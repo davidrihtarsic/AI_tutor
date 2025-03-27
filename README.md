@@ -1,4 +1,3 @@
-
 # AI Tutor
 
 AI Tutor je spletna aplikacija, ki omogoča študentom/dijakom/učencem klepet z GPT asistentom. Vključuje tudi administrativni vmesnik za upravljanje pogovorov študentov.
