@@ -1,0 +1,80 @@
+{
+    "8212022": {
+        "student_name": "mmiha",
+        "thread_id": "thread_BotE7101aXfatDyPG0gHnbY9",
+        "messages": [
+            {
+                "question": "Kaj je tvoja naloga",
+                "response": "'Moja naloga je, da te učim o robotiki in ti pomagam pri razumevanju konceptov ter projektov, povezanih z Arduino, RobDuino in Fischertechnik elementi. Pomagam ti lahko z razlago teorije, praktičnimi primeri, kodo ter koraki, ki jih lahko izvedeš sam. Ob tem koristim tudi učne vire, kot je knjiga \"Experiential Learning of Robotics\". \\n\\nČe imaš kakršna koli vprašanja ali projekte, ki ti povzročajo težave, mi lahko poveš, in skupaj bova poiskala rešitve!'"
+            }
+        ]
+    },
+    "999999999988": {
+        "student_name": "dddavid",
+        "thread_id": "thread_pvtAavmB1QoDvKBuEoXV2Pmv",
+        "messages": [
+            {
+                "question": "kako mi lahko pomagaš?",
+                "response": "'Seveda! Kako ti lahko pomagam? Ali imaš vprašanja glede robotike, programiranja z Arduinom, ali česa drugega? Lahko ti pomagam pri razlagi konceptov, iskanju informacij v tvojih datotekah ali pri reševanju problemov, s katerimi se srečuješ. Samo sporoči mi, kaj te zanima!'"
+            },
+            {
+                "question": "Napiši program za vkjučitev ledice.\n",
+                "response": "'Tukaj je enostaven Arduino program za vklop LED diodice, ki je povezana na pin 13:\\n\\n```cpp\\n// Določite pin, kjer je povezana LED\\n#define LED_PIN 13\\n\\nvoid setup() {\\n  // Inicializirajte LED pin kot izhod\\n  pinMode(LED_PIN, OUTPUT);\\n}\\n\\nvoid loop() {\\n  // Vklopite LED\\n  digitalWrite(LED_PIN, HIGH);\\n  delay(1000); // Ohranite LED vklopljen za 1 sekundo\\n  // Izklopite LED\\n  digitalWrite(LED_PIN, LOW);\\n  delay(1000); // Ohranite LED izklopljen za 1 sekundo\\n}\\n```\\n\\n### Pojasnilo programa:\\n1. **Definicija pina:** Na začetku definiramo, kateri pin se uporablja za LED diodo. V tem primeru uporabljamo pin 13.\\n2. **Setup funkcija:** V funkciji `setup()` nastavimo pin LED kot izhod s pomočjo `pinMode()`.\\n3. **Loop funkcija:** V funkciji `loop()` nenehno vklapljamo in izklapljamo LED diodo. LED bo vklopljen za 1 sekundo (`delay(1000)`), nato pa bo izklopljen za 1 sekundo.\\n\\n### Kako uporabiti:\\n- Prekopirajte zgornjo kodo in jo prilepite v Arduino IDE.\\n- Povežite LED diodo na pin 13 (dolg noga na plus, kratka noga na GND).\\n- Naložite kodo na Arduino in opazujte, kako LED dioda utripne!\\n\\n### Spraševanje:\\nZa boljše razumevanje, evo vprašanje:\\n\\n**Vprašanje:**\\nKateri del kode je odgovoren za to, da LED dioda zasveti?\\nA: `delay(1000);`\\nB: `digitalWrite(LED_PIN, HIGH);`\\nC: `pinMode(LED_PIN, OUTPUT);`\\nD: `digitalWrite(LED_PIN, LOW);`\\n\\nKatero je tvoje mnenje?'"
+            }
+        ]
+    },
+    "123321": {
+        "student_name": "Davidoff",
+        "thread_id": "thread_B3mP1a8J5z1oWCeHg780AKhT",
+        "messages": [
+            {
+                "question": "kako mi lahko pomahaš?",
+                "response": "'Seveda! Kako ti lahko pomagam? Če imaš kakšno vprašanje o robotiki, Arduinu, programiranju ali čem drugem, kar te zanima, kar povej! Tu sem, da te vodim in ti pomagam razumeti.'"
+            }
+        ]
+    },
+    "123456": {
+        "student_name": "Me",
+        "thread_id": "thread_QtYmViRsDOvNTmKSuIlbrxIv",
+        "messages": [
+            {
+                "question": "Kateir dan je danes?",
+                "response": "'Da bi vam lahko natančno odgovoril, bi potreboval več informacij o tem, na kaj se nanaša vaše vprašanje. Ali se sprašujete, kako je nekdo, poimensko Kateir, ali pa se sprašujete o posebnem dogodku ali situaciji, povezanem z njim? Prosim, da pojasnite, da vam lahko bolje pomagam.'"
+            },
+            {
+                "question": "Kako mi lahko pomagaš?",
+                "response": "'Lahko ti pomagam na več načinov, odvisno od tega, kakšna vprašanja ali naloge imaš. Tukaj je nekaj primerov, kako ti lahko pomagam:\\n\\n1. **Učenje Roboterike:** Lahko ti razložim osnovne koncepte robotike, ki vključujejo uporabo Arduina, RobDuino in Fischertechnik elementov.\\n\\n2. **Reševanje Problemov:** Če imaš težave pri delu na projektu, lahko skupaj pregledava težave in poiščeva rešitve.\\n\\n3. **Pomoč pri Programiranju:** Lahko ti pomagam razumeti ter pisati kodo za tvoje projekte. To vključuje tudi razlago, kako delujejo različne knjižnice in funkcije.\\n\\n4. **Priprava na Projekte:** Lahko ti svetujem, kako zgraditi ali načrtovati robot, ali pa ti pomagam izdelati načrt projekta.\\n\\n5. **Ocena Razumevanja:** Lahko zastavim vprašanja, ki ti bodo pomagala preveriti tvoje razumevanje snovi.\\n\\nKako točno ti lahko pomagam? Prosim, da mi poveš, s čim se srečuješ ali kaj te zanima!'"
+            }
+        ]
+    },
+    "77": {
+        "student_name": "Doncic",
+        "thread_id": "thread_ydBMR0tbOgytStd3lSVOIBPE",
+        "messages": [
+            {
+                "question": "Kdo je Luka Doncic?",
+                "response": "'Luka Dončić je slovenský profesionální basketbalista, který je známý svou výjimečnou dovedností a všestranností na hřišti. Narodil se 28. února 1999 v Lublani, Slovinsko. Dončić začal svou kariéru v Evropské basketballové lize a hrál za klub Real Madrid, kde se stal jedním z nejmladších hráčů, kteří získali titul mistrovství Evropy a EuroLeague.\\n\\nV roce 2018 byl Dončić vybrán jako třetí celkový pick v draftu NBA týmem Atlanta Hawks, ale byl vyměněn do Dallas Mavericks, kde okamžitě zapůsobil svým talentem a dovednostmi. Rychle se stal jedním z nejlepších hráčů v NBA, přičemž se vyznačuje skvělým driblingem, přihráváním, střelbou a schopností dát body.\\n\\nMezi jeho notable úspěchy patří:\\n\\n1. **Rookie of the Year** (za nováčka roku) v jeho první sezóně (2018-2019).\\n2. Opakované výběry do NBA All-Star game.\\n3. Vedení Mavericks k významným úspěchům v play-off.\\n\\nDončić je také kapitánem slovenské reprezentace a přispěl k úspěchům týmu na mezinárodních turnajích.\\n\\nPokud se chcete dozvědět více o jeho kariéře nebo konkrétních momentech, dejte mi vědět!'"
+            },
+            {
+                "question": "Postavi mi vprašanje?",
+                "response": "'Seveda! Tukaj je vprašanje, ki ti lahko pomaga razmisliti o znanju o Luki Dončiću:\\n\\n**Vprašanje:**\\nKakšen je največji uspeh Luke Dončića v njegovi mladinski karieri pred vstopom v NBA?\\nA: Zmaga na olimpijskih igrah.\\nB: Osvojitev EuroLeague z Real Madridom.\\nC: Postati najmlajši igralec v zgodovini Lige NBA.\\nD: Zmagati prvenstvo v svoji domači ligi.\\n\\nKatera možnost se ti zdi prava?'"
+            },
+            {
+                "question": "Ali nebi moral postavljati vprašanja v zvezi z Začetno Robotiko?",
+                "response": "'Opravičujem se za zmedo! Seveda, lahko postavim vprašanje v zvezi z robotiko. Tukaj je vprašanje, povezano z osnovami robotike in Arduinom:\\n\\n**Vprašanje:**\\nKateri od naslednjih elementov je najpomembnejši za krmiljenje robota, ki ga upravlja Arduino?\\nA: Senzor temperature.\\nB: Servomotor.\\nC: LCD zaslon.\\nD: Baterija.\\n\\nKatera možnost se ti zdi pravilna?'"
+            },
+            {
+                "question": "ali je B",
+                "response": "'Pravilno! Odgovor B: **Servomotor** je pravilen odgovor.\\n\\n**Razlaga:**\\nServomotorji so ključni elementi v robotiki, saj omogočajo natančno krmiljenje gibanja robota. Uporabljajo se za premikanje delov robota, kot so roke, kolesa ali drugi gibljivi deli. Z Arduino ploščo lahko enostavno upravljamo servomotorje, kar omogoča izvajanje različnih funkcij in gibov.\\n\\nSeveda pa so tudi drugi elementi, kot so senzorji in napajanje, pomembni za delovanje robota, vendar je servomotor tisti, ki zagotavlja gibanje.\\n\\nČe te zanima nadaljnje raziskovanje robotike, te lahko vprašam še nekaj o senzorjih. Ali želiš, da postavim še eno vprašanje ali razložim kakšno drugo temo?'"
+            },
+            {
+                "question": "Seveda robotika, zato sem tukaj",
+                "response": "'Super, vesel sem, da te zanima robotika! Poglejmo torej vprašanje o senzorjih, ki so prav tako ključni za delovanje robota.\\n\\n**Vprašanje:**\\nKateri senzor se najpogosteje uporablja za merjenje razdalje do predmetov v robotiki?\\nA: Senzor temperature.\\nB: Senzor vlage.\\nC: Ultra zvokovni senzor.\\nD: Senzor svetlobe.\\n\\nKatera možnost se ti zdi pravilna?'"
+            },
+            {
+                "question": "Verjetno je odgovor C pravilen, vendar mi nimamo v kompletu tega senzorja, pač pa uporabljamo IR senzor razdalje proizvajalca SHARP.",
+                "response": "'Odlično! Tvoj odgovor C: **Ultra zvokovni senzor** je pravilen za generično merjenje razdalje, ki se pogosto uporablja v robotiki. Ultra zvokovni senzorji delujejo na principu oddajanja in sprejemanja zvočnih valov ter merijo čas, ki ga potrebujemo, da se zvok vrne nazaj, kar omogoča izračun razdalje do objekta.\\n\\nPrav tako si omenil, da uporabljate **IR senzor razdalje** proizvajalca SHARP. To je tudi odličen senzor za merjenje razdalje! IR senzorji delujejo na podlagi infrardečega svetloba: oddajajo IR žarke in merijo, koliko svetlobe se odbije od bližnjih predmetov. IR senzorji so pogosto uporabljeni za sledenje robovom, izogibanje oviram in navigacijo robotov.\\n\\nOba tipa senzorjev imata svoje prednosti in slabosti. Ultra zvokovni senzorji običajno delujejo bolje na daljših razdaljah, medtem ko IR senzorji lahko delujejo hitreje in so manj občutljivi na hrup iz okolice.\\n\\nAli želiš, da raziščemo, kako uporabo IR senzorja v tvojem projektu ali morda še en vidik robotike?'"
+            }
+        ]
+    }
+}

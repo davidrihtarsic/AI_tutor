@@ -1,0 +1,77 @@
+/*<style>*/
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    font-size: 12px;
+}
+.conversation {
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+}
+
+.student-name {
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.question-wrapper {
+    margin-left: 20px; /* Indent the questions slightly */
+    margin-bottom: 0px;
+}
+
+.answer {
+    margin-left: 40px; /* Indent the answers further */
+    margin-bottom: 10px;
+    color: darkgreen;
+}
+
+.show-answer {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.assistant-select, .conversation-select {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Add some space between the dropdowns and the slider */
+}
+#assistantSelect, #conversationSelect {
+    width: 199px; /* Make the dropdown menus longer */
+    margin-left: 9px; /* Add some space between the labels and the dropdowns */
+}
+.slider {
+    position: relative;
+    display: inline-block;
+    width: 59px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    vertical-align: middle; /* Align vertically */
+    line-height: 20px; /* Set consistent line-height */
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 49%;
+    transition: .3s;
+}
+.slider.active {
+    background-color: #2195F3;
+}
+.slider.active:before {
+    transform: translateX(25px);
+}

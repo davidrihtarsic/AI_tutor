@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student GPT Chat</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+</head>
+<body>
+    <h2>Chat with GPT Assistant</h2>
+    <!-- Student Name and ID Input Fields in the Same Line -->
+    <div class="input-row">
+        <input type="text" id="studentNameInput" placeholder="Enter your name">
+        <input type="text" id="studentIdInput" placeholder="Enter your student ID (optional)">
+        <button id="loginButton" onclick="login()" disabled>Login</button>
+    </div>
+    <div id="chatBox"></div>
+    <!-- Message Input -->
+    <textarea id="messageInput" placeholder="Type your question..." rows="4" disabled></textarea>
+    <button id="sendButton" onclick="sendMessage()" disabled>Send</button>
+    <script>
+    </script>
+</body>
+</html>

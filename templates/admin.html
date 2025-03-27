@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Student Conversations</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin.css') }}">
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="{{ url_for('static', filename='admin.js') }}"></script>
+</head>
+<body>
+
+<div class="header">
+    <h2>Admin - Student Conversations</h2>
+    <div class="assistant-select">
+        <label for="assistantSelect">Select Assistant:</label>
+        <select id="assistantSelect">
+            {% for key, value in assistants.items() %}
+                <option value="{{ key }}">{{ key }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="conversation-select">
+        <label for="conversationSelect">Select Conversation Group:</label>
+        <select id="conversationSelect">
+            <option value="" disabled selected>Select a conversation group</option>
+            {% for file in conversation_files %}
+                <option value="{{ file }}">{{ file }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="slider" id="toggleSlider" style="margin-top: 10px;"></div>
+</div>
+
+<div id="conversations">
+    <!-- Conversations will be dynamically inserted here -->
+</div>
+
+<script src="{{ url_for('static', filename='admin.js') }}"></script>
+</body>
+</html>

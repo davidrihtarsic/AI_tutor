@@ -1,0 +1,140 @@
+
+/* styles.css */
+
+html, body {
+    height: 95%;
+    margin: 10px;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#chatBox {
+    flex-grow: 1;                /* Allow the chatBox to grow and take up remaining space */
+    border: 1px solid #ccc;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+}
+
+li, ol, ul{
+    margin: 0em;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-top: 0.0em;   /* Adjust margin between headers */
+    margin-bottom: 0.0em;
+}
+
+h1 {
+    font-size: 1.6em;
+}
+
+h2 {
+    font-size: 1.4em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+/* Style for paragraphs */
+p {
+    margin: 0.0em;  /* Reduce gap between paragraphs */
+}
+
+/* Styling code blocks */
+/*
+code {
+    background-color: #f4f4f4;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: Consolas, 'Courier New', monospace;
+    color: black;
+}
+*/
+/* Styling <pre> blocks for larger code sections */
+pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.student-message, .gpt-message {
+    margin: 10px 0;
+}
+
+.gpt-message {
+    color: darkblue;
+}
+
+/* To break long words and avoid overflow */
+.gpt-message {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    margin-right: 10px;
+    flex: 1;
+}
+input:disabled {
+    background-color: #f0f0f0;
+    color: #999;
+    cursor: not-allowed;
+}
+
+#messageInput {
+    width: 100%;               /* Set width to 80% of the parent container */
+    height: 100px;            /* Adjust height */
+    padding: 10px;            /* Add padding for better readability */
+    font-family: Arial, sans-serif;
+    font-size: 16px;          /* Larger font size */
+    border: 1px solid #ccc;   /* Light border */
+    border-radius: 15px;       /* Rounded corners */
+    box-sizing: border-box;   /* Ensure padding is part of the width and height */
+    margin-bottom: 10px;      /* Add some space below the textarea */
+    flex-shrink: 0;            /* Prevent shrinking */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+button:disabled {
+    cursor: not-allowed;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
