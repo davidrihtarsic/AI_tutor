@@ -24,23 +24,17 @@ def load_config(file_path="config/config.json"):
         print(f"Error decoding JSON: {e}")
         raise
 
-# Save updated configuration to config.json
-def save_config(file_path="config/config.json"):
-    try:
-        with open(file_path, 'w', encoding='utf-8') as file:
-            json.dump(config, file, ensure_ascii=False, indent=4)
-            print("Configuration saved successfully.")
-    except Exception as e:
-        print(f"Error saving configuration: {e}")
-        raise
-
 # Load configuration
 config = load_config()
 
 # Use the first API key and assistant ID as defaults
 default_api_key_name = next(iter(config["api_keys"]))
-assistant_name = next(iter(config["assistants"]))
+default_assistant_name = next(iter(config["assistant_ids"]))
 client = OpenAI(api_key=config["api_keys"][default_api_key_name])
+
+# Check if the assistant has additional parameters like "openai_assistant_id"
+default_assistant = config["assistant_ids"][default_assistant_name]
+ASSISTANT_ID = default_assistant["openai_assistant_id"] if isinstance(default_assistant, dict) else default_assistant
 
 # Path to the JSON file where conversations will be saved
 CONVERSATIONS_DIR = 'conversations'
@@ -93,90 +87,50 @@ def chat_stream():
     user_input = request.args.get('message')
     student_id = request.args.get('student_id')
     student_name = request.args.get('student_name')  # Get the student's name
-    if debug:
-        print(f"{student_name} ({student_id}) using assistant {assistant_name}: {user_input}")
+    print(f"{student_id} ({student_name}): {user_input}")
 
     try:
-        # Check if the student exists in conversations
+        # Check if there is an existing thread for the student
         if student_id not in conversations:
-            # Create a new student entry in conversations
+            # If not, create a new thread for the student
+            thread = client.beta.threads.create(
+                messages=[ { "role":"user", "content":user_input } ],
+            )  
+            thread_id = thread.id
+            # Add the student name and thread ID to the conversations dictionary
             conversations[student_id] = {
-                'student_name': student_name,
-                'thread_id': "",
+                'student_name': student_name,  # Store the student's name
+                'thread_id': thread_id,
                 'messages': []
             }
             if debug:
-                print(f"Created new student entry for {student_name} ({student_id}).")
-
-        # Get the assistant configuration
-        assistant_config = config["assistants"].get(assistant_name)
-        if not assistant_config:
-            return jsonify({'error': f"No assistant configuration found for {assistant_name}."}), 400
-
-        assistant_id = assistant_config.get("openai_assistant_id")
-        assistant_instructions = assistant_config.get("instructions", "")
-        if debug:
-            print(f"\nAssistant ID: {assistant_id},\nInstructions: {assistant_instructions}")
-        # Check if openai_assistant_id exists, if not, create an assistant
-        if not assistant_id:
-            if debug:
-                print(f"Creating new assistant for {assistant_name}...")
-            if assistant_instructions:
-                # Create the assistant with the provided instructions
-                if debug:
-                    print(f"Creating assistant with instructions: {assistant_instructions}")
-                assistant = client.beta.assistants.create(
-                    name=assistant_name,
-                    instructions=assistant_instructions,
-                    model="o3-mini",
-                )
-                assistant_id = assistant.id
-                assistant_config["openai_assistant_id"] = assistant_id
-                save_config()  # Save the updated assistant ID to config.json
-                if debug:
-                    print(f"Created new assistant for {assistant_name} with ID: {assistant_id}")
-            else:
-                return jsonify({'error': 'No openai_assistant_id and no instructions provided.'}), 400
+                print(f"Creating thread_id: {thread_id} for student_id: {student_id}")
         else:
-            if debug:
-                print(f"Using existing assistant_id: {assistant_id} for assistant_name: {assistant_name}")
-
-        # Check if a thread exists for the student, if not, create one
-        thread_id = conversations[student_id].get('thread_id')
-        if debug:
-            print(f"Thread ID for student {student_id}: {thread_id}")
-        
-        if not thread_id:  # Check for falsy values like None, "", or missing keys
-            thread = client.beta.threads.create(
-                messages=[{"role": "user", "content": user_input}],
-            )
-            conversations[student_id]['thread_id'] = thread.id
-            if debug:
-                print(f"Created new thread for student_id: {student_id} with thread_id: {thread.id}")
-        else:
-            # Append the user message to the existing thread
-            if debug:
-                print(f"Appending message to existing thread for student_id: {student_id}")
+            # Reuse the existing thread
             thread_id = conversations[student_id]['thread_id']
-            msg = client.beta.threads.messages.create(
+            message = client.beta.threads.messages.create(
                 thread_id=thread_id,
                 role="user",
                 content=user_input
             )
             if debug:
-                print(f"Appended message to thread {thread_id}: {msg}")
-        
-        def generate_response():
-            gpt_response = ""
-            thread_id = conversations[student_id]['thread_id']
+                print(f"Using existing thread_id: {thread_id} for student_id: {student_id}")
+                print(f"Message added to thread: {message}")
 
+        def generate_response():
+            if not ASSISTANT_ID:
+                # If openai_assistant_id is empty, return a message
+                yield f"data: {repr('no openai_assistant_id')}\n\n"
+                return
+
+            gpt_response = ""
             # Stream the response from the assistant
             if debug:
                 print(f"Using thread_id: {thread_id} for student_id: {student_id}")
-                print(f"Assistant ID: {assistant_id}")
+                print(f"Assistant ID: {ASSISTANT_ID}")
             with client.beta.threads.runs.stream(
                 thread_id=thread_id,
-                assistant_id=assistant_id,
+                assistant_id=ASSISTANT_ID,
                 timeout=30
             ) as stream:
                 for text_delta in stream.text_deltas:
@@ -191,7 +145,6 @@ def chat_stream():
                 'question': user_input,
                 'response': f"{repr(gpt_response)}"
             })
-
             # Save conversations after each update
             save_conversations()
 
@@ -205,20 +158,18 @@ def chat_stream():
 
 @app.route('/api/set_assistant')
 def set_assistant():
-    global assistant_name 
     assistant_name = request.args.get('name')
-    if assistant_name in config["assistants"]:
-        assistant = config["assistants"][assistant_name]
-        assistant_id = assistant["openai_assistant_id"] if isinstance(assistant, dict) else assistant
-    if debug:
-        print(f"Assistant set to: {assistant_name} with ID: {assistant_id}")
-    return jsonify({'assistant_id': assistant_id})
+    global ASSISTANT_ID
+    if assistant_name in config["assistant_ids"]:
+        assistant = config["assistant_ids"][assistant_name]
+        ASSISTANT_ID = assistant["openai_assistant_id"] if isinstance(assistant, dict) else assistant
+    return jsonify({'assistant_id': ASSISTANT_ID})
 
 @app.route('/admin')
 def admin():
     assistants = {
         key: (value["openai_assistant_id"] if isinstance(value, dict) else value)
-        for key, value in config["assistants"].items()
+        for key, value in config["assistant_ids"].items()
     }
     conversation_files = [os.path.basename(f) for f in glob.glob(os.path.join(CONVERSATIONS_DIR, '*.json'))]
     return render_template('admin.html', assistants=assistants, conversation_files=conversation_files, selected_conversation_file=selected_conversation_file)
