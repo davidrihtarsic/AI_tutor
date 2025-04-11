@@ -54,7 +54,7 @@ pip install flask openai
     source venv/bin/activate
     ```
 
-3. Spremenite datoteko `config.json` v korenski mapi z vašim OpenAI API ključem in ID-ji asistentov:
+3. Spremenite ime datoteke `config.example.json` v `config.json` v mapi `/config`. Nato premenite vsebino te datoteke z vašim OpenAI API ključem in ID-ji asistentov:
     ```json
     {
         "api_keys": {
