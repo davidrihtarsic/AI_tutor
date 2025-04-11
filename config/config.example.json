@@ -1,0 +1,15 @@
+{
+    "api_keys": {
+        "default_key": "sk-pro**************************lUA"
+    },
+    "assistants": {
+        "Pomocnik_delo_v_skupinah": {
+            "openai_assistant_id": "asst_7*******************Wdrs",
+            "instructions": ""
+        },
+        "Pomocnik_preverjanje_znanja": {
+            "openai_assistant_id": "asst_x*******************xzq",
+            "instructions": ""
+        }
+    }
+}
