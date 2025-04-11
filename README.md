@@ -44,7 +44,7 @@ pip install flask openai
 
 1. Klonirajte repozitorij:
     ```sh
-    git clone https://github.com/yourusername/AI_tutor.git
+    git clone https://github.com/davidrihtarsic/AI_tutor.git
     cd AI_tutor
     ```
 
