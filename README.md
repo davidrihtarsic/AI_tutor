@@ -11,6 +11,8 @@ AI Tutor je spletna aplikacija, ki omogoča študentom/dijakom/učencem klepet z
 3. Kliknite gumb "Prijava" za začetek seje.
 4. Vnesite svoja vprašanja v vnosno polje za sporočila in kliknite "Pošlji" za klepet z GPT asistentom.
 
+![Slika pogovornega okna za učence.](./images/Ai_tutor_student.png){#fig:Ai_tutor_student}
+
 ### Administrativni vmesnik
 
 1. Odprite administrativno stran z navigacijo na `https://127.0.0.1/admin`.
@@ -18,16 +20,27 @@ AI Tutor je spletna aplikacija, ki omogoča študentom/dijakom/učencem klepet z
 3. Izberite skupino pogovorov za ogled pogovorov.
 4. Preklopite status vnosnega polja za sporočila z drsnikom.
 
+![Zaslonska slika administracijskega okna.](./images/Ai_tutor_teacher.png){#fig:Ai_tutor_teacher}
+
 ## Namestitev
 
-### Predpogoji
+### Potrebna programska oprema
 
-- Python 3.x
-- Flask
-- OpenAI knjižnica
+- Python 3.17 ali novejša različica
 - Dodatne Python knjižnice (navedene spodaj)
+- Beležnica za urejanje `*.json` datotek (Notepad++, Sublime text, Notepad)
 
-### Koraki
+### Potrebne knjižnice
+
+- Flask
+- OpenAI
+
+Namestite te knjižnice z naslednjim ukazom:
+```sh
+pip install flask openai
+```
+
+### Priprava okolja
 
 1. Klonirajte repozitorij:
     ```sh
@@ -41,52 +54,38 @@ AI Tutor je spletna aplikacija, ki omogoča študentom/dijakom/učencem klepet z
     source venv/bin/activate
     ```
 
-3. Namestite potrebne knjižnice:
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-4. Ustvarite datoteko `config.json` v korenski mapi z vašim OpenAI API ključem in ID-ji asistentov:
+3. Spremenite datoteko `config.json` v korenski mapi z vašim OpenAI API ključem in ID-ji asistentov:
     ```json
     {
-        "api_key": "your_openai_api_key",
-        "ai_elora_1": "assistant_id_1",
-        "ai_elora_2": "assistant_id_2"
+        "api_keys": {
+            "default_key": "sk-proj-***************************************lUA"
+        },
+        "assistants": {
+            "Pomocnik_pri_skupinskem_delu": {
+                "openai_assistant_id": "asst_7U******************Wdrs",
+                "instructions": ""
+            },
+            "Pomocnik_za_preverjanje_znanja": {
+                "openai_assistant_id": "asst_xg******************Qxzq",
+                "instructions": ""
+            }
+        }
     }
     ```
 
-5. Ustvarite mapo `conversations` v korenski mapi za shranjevanje datotek pogovorov:
+4. Ustvarite novo datoteko za nove pogovore. Datoteka se mora nahajati v mapi `conversations`. Najbolje, da skopirate prazno predlogo pogovorne datoteke 
     ```sh
-    mkdir conversations
+    cp ./conversations/sample_class.json ./conversations/2025_04_prosti_pad.json
     ```
 
-6. Zaženite aplikacijo:
+5. Zaženite aplikacijo:
     ```sh
-    python AiTutor.py
+    python3 AiTutor.py
     ```
 
-7. Odprite svoj spletni brskalnik in navigirajte na `http://localhost:5000` za študentski vmesnik ali `http://localhost:5000/admin` za administrativni vmesnik.
+6. Odprite svoj spletni brskalnik in navigirajte na `http://localhost:5000` za študentski vmesnik ali `http://localhost:5000/admin` za administrativni vmesnik.
 
-## Potrebne knjižnice
-
-- Flask
-- OpenAI
-- Marked (za Markdown razčlenjevanje)
-- Highlight.js (za sintaksno označevanje)
-
-Namestite te knjižnice z naslednjim ukazom:
-```sh
-pip install flask openai
-```
-
-Dodatno vključite naslednje v svoje HTML datoteke:
-```html
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
-```
 
 ## Licenca
 
-Ta projekt je licenciran pod MIT licenco.
+Ta projekt je licenciran pod CC BY-SA licenco.

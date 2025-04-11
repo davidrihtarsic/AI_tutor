@@ -1,0 +1,12 @@
+{
+    "123456": {
+        "student_name": "David",
+        "thread_id": "thread_BotE7101aXfatDyPG0gHnbY9",
+        "messages": [
+            {
+                "question": "Kaj je tvoja naloga",
+                "response": "'Moja naloga je, da te učim o robotiki in ti pomagam pri razumevanju konceptov ter projektov, povezanih z Arduino, RobDuino in Fischertechnik elementi. Pomagam ti lahko z razlago teorije, praktičnimi primeri, kodo ter koraki, ki jih lahko izvedeš sam. Ob tem koristim tudi učne vire, kot je knjiga \"Experiential Learning of Robotics\". \\n\\nČe imaš kakršna koli vprašanja ali projekte, ki ti povzročajo težave, mi lahko poveš, in skupaj bova poiskala rešitve!'"
+            }
+        ]
+    }
+}
