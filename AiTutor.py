@@ -128,7 +128,7 @@ def chat_stream():
                 assistant = client.beta.assistants.create(
                     name=assistant_name,
                     instructions=assistant_instructions,
-                    model="o3-mini",
+                    model="gpt-4o-mini",
                 )
                 assistant_id = assistant.id
                 assistant_config["openai_assistant_id"] = assistant_id
