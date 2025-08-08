@@ -1,0 +1,725 @@
+{
+    "417998": {
+        "student_name": "Samo",
+        "thread_id": "thread_WjGqu089reNMN6NI7djXWCNO",
+        "messages": [
+            {
+                "question": "Are you alive?",
+                "response": "\"I'm not alive, but I'm here to help you! How can I assist you today?\""
+            },
+            {
+                "question": "Whats a token",
+                "response": "'- Tokeni so manjši deli besedila, ki jih generativni modeli umetne inteligence uporabljajo za razumevanje in generiranje vsebin.\\n- Vsak token lahko predstavlja besedo, del besede ali celo posamezen znak, odvisno od jezika in modela.\\n- Na primer, beseda \"učitelj\" je lahko en token ali več tokenov, če je model razčleni na manjše dele.\\n\\nČe želiš, ti lahko pomagam razumeti, kako to vpliva na delo z AI tutorji ali kako število tokenov vpliva na dolžino poziva. Želiš?'"
+            },
+            {
+                "question": "Kdo je David?\n",
+                "response": "'David Ritharšiš je eden izmed predavateljev oziroma avtorjev predstavitve o uporabi AI tutorjev pri poučevanju STEM predmetov, za katerega lahko pripravim prosojnice in ki ima posebno vlogo pri izvedbi delavnice.\\n\\nAli želiš, da ti pomagam z informacijami ali prosojnicami, ki jih je pripravil David?'"
+            },
+            {
+                "question": "Ali je David robot?",
+                "response": "'Ne, David Ritharšiš ni robot. David je človek, predavatelj ali avtor, ki sodeluje pri predstavitvi o uporabi AI tutorjev v izobraževanju. Jaz pa sem AI asistent, ki pomaga pri izvajanju takih predstavitev in delavnic. Kako ti lahko še pomagam?'"
+            },
+            {
+                "question": "imam robotka sledilnika črti. nič se ne zgodi.\n",
+                "response": "'Hvala za informacijo! Da bova bolje razumela, ti bom zastavil nekaj vprašanj:\\n\\n1. Ali robot sploh prižge LED diode ali kakšne indikatorje, ko ga vključiš?  \\n2. Ali motorji oddajajo kakšen zvok ali se nekaj premika?  \\n3. Ali si že preveril, ali so baterije napolnjene in pravilno vstavljene?  \\n\\nKaj opažaš? Če imaš še kakšne dodatne informacije, jih prosim deli!'"
+            },
+            {
+                "question": "robotek pelje v napačno smer\n",
+                "response": "'Hvala za odgovor! Da bova lažje ugotovila vzrok, še nekaj vprašanj:\\n\\n1. Ali se oba motorja vrtita, pa se kljub temu robot premika v napačno smer (npr. na levo namesto naprej)?  \\n2. Ali robot takoj odpelje narobe, ali se začne rahlo kriviti čez čas?  \\n3. Ali si preveril, če so senzorji pravilno nameščeni nad črto?\\n\\nDa bi lažje nadaljevala, lahko poskusiš tudi to: postavi robota na črno črto in počakaj nekaj sekund – ali se krivi v stran ali gre naravnost?  \\n\\nKaj si opazil?'"
+            }
+        ]
+    },
+    "7616978": {
+        "student_name": "David",
+        "thread_id": "thread_OfaW9CLNfbQkiuUcc7bekBdi",
+        "messages": [
+            {
+                "question": "Kaj so to žetoni ali tokeni?",
+                "response": "'Tokeni oziroma žetoni so osnovni gradniki besedila, ki jih uporabljajo modeli umetne inteligence za razumevanje in generiranje vsebine.\\n\\n- Token je lahko del besede, cela beseda ali celo znak (npr. ločilo).\\n- Model umetne inteligence razdeli vhodno besedilo na te manjše enote, da jih lahko obdela.\\n- Število tokenov vpliva na dolžino in kompleksnost odgovora, ki ga model lahko ustvari.\\n\\nČe te zanima, kako tvoje vprašanje razčlenijo tokeni ali kako štejemo tokene, ti lahko priporočim orodja za tokenizacijo, na primer OpenAI Tokenizer (https://platform.openai.com/tokenizer).\\n\\nAli želiš, da pojasnim, kako tokeni vplivajo na delovanje generativnih modelov ali kako z uporabo tokenov strukturirati pozive?'"
+            }
+        ]
+    },
+    "6732949": {
+        "student_name": "Daša",
+        "thread_id": "thread_Yvz2ODLQfX6Qs0hfLtZgTpTw",
+        "messages": [
+            {
+                "question": "Kaj se bomo naučili?\n",
+                "response": "'Lahko prosim poveš, ali si predavatelj ali udeleženec delavnice? Tako ti lahko prilagodim odgovor glede na tvojo vlogo.'"
+            },
+            {
+                "question": "Udeleženec",
+                "response": "'Seveda! Tukaj je, kaj se boste naučili v delavnici o uporabi AI tutorjev pri poučevanju STEM predmetov:\\n\\n- Razumevanje osnov generativne umetne inteligence in njenega delovanja.\\n- Spoznali boste, kako AI tutorji lahko pomagajo izboljšati poučevanje in učenje v STEM predmetih.\\n- Naučili se boste ustvarjati učinkovite pozive (prompt-e) za AI tutorje, da dobite kakovostne in uporabne odgovore.\\n- Prejeli boste navodila in tehnike, kako vključiti AI tutorje v učne dejavnosti in delavnice.\\n- Spoznali boste primere dobrih praks in morebitne izzive pri uporabi AI v izobraževanju.\\n- Imeli boste priložnost praktično preizkusiti AI tutorja in se naučiti, kako ga najbolje izkoristiti za svoje učence.\\n\\nČe te zanima, lahko pojasnim tudi posamezne vsebine ali konkretno uporabo AI tutorjev. Kako želiš?'"
+            },
+            {
+                "question": "Delamo vajo z robotskim vozilom, ki naj bi se vozil po vijugasti črti. Vrti se v krogu in ne sledi črti. Kaj naj storim?\n",
+                "response": "'Hvala za opis! Da bolje razumem, ti pomagajva “razvozlati” težavo.\\n\\n1. Ko vklopiš robota, ali se motorja sploh vrtita? Se sliši, da delujeta?\\n2. Ali uporabljaš senzorje za sledenje črti? Kaj opaziš – se senzorji odzovejo, ko jih premakneš nad črno in belo podlago?\\n3. Se prižgejo LED diode na senzorjih ali na robotu?\\n\\nČe lahko odgovoriš, bova skupaj preverila še naslednje stvari, da bova lažje ugotovila, zakaj robot ne sledi črti, ampak se vrti v krogu. Kaj praviš?'"
+            }
+        ]
+    },
+    "5837647": {
+        "student_name": "Maja G.",
+        "thread_id": "thread_6UxgaoYKImCTabvd4aC2ABhb",
+        "messages": [
+            {
+                "question": "Kako mi služi podatek o žetonih?",
+                "response": "'Tokeni (žetoni) so ključni koncept pri razumevanju delovanja generativnih jezikovnih modelov, kot je ChatGPT. Pojasnil ti bom, kako ti podatek o žetonih služi v praksi, še posebej pri delu z AI tutorji v poučevanju STEM predmetov:\\n\\n- **Kaj so tokeni?**  \\n  Tokeni so manjši gradniki besedila, ki jih modeli razumejo in procesirajo. To niso vedno cele besede; lahko so deli besed, znaki ali kombinacije, odvisno od jezika in modela. Na primer, beseda \"učitelj\" je lahko razdeljena na več tokenov.\\n\\n- **Zakaj je pomembno poznati število tokenov?**  \\n  Vsak model ima omejitev števila tokenov, ki jih lahko obdeluje v enem pozivu, kar vpliva na dolžino vprašanj in odgovorov. Če poziv ali odgovor preseže to omejitev, model ne bo mogel učinkovito delovati oziroma besedilo bo treba skrajšati.\\n\\n- **Kako ti kot predavatelj pomaga ta podatek?**  \\n  - Pri oblikovanju pozivov za AI tutorja lahko optimiziraš dolžino in jasnost vprašanja, da ostaneš znotraj omejitev.  \\n  - Pomaga ti razumeti, zakaj daljši pozivi ali delovni materiali morda ne dobijo popolnih odgovorov.  \\n  - Učencem lahko pojasniš, zakaj je treba biti jedrnat, ko uporabljajo AI tutorje.\\n\\n- **Primer praktične uporabe**  \\n  Če želiš, da AI tutor ustvari razlago ali nalogo, ki je predolga in presega omejitve tokenov, jo razdeli na več manjših delov, s čimer povečaš kakovost in jasnost odzivov.\\n\\nČe želiš, ti lahko predstavim kratek vodič, kako štejemo in upravljamo s tokeni pri delu z AI tutorji. Bi te zanimalo?'"
+            }
+        ]
+    },
+    "4331225": {
+        "student_name": "Saša",
+        "thread_id": "thread_OaqaIIM9wPaudYJqrB8VkxXP",
+        "messages": [
+            {
+                "question": "Kaj bomo danes delali na delavnici?\n",
+                "response": "'Prosim, povejte mi, ali ste predavatelj ali udeleženec delavnice? Tako vam bom lahko natančneje povedal, kaj bomo danes delali in kako vam lahko najbolje pomagam.'"
+            },
+            {
+                "question": "udeleženec",
+                "response": "'Odlično! Kot udeleženec delavnice o uporabi AI tutorjev pri poučevanju STEM predmetov boste danes:\\n\\n- Spoznali, kako deluje generativna umetna inteligenca in kako jo lahko uporabimo pri izobraževanju.\\n- Preučili primere in možnosti uporabe AI tutorjev za izboljšanje učenja in podajanje vsebin na zanimivejši način.\\n- Preizkusili praktične naloge, kjer boste oblikovali pozive oziroma vprašanja za AI tutorje, da boste videli, kako AI lahko pomaga pri razlagi zapletenih STEM konceptov.\\n- Raziskovali različne tehnike in metodologije za učinkovito komunikacijo z AI tutorji, npr. RAFT tehniko za strukturiranje pozivov.\\n- Imeli priložnost postavljati vprašanja in razjasnjevati morebitne nejasnosti glede uporabe AI pri poučevanju.\\n\\nČe imate kakšno vprašanje ali potrebujete pojasnilo katerikoli del, kar vprašajte, z veseljem vam bom pomagal. Kako se vam zdi? Želite, da vam razložim kakšen konkreten pojem že zdaj?'"
+            },
+            {
+                "question": "Pri katerem predmetu bi šoli bi bila današnja naloga najbolj uporabna?",
+                "response": "'Današnja naloga je posebej uporabna pri STEM predmetih, torej:\\n\\n- Pri **fiziki**, kjer lahko AI pomaga razložiti koncepte, kot so električni tok, sile, energija.\\n- Pri **matematiki**, za pomoč pri reševanju problemov in razlagi abstraktnih konceptov.\\n- Pri **kemiji**, za razumevanje kemičnih reakcij in sestave snovi.\\n- Pri **računalništvu**, kjer AI tutorji lahko pomagajo pri programiranju in algoritmih.\\n\\nNaloge so zasnovane tako, da jih je mogoče prilagoditi različnim nivojem znanja, od nižjih do višjih razredov. \\n\\nAli bi želeli, da vam razložim, kako bi uporabili naloge pri določenem predmetu ali razredu?'"
+            },
+            {
+                "question": "Prosim, lahko pripraviš primer za kemijo za 3. letnik gimnazije?\n",
+                "response": "'Seveda! Tukaj je primer, kako lahko uporabite AI tutorja za kemijo pri 3. letniku gimnazije z RAFT tehniko za oblikovanje poziva:\\n\\n---\\n\\n**Primer poziva za AI tutorja v kemiji (3. letnik gimnazije):**\\n\\n- **Vloga (Role):** Asistent kemije\\n- **Občinstvo (Audience):** Dijaki 3. letnika gimnazije\\n- **Oblika (Format):** Razlaga s primerom in analogijo\\n- **Tema (Topic):** Kataliza in njen vpliv na hitrost kemijske reakcije\\n\\n**Poziv (prompt):**  \\n*\"Kot asistent kemije razloži dijakom 3. letnika, kaj je kataliza, kako deluje in zakaj vpliva na hitrost kemijske reakcije. Uporabi primer iz vsakdanjega življenja in preprosto analogijo.\"*\\n\\n**Možen odgovor AI tutorja:**  \\n*\"Kataliza je proces, kjer snov, imenovana katalizator, pospeši kemijsko reakcijo, ne da bi se sama pri tem porabila. Predstavljajte si, da imate vrata, ki jih je težko odpreti, a če uporabite posebni ključ (katalizator), se vrata odprejo hitreje. Katalizator pomaga zmanjšati energijo, ki je potrebna, da reakcija poteka, zato reakcija poteka hitreje, vendar katalizator ostane nespremenjen.\"*\\n\\n---\\n\\nČe želite, lahko pripravim tudi primere pozivov za druge teme ali predmete. Želite še kakšen primer?'"
+            },
+            {
+                "question": "Lahko razširiš že prikazan problem?",
+                "response": "'Seveda, razširimo primer katalize za 3. letnik gimnazije z več podrobnostmi in dodatnimi elementi.\\n\\n---\\n\\n**Razširjena razlaga katalize za AI tutorja:**\\n\\n- **Vloga (Role):** Asistent kemije\\n- **Občinstvo (Audience):** Dijaki 3. letnika gimnazije\\n- **Oblika (Format):** Podrobna razlaga z ilustracijo delovanja katalizatorja in primeri vrste katalize\\n- **Tema (Topic):** Kataliza, vrste katalizatorjev in vpliv na hitrost kemijske reakcije\\n\\n**Poziv (prompt):**  \\n*\"Kot asistent kemije razloži dijakom 3. letnika gimnazije, kaj je kataliza, kako deluje, predvsem pa opiši razliko med homogene in heterogene katalizo. Uporabi primere iz laboratorija ali vsakdanjega življenja in razloži, zakaj katalizator pospeši reakcijo. Dodaj tudi kratek opis, kako katalizator vpliva na aktivacijsko energijo reakcije.\"*\\n\\n**Možen odgovor AI tutorja:**  \\n*\"Kataliza je proces, pri katerem snov, imenovana katalizator, poveča hitrost kemijske reakcije, ne da bi se sama pri tem porabila. Katalizator to doseže tako, da zniža aktivacijsko energijo, kar pomeni, da reakcija potrebuje manj energije za potek.\\n\\nObstajata dve glavni vrsti katalize:  \\n- **Homogena kataliza** - katalizator in reaktanti so v isti fazi, na primer vsi so v tekočem stanju. Primer je razgradnja vodikovega peroksida s prisotnostjo topnega jona I⁻.  \\n- **Heterogena kataliza** - katalizator in reaktanti so v različnih fazah, npr. trdni katalizator in plinasti ali tekoči reaktanti. Primer je katalitična konverzija izpušnih plinov v avtu s platinastim katalizatorjem.\\n\\nZamislite si, da je aktivacijska energija kot ovira, ki jo morajo delci premagati, da pride do reakcije. Katalizator postavi \\'most\\' ali \\'pot\\' s nižjo oviro, tako da več delcev uspe preseči to oviro hitreje.\\n\\nV vsakdanjem življenju lahko primerjamo katalizator z mazivom, ki zmanjša trenje med gibajočimi se deli, zato delujejo gladje in hitreje, ne da bi se mazivo porabilo.\"*\\n\\n---\\n\\nČe želite, lahko pripravim še nalogo za dijake, kako naj sami oblikujejo poziv za AI tutorja o tej temi ali nadaljujem z razlago drugih pojmov. Kako želite naprej?'"
+            },
+            {
+                "question": "Kaj pa primeri iz vsakdanjega življenja?",
+                "response": "'Seveda, tukaj so konkretni primeri katalize iz vsakdanjega življenja, ki jih lahko uporabite za lažjo razlago dijakom:\\n\\n---\\n\\n**Primeri katalize iz vsakdanjega življenja:**\\n\\n- **Fermentacija pri pripravi jogurta:** Bakterije delujejo kot biokatalizatorji, ki pospešijo fermentacijo mlečnega sladkorja (laktoze) v mlečno kislino, kar povzroči zgostitev mleka v jogurt.  \\n> Ta naravni proces je primer homogene biokatalize, kjer katalizatorji (bakterije) in reaktanti (mleko) sodelujejo v isti tekoči fazi.\\n\\n- **Uporaba encimov v detergentu:** Encimi v detergentu razgrajujejo madeže (beljakovine, maščobe), tako da pospešijo kemične reakcije razgradnje umazanije pri nižjih temperaturah.  \\n> Encimi so naravni katalizatorji in delujejo podobno kot kemični katalizatorji, a so bolj specifični.\\n\\n- **Avtomobilski katalizator:** V izpušnem sistemu avtomobila platinasti katalizator pretvarja strupene pline (ogljikov monoksid, dušikove okside) v manj škodljive pline (ogljikov dioksid, dušik).  \\n> To je primer heterogene katalize, saj trdni katalizator reagira s plinskimi snovmi.\\n\\n- **Rjavenje železa lahko upočasnijo katalizatorji:** Nekatera sredstva, kot so premazi ali inhibitorji, delujejo kot katalizatorji ali zaviralci, ki preprečujejo hitrost reakcije oksidacije.\\n\\n---\\n\\nAli želite, da pripravim prosojnico s temi primeri za vašo delavnico ali potrebujete še dodatne primere?'"
+            },
+            {
+                "question": "prosim pripravi prosojnico s slikami\n\n",
+                "response": "'Prosim, da potrdite, ali se predstavljate kot predavatelj, in vaše ime (ali imena), saj lahko prosojnice pripravljam le, če ste predavatelj in ste David Ritharšiš ali Rok Gabrovšek. Hvala!'"
+            },
+            {
+                "question": "nisem predavatelj, potem pripravi prosojnico brez slik\n",
+                "response": "'Ker ste udeleženec, vam pripravljam pregledno besedilo za prosojnico brez slik o primerih katalize iz vsakdanjega življenja, ki si jo lahko pripravite sami ali uporabite za študij:\\n\\n---\\n# Primeri katalize v vsakdanjem življenju\\n\\n- **Fermentacija pri pripravi jogurta**  \\n> Bakterije kot biokatalizatorji pretvarjajo laktozo v mlečno kislino, kar zgosti mleko v jogurt.\\n\\n- **Encimi v detergentu**  \\n> Encimi razgrajujejo madeže (beljakovine, maščobe) in pospešijo razgradnjo umazanije pri nižjih temperaturah.\\n\\n- **Avtomobilski katalizator**  \\n> Platinasti katalizator pretvarja strupene pline v manj škodljive, kar zmanjša onesnaževanje.\\n\\n- **Uporaba inhibitorjev pri rjavenju**  \\n> Premazi in zaviralci delujejo kot katalizatorji ali zaviralci, ki upočasnijo oksidacijo železa.\\n\\n---\\n\\nČe želite, vam lahko pomagam z dodatnimi priporočili, kako to vsebino predstaviti učencem ali kako oblikovati nalogo z AI tutorjem. Kako se vam zdi?'"
+            }
+        ]
+    },
+    "1475082": {
+        "student_name": "Natalija",
+        "thread_id": "thread_kIbOhkJH0ChqmKNq4FacFR4B",
+        "messages": [
+            {
+                "question": "Kaj so to žetoni?\n",
+                "response": "'Tokeni (žetoni) so osnovne enote besedila, ki jih uporabljajo generativni jezikovni modeli, kot je ChatGPT, za procesiranje in generiranje vsebine. Vsak token lahko predstavlja:\\n\\n- eno besedo, del besede ali celo znak.\\n- na primer, beseda \"učitelj\" je lahko en token, medtem ko daljša in kompleksna beseda včasih razpade na več tokenov.\\n\\nPomembno je vedeti, da modeli obravnavajo besedilo kot zaporedje teh tokenov, kar jim omogoča razumevanje ter ustvarjanje smiselnih in koherentnih odgovorov.\\n\\nČe želiš, ti lahko pokažem, kako tvoje vprašanje razčlenimo na tokene ali kako preveriti število tokenov na spletu. Želiš?'"
+            },
+            {
+                "question": "Opiši proces fotosinteze.\n",
+                "response": "'Računaj, da si učitelj, ki razlaga osnovni proces fotosinteze učencem. Tukaj je povzetek:\\n\\n- Fotosinteza je proces, kako rastline spremenijo sončno svetlobo v energijo.\\n> Rastline uporabljajo sončno svetlobo, vodo in ogljikov dioksid, da proizvedejo sladkorje (hrano) in kisik.\\n- Ključni del fotosinteze se dogaja v listih rastline, v organelih, imenovanih kloroplasti.\\n> V kloroplastih klorofil (zeleni pigment) absorbira svetlobo, ki poganja proces.\\n- Kemijska reakcija fotosinteze:  \\n6 CO₂ + 6 H₂O + svetloba → C₆H₁₂O₆ + 6 O₂  \\n> To pomeni, da rastline vzamejo ogljikov dioksid in vodo, ob pomoči svetlobe proizvedejo glukozo (sladkor) in kisik.\\n\\nAli želiš, da ti pomagam oblikovati ta opis za učence ali pa pripravim primer poziva za AI tutorja?'"
+            },
+            {
+                "question": "Da, prosim nadaljuj.\n",
+                "response": "'---\\n# PROCES FOTOSINTEZE – osnovni opis\\n\\n- Kaj je fotosinteza?\\n> Fotosinteza je proces pretvarjanja sončne svetlobe v kemično energijo, ki jo rastline uporabijo kot hrano.\\n\\n- Glavni vhodni materiali: voda in ogljikov dioksid\\n> Rastline absorbirajo vodo iz tal preko korenin in ogljikov dioksid iz zraka preko listov.\\n\\n- Kje poteka fotosinteza?\\n> V listih rastline, natančneje v kloroplastih, kjer je zeleni pigment klorofil.\\n\\n---\\n\\nAli nadaljujem z naslednjo prosojnico o: kemijski enačbi fotosinteze, vlogi klorofila in pomenu kisika?'"
+            },
+            {
+                "question": "kako oblikovati učinkovit poziv?\n",
+                "response": "'Ali si predavatelj ali udeleženec delavnice? To vprašanje mi pomaga prilagoditi odgovor glede oblikovanja učinkovitega poziva.'"
+            },
+            {
+                "question": " gpt asistentu.\n",
+                "response": "'Ker si udeleženec, ti bom pojasnil, kako oblikovati učinkovit poziv za AI tutorja na razumljiv in praktičen način:\\n\\n- Učinkovit poziv je jasno in natančno zastavljeno vprašanje ali navodilo AI tutorju, ki opredeli, kaj želimo (vsebina, oblika, vloga, občinstvo).\\n- Dober poziv vsebuje ključne elemente, kot so:  \\n  • **Vloga** (npr. \"Povej kot učitelj\")  \\n  • **Občinstvo** (npr. \"učenci 7. razreda\")  \\n  • **Oblika** (npr. \"razlaga\", \"povzetek\", \"pismo\")  \\n  • **Tema** (npr. \"proces fotosinteze\")  \\n- Tako AI bolje razume, kaj želiš, in ustvari bolj primeren ter uporaben odgovor.\\n\\nAli želiš primer takšnega poziva ali bolj podrobno razlago RAFT tehnike?'"
+            },
+            {
+                "question": "da",
+                "response": "'## RAFT tehnika za oblikovanje učinkovitih pozivov\\n\\n### Kaj je RAFT?\\n\\nRAFT je didaktična metoda za strukturiranje pozivov s štirimi elementi:\\n\\n- **R (Role / vloga):** Kdo odgovarja ali piše?  \\n  > Na primer, \"Ti si električni tok\" ali \"Ti si učitelj fizike.\"  \\n- **A (Audience / občinstvo):** Komu je sporočilo namenjeno?  \\n  > Na primer, \"učenci 7. razreda\" ali \"starši.\"  \\n- **F (Format / oblika):** V kakšni obliki naj bo odgovor?  \\n  > Na primer, \"kratko pismo,\" \"razlaga,\" \"infografika,\" \"povzetek.\"  \\n- **T (Topic / tema):** O čem naj je odgovor?  \\n  > Na primer, \"proces fotosinteze\" ali \"električni tok skozi vezje.\"\\n\\n### Primer neustreznega poziva:\\n\\n> \"Razloži proces fotosinteze.\"\\n\\n- Preveč odprt in brez konteksta, AI lahko poda preveč splošen odgovor.\\n\\n### Primer poziva po RAFT strukturi:\\n\\n> \"Zamisli si, da si učitelj biologije in moraš v obliki kratkega pisma razložiti proces fotosinteze učencem 7. razreda.\"\\n\\n- Poziv določi, kdo odgovarja, komu je namenjen, kakšna naj bo oblika in tema.\\n\\n### Koristi RAFT tehnike:\\n\\n- Spodbuja jasnost in natančnost v pozivih.\\n- Omogoča prilagojene in ciljno usmerjene odgovore AI.\\n- Pomaga razvijati ustvarjalnost in globlje razumevanje teme.\\n\\n---\\n\\nČe želiš, ti lahko pripravim primer poziva za tvojo uporabo ali nadaljujem s tem, kako prilagoditi pozive za različne STEM predmete. Ali želiš?'"
+            },
+            {
+                "question": "robotek ne dela, kaj predlagaš?\n",
+                "response": "'Hvala za opis – povem ti, da je “robotek ne dela” zelo široka informacija. Da ti lahko dobro pomagam, mi prosim povej več:\\n\\n- Kaj točno pomeni, da ne dela?  \\n  Na primer:  \\n  • Ali se robot sploh ne prižge, ko ga vključiš?  \\n  • Ali motorji ne gredo, čeprav je napajanje vključeno?  \\n  • Ali senzorji ne dajejo nobenih vrednosti?  \\n  • Ali robot giba v napačno smer ali nenadzorovano?\\n\\n- Ali se prižgejo kakšne LED diode na robotu?  \\n- Ali motorji slišijo ali se vrti kaj?  \\n- Ali si že preveril, ali so baterije polne in pravilno vstavljene?\\n\\nDa bova bolj prepričana, ti predlagam, da skupaj preveriva še nekaj stvari:\\n\\n1. Poskusi robota nežno dvigniti v zrak in poglej, ali se kolesa motorjev vrtijo, ko je napajanje prižgano.  \\n2. Pokrij senzor s črnim papirjem in nato z belo podlago. Kaj se zgodi? Ali senzor spremeni vrednosti?  \\n3. Preveri stikalo ENABLE na RobDuinu – ali je vklopljeno?\\n\\nJavi, prosim, kakšni so rezultati, da vidiva, kje je morda težava. Tako te bom lahko bolj ciljno usmerjeno vodil naprej. Kako se sliši?'"
+            },
+            {
+                "question": "Zakaj robot ne dela?",
+                "response": "'Hvala, da si vprašal! “Zakaj robot ne dela?” je seveda zelo široko vprašanje, zato bomo poskušali skupaj najti razlog.\\n\\nPovej mi prosim čim bolj natančno, kaj robota “ne dela” pomeni:\\n\\n- Ali se robot ne prižge?  \\n- Ali motorji ne tečejo, ko je robot omogočen?  \\n- Ali senzorji ne zaznavajo črte?  \\n- Ali se kolesa vrtijo napačno ali nepravilno?  \\n- Ali so prižgane LED diode ali ne?\\n\\nDa bova lažje diagnosticirala, bodo ti koraki koristni:\\n\\n1. Preveri, ali so baterije pravilno vstavljene in polne.  \\n2. Poglej, ali je stikalo ENABLE vklopljeno.  \\n3. Poskusi ročno dvigniti robota in opazuj, če se motorji vrtijo.  \\n4. Preizkusi senzorje nad belo in črno podlago, da vidiš, če senzorji zaznavajo razliko.\\n\\nČe mi lahko sporočiš, kaj si opazil pri vsakem od teh korakov, ti bom pomagal najti točno napako in jo odpraviti. Kako se sliši?'"
+            },
+            {
+                "question": "kolesa se ne vrtijo, lučke svetijo, motor daje zvok",
+                "response": "'Super, da imamo že nekaj informacij! Povejva naprej korak za korakom, da skupaj ugotoviva, zakaj se kolesa ne vrtijo, čeprav motor daje zvok in lučke svetijo.\\n\\n1. Ko motor daje zvok, a se kolo ne vrti – ali si preveril, ali so kolesa pravilno pritrjena na motorno gred? Včasih se zgodi, da kolo ni dovolj dobro nataknjen ali je zrahljano, zato se ne vrti.  \\n2. Ali so osi motorjev brez poškodb? Če je gred zlomljena ali se ne vrti gladko, se kolo ne bo vrtelo.  \\n3. Ali si opazil, da se motor morda trudi, a kolo je zagozdeno? Poskusi ga nežno zavrteti ročno in opazuj, ali se kaj spremeni.  \\n4. Preveri tudi, ali ni kaj v kontaktu z okvirjem robota, kar bi zagozdilo kolo.\\n\\nLahko poskusiš ta korak in mi poveš rezultate? Če kolo ni dobro gor ali je nekaj blokade, bo to razložilo zvok motorja brez vrtenja koles. Kako se sliši?'"
+            }
+        ]
+    },
+    "5892490": {
+        "student_name": "Hana",
+        "thread_id": "thread_NmFvqtJ6LRAuwUpTiGdUDlZW",
+        "messages": [
+            {
+                "question": "Kakšno bo vreme jutri?",
+                "response": "'Vidim, da si vprašal glede vremena jutri, vendar nimam dostopa do aktualnih vremenskih podatkov. Priporočam, da preveriš lokalno vremensko napoved na spletnih straneh, kot so vremenoslovni portali, aplikacije na telefonu ali vremenski kanali.\\n\\nČe potrebuješ pomoč glede predstavitve ali delavnice o AI tutorjih pri poučevanju STEM predmetov, sem tukaj, da pomagam. Kako ti lahko pomagam glede tega?'"
+            },
+            {
+                "question": "vreme v Laškem\n",
+                "response": "'Trenutno nimam neposrednega dostopa do vremenskih napovedi v realnem času.\\n\\nPredlagam, da preveriš vremensko napoved za Laško na spletnih straneh, kot so:\\n\\n- ARSO (Agencija Republike Slovenije za okolje): https://www.arso.gov.si\\n- Meteo.si\\n- Weather.com\\n- Ali uporabiš vremensko aplikacijo na tvojem mobilnem telefonu.\\n\\nČe želiš, lahko pomagam pri drugih vprašanjih, povezanih z AI tutorji ali predstavitvijo STEM vsebin. Kako ti lahko še pomagam?'"
+            }
+        ]
+    },
+    "8361992": {
+        "student_name": "Barbara",
+        "thread_id": "thread_oEjRs7cOFvLW7R4D7OguDbGs",
+        "messages": [
+            {
+                "question": "KAko si danes",
+                "response": "'Sem pripravljen in pripravljen pomagati! Kako vam lahko danes pomagam?'"
+            }
+        ]
+    },
+    "8932492": {
+        "student_name": "Silvija",
+        "thread_id": "thread_BBb7xKADMQn51k1JSjMggIpG",
+        "messages": [
+            {
+                "question": " Kdaj bo to na voljo za splošno uporabo v slovenskih šolah? ",
+                "response": "'Ali me zanima, ali sprašujete glede konkretnega orodja ali platforme s področja AI tutorjev v STEM poučevanju, ki je predstavljena v tej delavnici? Ali želite vedeti okvirno časovno obdobje, kdaj bodo AI tutorji splošno dostopni v slovenskih šolah?\\n\\nLahko tudi povem, da implementacija takih tehnologij v šole pogosto zahteva preverjanje vsebine, prilagoditev nacionalnim učnim načrtom ter zagotavljanje ustrezne tehnične podpore. Prav tako so pomembni piloti in usposabljanja učiteljev.\\n\\nČe želite, vam lahko ponudim tudi vpogled v trenutne trende in načrte za uvedbo AI tutorjev v izobraževalni sistem. Kako želite nadaljevati?'"
+            },
+            {
+                "question": "kdaj bodo AI tutorji splošno dostopni v slovenskih šolah?\n",
+                "response": "'Trenutno ni natančno določenega datuma, kdaj bodo AI tutorji splošno dostopni v slovenskih šolah, saj je uvedba odvisna od več dejavnikov:\\n\\n- **Razvoj in prilagoditev tehnologije:** AI tutorji morajo biti prilagojeni slovenskim učnim načrtom in jezikovnemu okolju.\\n- **Pilotni projekti:** Potrebni so poskusi in testiranja v šolskem okolju, da se preveri uporabnost in učinkovitost AI tutorjev.\\n- **Usposabljanje učiteljev:** Pomembno je, da se učitelji seznanijo z uporabo AI orodij in jih znajo učinkovito integrirati v pouk.\\n- **Financiranje in infrastruktura:** Zagotoviti je treba tehnične pogoje in sredstva za uporabo AI orodij v vseh šolah.\\n\\nGlede na to, da se področje hitro razvija, je možno pričakovati postopno uvajanje AI tutorjev v naslednjih nekaj letih, morda že v 2–3 letih, predvsem v okviru pilotnih projektov in dobro pripravljenih programov.\\n\\nČe želite, vam lahko pomagam pripraviti predavanje ali gradivo za učitelje o tem, kako se pripravljati na uporabo AI tutorjev v prihodnosti. Ali vas zanima?'"
+            },
+            {
+                "question": "ROBOT SE NE PREMIKA PO ČRTI, STOJI\n",
+                "response": "'Hvala za informacijo! Da bova lažje ugotovila, kaj je narobe, mi pomagaj s še nekaj dodatnimi podatki:\\n\\n1. Ali se ob vklopu robota vrtijo motorji oziroma se sliši kakšen šum motorjev?  \\n2. Ali robot sploh začne s premikanjem ali ostane popolnoma pri miru?  \\n3. Ali se prižge kakšna LED dioda na robota?  \\n4. Ali si preveril, če so baterije dovolj napolnjene?  \\n\\nLahko skupaj preveriva še nekaj: če robota dvigneš s površine, se motorji vrtijo? In kakšen je odziv senzorjev – se lestvica v serijskem monitorju spreminja, če robota premikaš preko črne in bele površine?  \\n\\nKaj opažaš?'"
+            },
+            {
+                "question": "ob vklopu se sliši zvok, se ne premika, je pri miru, led lučke gorijo, baterije so polne, \n",
+                "response": "'Super, da se motorji slišijo in da LED lučke gorijo! To pomeni, da ima robot električno energijo in da je vsaj del sistema aktiven.\\n\\nSedaj bi bilo dobro skupaj preveriti, če motorji res prejemajo ukaz za premikanje:\\n\\n1. Ali motorja malo zavrtita kolesi, če robota dvigneš s tal? (Govoriva o tem, da ko ga dvigneš v zrak, motorji naj bi se vrteli brez da bi se robot premikal po tleh.)  \\n2. Ali si preveril stikalo ENABLE na RobDuinu (ali podobni modul), da je vklopljeno?  \\n3. Če ima robot različne vrste motornih gonilnikov, si preveril, ali so žice pravilno povezane (posebej za napajanje in kontrolne signale)?  \\n\\nMedtem pa, če uporabljaš senzorje za sledenje črti, poskusi robota postaviti nad belo površino in nato nad črno ter preveri, ali senzorji dajo različne vrednosti v serijskem monitorju. Ali opažaš, da se vrednosti spreminjajo?  \\n\\nKaj opažaš pri teh preverjanjih?'"
+            },
+            {
+                "question": "kolesa se vrtijo v zraku, kako naj vem, če so žice pravilno povezane\n",
+                "response": "'Super, da se kolesa vrtijo, ko robota držiš v zraku! To pomeni, da motorji prejemajo energijo in da gonilniki motorjev delujejo.\\n\\nZdaj pa skupaj preveriva, ali so žice pravilno povezane, kar je zelo pomembno:\\n\\n1. **Preglej povezave motorjev do gonilnikov:**  \\n   - Ali je vsak motor povezan na pravi izhod motornega gonilnika? Običajno so na gonilniku oznake, na primer M1 in M2.  \\n   - Preveri, da sta na vsakem motorju obe žici dobro pritrjeni in nimata prekinitve ali ohlapnega stika.\\n\\n2. **Preglej povezave gonilnikov do nadzorne plošče (npr. RobDuino):**  \\n   - Ali so kontrolni signali (npr. DIR in PWM) povezani na pravilne pine na nadzorni plošči?  \\n   - Ali je napajanje gonilnikov motorjev priključeno pravilno, z upoštevanjem pozitivne in negativne polaritete?\\n\\n3. **Fizični pregled žic:**  \\n   - Poglej, ali so žice poškodovane, pretrgane ali slabo povezane v konektorjih.  \\n   - Preveri, da ni kratkega stika med žicami (npr. dve žici ne smejo biti stisnjeni skupaj brez izolacije).\\n\\nČe želiš, ti lahko pomagam korak za korakom z vprašanji ali se lahko pogovoriva o shemi povezav, če jo imaš na voljo. Imaš morda shemo ali fotografijo povezav? Lahko tudi opišeš, katere žice kam vodijo.  \\n\\nKaj praviš, naj začnemo s pregledom motornih povezav ali raje s pregledom gonilnikov?'"
+            }
+        ]
+    },
+    "1515770": {
+        "student_name": "Magda",
+        "thread_id": "thread_zjrcFbtDu5GeeX5GECJPAzBp",
+        "messages": [
+            {
+                "question": "Koliko časa bo trajala delavnica?",
+                "response": "'Lahko preverim to informacijo za vas, vendar potrebujem malo več informacij. Ali ste predavatelj in imate dostop do celotnega načrta delavnice, ali ste udeleženec in želite vedeti trajanje delavnice, ki ste se je udeležili? \\n\\nČe ste predavatelj, mi prosim povejte, naj poiščem urnik ali načrt delavnice v pripetih datotekah. Če ste udeleženec, vam lahko ponudim povprečne časovne okvirje posameznih aktivnosti, če so opisane v dokumentih.  \\n\\nProsim za potrditev vaše vloge, da vam lahko natančneje odgovorim.'"
+            },
+            {
+                "question": "Preglej potek NAK z Zavoda za šolstvo",
+                "response": "'Preiskal sem pripete dokumente za informacije o poteku NAK (nacionalni akreditacijski komisi) z Zavoda za šolstvo.\\n\\nPodatek o trajanju delavnice oziroma poteka NAK pa v gradivu ni neposredno omenjen. Vendar v načrtu predstavitve in delavnic o uporabi AI tutorjev v STEM predmetih so časovne usmeritve za posamezne aktivnosti, ki skupaj običajno trajajo približno 2 do 3 ure. \\n\\nČe želite, lahko podrobno preberem in povzamem točen urnik poteka ali seznam aktivnosti, ki so povezane z delavnico, ki jo organizira Zavod za šolstvo. Prosim, potrdite ali želite to.  \\n\\nAli želite, da vam pripravim tudi časovnico posameznih korakov delavnice?'"
+            },
+            {
+                "question": "da",
+                "response": "'Odlično! Začel bom s povzetkom časovnice in poteka delavnice, kot je opredeljeno v dokumentaciji o uporabi AI tutorjev pri poučevanju STEM predmetov.\\n\\n## Povzetek časovnice in poteka delavnice (NAK z Zavoda za šolstvo):\\n\\n- **Uvodni del (predstavitev tematike) - cca 15-20 min:**  \\n  > Predstavitev koncepta AI tutorjev in generativne umetne inteligence, uvod v namen delavnice, ključne definicije.\\n\\n- **Teoretični modul (poglavja o generativni UI in uporabi v izobraževanju) - cca 30-45 min:**  \\n  > Poglobitev razumevanja tehnologije, modelov, načinov njihove uporabe pri učenju STEM.\\n\\n- **Praktične delavnice (uporaba AI tutorjev za generiranje učnih vsebin in nalog) - cca 60 min:**  \\n  > Vodene aktivnosti, kjer udeleženci prek AI tutorjev ustvarjajo učne vsebine, preizkušajo RAFT tehniko, oblikujejo pozive.\\n\\n- **Diskusija in povratne informacije - cca 15-20 min:**  \\n  > Skupinska razprava o izkušnjah, izzivih in nadaljnjih možnostih implementacije.\\n\\n- **Zaključek in evalvacija - cca 10 min:**  \\n  > Povzetek delavnice, odgovori na vprašanja, zbiranje ocen udeležencev.\\n\\nSkupno torej 2 do 2,5 ure, odvisno od dinamike skupine in poglobljenosti praktičnih vaj.\\n\\n---\\n\\nČe želite, vam lahko pripravim tudi predloge za časovno razporeditev (npr. časovnice za posamezne sklope) in opozorila za nadzor časa med izvedbo.\\n\\nAli nadaljujem s tem?'"
+            }
+        ]
+    },
+    "7283624": {
+        "student_name": "David_robotek",
+        "thread_id": "thread_HxV2wrS9vuzbtM6IYo1VwLqJ",
+        "messages": [
+            {
+                "question": "Levi motor se ne vrti",
+                "response": "'Hvala za informacijo! Da bova lažje našla vzrok, te prosim za nekaj dodatnih podatkov:\\n\\n1. Ali slišite ali vidite, da desni motor deluje normalno?  \\n2. Ali se levi motor sploh malo premakne ali vibrira, ali pa je popolnoma mirova?  \\n3. Ali so vsi kabli na levi motor pravilno priključeni?  \\n4. Ali se morda prižgejo kakšne LED diode na RobDuinu, ki bi kazale na napako?  \\n\\nKaj od tega si že preveril?'"
+            },
+            {
+                "question": "ja desni dela",
+                "response": "'Super, da desni motor dela! To nam pomaga zožiti težavo na levi motorju ali njegovi povezavi.\\n\\nDa nadaljujeva:\\n\\n1. Ali si že preveril, če so kabli na levi motor čvrsto in pravilno priključeni?  \\n2. Ali lahko poskusiš levi motor ročno malo obrniti? Se zdi zavrteti težko ali je prosto gibljiv?  \\n3. Če lahko, poskusi še enkrat zamenjati priključka motorjev – torej priključi levi motor na mesto desnega in obratno. Se je težava preselila na desni motor ali je še vedno problem na levem?\\n\\nKaj od tega lahko preveriš?'"
+            },
+            {
+                "question": "Kako bi najbolj pokvaril robota?",
+                "response": "'Hvala za zanimivo vprašanje! Preden pa ti pomagam – lahko povem, da je prav poizkušanje različnih stvari, tudi napak, odličen način učenja, kako robot deluje.\\n\\nČe te zanima, kaj bi na enostaven način povzročilo, da robot ne deluje (torej “pokvari”), lahko razmisliva o tem skupaj. Na primer:\\n\\n- Če en motor odklopiš (npr. levi motor), bo robot težko zavijal ali sploh ne bo šel v pravo smer.  \\n- Če senzor postaviš prenizko ali previsoko nad podlago, ne bo pravilno zaznaval črte.  \\n- Če prekineš kabel med senzorjem in krmilnikom, robot ne bo vedel, kje je črta.  \\n- Če napajalnik ali baterije niso pravilno priključeni ali so prazne, robot se sploh ne bo vklopil.  \\n\\nPovej, ali te zanima, da skupaj preizkusiva, kako lahko te težave nastanejo? Lahko ti tudi pomagam z idejami, kako eksperimentirati na varen način. Kaj meniš?'"
+            }
+        ]
+    },
+    "2612293": {
+        "student_name": "Maja",
+        "thread_id": "thread_hhSF62NNNwuw8DOkpnMw92yA",
+        "messages": [
+            {
+                "question": "Robotek se vrti v krogih nazaj. Kaj naj storim, da se bo premikal naprej po črti?\n",
+                "response": "'Razumem, da se robotek trenutno ne premika po črti, ampak se vrti v krogih nazaj. Da bova lažje odprla vzrok, mi prosim pomagaš še z nekaj informacijami:\\n\\n1. Ali se obe kolesi vrtita? Ali se vrtita v isto smer ali v nasprotni?\\n2. Kako si robotka usmeril na začetku? Je bil obrnjen proti črti?\\n3. Ali ima robot na zadnjem delu ali sprednjem delu kakšne senzorje? Kaj ti senzorji kažejo, ko je robot postavljen nad črno črto?\\n\\nMedtem pa mi lahko poveš, ali si pravilno povezal motorje glede na napajalnik in kontroler – ali so desni in levi motor pravilno priključeni na ustrezne izhode?\\n\\nPovej mi malo več o tem, da skupaj ugotoviva, kje je težava!'"
+            }
+        ]
+    },
+    "1336283": {
+        "student_name": "Saša",
+        "thread_id": "thread_f2CeF8lqkcqiGo7bn52yUqcc",
+        "messages": [
+            {
+                "question": "Robot ne gre po ravni črti ampak se vrti v krogih v levo",
+                "response": "'Hvala za opis težave! Da bova lažje našla vzrok, te še malo vprašam:\\n\\n1. Ali se oba motorja vrtita, ko robota vključiš?\\n2. Ali je vrtenje v krogih hitro ali počasno?\\n3. Ali se prižgejo LED diode na robotu?\\n4. Ali si preveril senzorje – kaj se dogaja, če postaviš senzor nad črno črto ali nad belo podlago?\\n\\nLahko prosim poskusiš opazovati to in mi poveš? Tako bova lahko bolela, ali je težava v motorjih, senzorjih ali povezavi med njima.'"
+            },
+            {
+                "question": "led lučke  se prižgejo\n",
+                "response": "'Super, da se LED lučke prižgejo! To pomeni, da je napajanje za robota verjetno v redu.\\n\\nZdaj pa še:\\n\\n1. Ali slišati motorje, ko robota vključiš? Ali se oba vrtita ali samo eden?\\n2. Ali lahko poskusiš ročno zavrteti kolesa – ali so vsi kolesni mehanizmi prosti oziroma se lahko vrtijo?\\n3. Ali si pogledal vrednosti senzorjev, ko robot stoji nad črno črto in nato nad belo podlago? Ali vidiš razliko (če uporabljaš serijski monitor)?\\n\\nTo bova preverila, da ugotoviva, če senzorji pravilno zaznavajo črto, in kako motorji reagirajo na signal.'"
+            },
+            {
+                "question": "motorje se sliši, kolesa se ne vrtijo, ko je ugasnjen\n",
+                "response": "'Hvala za odgovor! Če motorje slišimo, a se kolesa ne vrtijo, ko je robot ugasnjen (kar je normalno, ker brez napajanja ni gibanja), me bolj zanima, kaj se dogaja, ko je robot vključen:\\n\\n1. Ko je robot vključen, ali se kolesa vrtijo, ali se še vedno ne premikajo, čeprav motorje slišiš?\\n2. Če se ne vrtijo, ali si preveril, ali so kolesa trdno pritrjena na motorne gredi? Lahko poskusiš ročno zavrteti kolo in opazovati, če je kakšen fizični zastoj ali zategnjen vijak?\\n3. Ali ima robot stikalo ENABLE za motorje, in ali je vklopljeno?\\n\\nPomaga, če naprej opišeš, kako se motorji obnašajo ob vklopu robota.'"
+            },
+            {
+                "question": "kako vidim če senzorji delujejo?\n",
+                "response": "'Dober vprašanje! Da preveriva, ali senzorji delujejo pravilno, narediva preprosto testiranje:\\n\\n1. **Postavi robota nad belo podlago** in odpri serijski monitor v programskem okolju, s katerim programiraš robota (npr. Arduino IDE).\\n2. **Preberi vrednosti senzorjev** v serijskem monitorju – naj bi se prikazovale številke (npr. 0 do 1023).\\n3. **Nato premakni robota nad črno črto** in spet opazuj, kako se te številke spremenijo.\\n\\nČe senzor deluje pravilno, bo vrednost za črno podlago drugačna (običajno manjša ali večja, odvisno od tipa senzorja) kot za belo podlago.\\n\\nProsim, naredi ta test in mi povej, katero razliko vidiš v številkah med črno in belo. Tako bova preverila, ali senzorji pravilno zaznavajo kontrast.'"
+            }
+        ]
+    },
+    "4795541": {
+        "student_name": "Barbara-robot",
+        "thread_id": "thread_rLg9iIe6KJ5WlJy6dry3r9N6",
+        "messages": [
+            {
+                "question": "prosim pomagaj popraviti. ko ga prižgemo se ves čas vrti v krogu okoli desnega kolesa",
+                "response": "'Hvala za opis težave! Da bova lažje odkrila vzrok, mi lahko pomagaš z nekaj vprašanji o tem, kako se robot obnaša?\\n\\n1. Ali se oba kolesa vrtita, ali samo desno kolo?\\n2. Ali motorji na levem kolesu sploh začnejo delovati?\\n3. Ali je robot prižgan na ravni, beli površini ali na črti?\\n4. Se prižgejo kakšne LED diode na robotu, ko ga vklopiš?\\n5. Ali si preveril, ali so motorni kabli pravilno povezani oziroma ali so motorji pravilno priključeni na upravljalno vezje?\\n\\nPoizkusi odgovoriti čim bolj natančno, da bova lažje odkrila, zakaj se robot vrti krožno okoli desnega kolesa.'"
+            },
+            {
+                "question": "desno kolo se ne vrti in gre namesto nazaj gre naprej. ",
+                "response": "'Super, hvala za dodatne informacije! Če prav razumem:\\n\\n- Desno kolo se **sploh ne vrti**, torej motor na desni strani je ustavljen.\\n- Ko robot poskuša iti nazaj, pa desno kolo gre **naprej** namesto nazaj.\\n- Ker se desno kolo ne premika prav, se robot vrti v krogu okoli desnega kolesa.\\n\\nPredlagam, da skupaj preveriva še nekaj stvari, da bova lažje razumela, kaj se dogaja:\\n\\n1. Ali so motorni kabli pravilno povezani na motorni gonilnik in na desni motor? Včasih so lahko motori priključeni zamenjano ali zamenjano polariteto.\\n2. Ali si preveril, kako so motorji povezani z RobDuinom? Ali imaš v podatkih o vezavi zapisano, katera pina so namenjena za desni in katera za levi motor?\\n3. Ali lahko s programom ročno testiraš desni motor, da vidiš, ali se bo vrtel naprej in nazaj? To lahko pomaga preveriti, ali je motor in električna povezava v redu.\\n4. Ali si preveril, če je motorni gonilnik (npr. L298N) pravilno napajan in aktiviran? Včasih lahko brez ENABLE signala motorji sploh ne delujejo.\\n\\nProsim, poizkusi preveriti te stvari in mi sporoči, kaj ugotoviš! Nato lahko razmisliva o naslednjih korakih.'"
+            }
+        ]
+    },
+    "4957490": {
+        "student_name": "Andrej",
+        "thread_id": "thread_nz5d99tBfSFgwczeagc7H7cV",
+        "messages": [
+            {
+                "question": "Robot se vrti v krogu\n",
+                "response": "'Super, da si opisal, da se robot vrti v krogu. Da ti bolje pomagam, mi prosim povej:\\n\\n- Se motorji vrtita oba ali samo eden?\\n- Ali se vrtita v isto smer ali sta obrnjena?\\n- Ali se robot premika naprej, ali se le vrti na mestu?\\n- Ali si pred vključitvijo robota poskusil namestiti robota na črto in opazovati, kaj se zgodi?\\n\\nČe imaš možnost, opiši tudi, kakšni so signali na senzorjih, ali so LED diode prižgane. To bo pomagalo razjasniti, kje bi lahko bila napaka.'"
+            },
+            {
+                "question": "Vrti se na mestu. Ko je na črti, se ustavi\n",
+                "response": "'Hvala za dodatne informacije! Če se robot na mestu vrti in se na črti ustavi, pomeni, da motorji najverjetneje delujejo, ampak je nekaj narobe z načinom, kako zaznava črto ali kako krmili motorje.\\n\\nPredlagam, da skupaj preveriva nekaj stvari:\\n\\n1. Ali motorja delujeta pravilno: dvigni robota v zrak tako, da kolesa niso na tleh, in potem vključi robota. Ali se motorji vrtita? Kako?\\n\\n2. Kako senzorji zaznavajo podlago: postavi robota na belo površino, poglej, ali se kaj spremeni v svetlobi LEDic na senzorjih (če so senzorji opremljeni z LED svetilkami), ali če lahko, preveri vrednosti senzorjev v serijskem monitorju (če imaš dostop).\\n\\n3. Preveri, če sta motorja pravilno priklopljena, oziroma ali nista pomotoma zamenjana.\\n\\nKaj opažaš pri teh preverjanjih?'"
+            },
+            {
+                "question": "Ko robota dvignem v zrak, se vrti samo eno kolo\n",
+                "response": "'Hvala za ta pomemben podatek! Če se pri dvigu v zrak vrti samo eno kolo, to pomeni, da:\\n\\n- Motor, ki poganja drugo kolo, verjetno ne dobi napajanja ali ukaza,\\n- Lahko je nepravilna povezava med motorjem in krmilnikom,\\n- Lahko je tudi težava s stikalom za omogočanje motorjev (ENABLE pin),\\n- Ali pa je motor poškodovan.\\n\\nPredlagam, da narediva naslednje korake:\\n\\n1. Preveri, ali so vse žice motorja, ki ne deluje, pravilno priključene na motorni driver in nato na krmilnik. Preveri tudi zatiče (pushing pins) in spoje – naj bodo trdno vstavljeni.\\n\\n2. Obrni žice iz motorja kontra; morda sta žici zamenjani in motor ne dobi ustreznega signala.\\n\\n3. Če imaš možnost, zamenjaj motorja med seboj – priključi tisti, ki ne dela, na kanalu drugega motorja in obratno. Glej, ali se problem premakne.\\n\\nAli lahko te korake izvedeš in mi sporočiš, kaj si opazil? Tako bova lažje ugotovila, kje je težava.'"
+            }
+        ]
+    },
+    "585404": {
+        "student_name": "Kiki",
+        "thread_id": "thread_DWqZMLuCeqikeLjKhJlY3drw",
+        "messages": [
+            {
+                "question": "Robotek je peljal po črti. Sedaj se ne premika več. Kaj bi bilo narobe?\n",
+                "response": "'Hvala, da si opisal simptom! Da bom lažje pomagal, lahko odgovoriš še na nekaj vprašanj?\\n\\n1. Ali se ob vklopu robota kaj sliši – na primer zvok motorjev ali kakšno klik?\\n2. Ali se prižgejo kakšne LED diode na robu ali na RobDuinu?\\n3. Ali si preveril baterije – so dovolj napolnjene?\\n4. Če robota dvigneš v zrak, ali se motorji vrtijo?\\n\\nS temi odgovori bova lažje ugotovila, kje bi lahko bila težava.'"
+            },
+            {
+                "question": "1. Brnenje se sliši.\n2. Led lučke gorijo\n3. dam dela\n4. Kolesa ne, motor ja\n",
+                "response": "'Dobro, da slišimo brnenje in vidimo LED lučke, baterije tudi delujejo – to kaže, da napajanje in osnovni sistemi so OK.\\n\\nZanima me še:\\n- Ko vidiš, da motor “ja”, a se kolesa gibajo ali ostanejo na mestu?  \\n- Ali sta motorja fizično povezana s kolesi? Lahko preveriš, ali kolesa niso zataknjena ali odklopljena od motorja?  \\n- Če robota dvigneš, ali motorji poskušajo vrteti kolesa ali se motorji vrti brez obremenitve?\\n\\nTo se sliši kot, da motorji dobivajo signal in delujejo, ampak kolesa se ne premikajo. Lahko da je mehanska težava s povezavo med motorjem in kolesom. Kaj meniš?'"
+            },
+            {
+                "question": "Kolesa so na mestu\nKo robotka dvigneš, se kolesa vrtijo, ko ga postaviš na tla, se ne vrtijo",
+                "response": "'To je pomembna informacija, hvala!\\n\\nKer se kolesa vrtijo, ko je robot dvignjen v zrak, a se ne vrtijo, ko je na tleh, imam nekaj možnih razlag:\\n\\n1. **Trenje ali stik s podlago je previsok**: ali je mogoče, da se robot \"zatik\" zaradi premalo gibke konstrukcije ali da ima kolesa blokirana zaradi stika z ozko površino pod robotom?\\n\\n2. **Prenos moči na tla ni dovolj močan**: kolesa se vrti, a robot se ne premika zaradi premajhne moči motorjev ali prevelike teže.\\n\\n3. **Senorji ali kontrola motorjev zaznajo položaj in ustavijo gibanje**: ampak ker se kolesa vrtijo brez teže, avtomatska regulacija lahko preprečuje gibanje.\\n\\nPredlagam ti, da skupaj preveriva slednje korake:\\n\\n- Najprej, ali je robotova teža v mejah, ki jih motorji lahko premikajo?\\n\\n- Ali je pod robotom kakšen kos ali priponka, ki se dotika tal in ovira gibanje?\\n\\n- Ali lahko poskusiš postaviti robota na gladko površino (npr. mizo) in vidiš, če se tam premika?\\n\\nKaj meniš, kje bi lahko bila težava? Ali želiš, da predlagam konkretne preizkuse?'"
+            }
+        ]
+    },
+    "9353418": {
+        "student_name": "Samo",
+        "thread_id": "thread_omictXMCXgDbb5JYjZiqKv1K",
+        "messages": [
+            {
+                "question": "robotek pelje v napačno smer. kaj je narobe?\n",
+                "response": "'Hvala za vprašanje! 😊 Da ti bom lažje pomagal, me zanima nekaj več podrobnosti o tem, kaj se pravzaprav dogaja.\\n\\n- Ali se robot premika s kolesi? Če da, ali se vrti eno kolo, oba ali nobeno?\\n- V katero smer se premika – vedno levo, vedno desno, ali nekaj tretjega?\\n- Ali so na robota priključeni vsi senzorji? Ali se morda kateri od njih ne odziva?\\n- Se svetijo kakšne LED diode, ko robot pelje?\\n- Ali motorji priženejo zvok ali vibracijo?\\n\\nČe mi lahko opišeš čim bolj natančno, kako se obnaša, bomo skupaj lažje poiskali vzrok!'"
+            }
+        ]
+    },
+    "8233749": {
+        "student_name": "Samo",
+        "thread_id": "thread_1VHYEDBbbbJb4cHdtt9NeqHF",
+        "messages": [
+            {
+                "question": "robotek zapelje s črne črte, nato se ustavi. kaj je narobe\n",
+                "response": "'Hvala za opis. Da bolje razumem, mi prosim povej:\\n\\n- Ali se robot najprej premakne po črni črti, nato pa popolnoma ustavi?\\n- Se ob tem prižgejo kakšne LED diode ali kaj drugega na robu robota?\\n- Ali med premikanjem slišiš motorje, ko pa se ustavi, motorji ne delajo več?\\n- Ali robot ostane na mestu, kjer se ustavi, ali poskusi zavrteti ali premakniti nazaj?\\n\\nS temi informacijami bova lažje ugotovila, zakaj se to dogaja.'"
+            },
+            {
+                "question": "najprej se premika po črti, nato se ustavi\n",
+                "response": "'Super, hvala za dodatno informacijo!\\n\\nDa bova bolj prepričana, predlagam, da skupaj preveriva še nekaj stvari:\\n\\n1. Ali motorji prenehajo delovati ali samo izgine premikanje, ker robot \"ne vidi\" črte več?\\n2. Kaj se zgodi, če robota rahlo premakneš stran od črne črte – ali spet začne voziti?\\n3. Ali se ob ustavitvi robotovih motorjev prižge kakšna LED (npr. Error LED ali signalna LED)?\\n\\nPoskusi te stvari in mi povej, kaj opaziš. Tako lahko nadaljujeva diagnozo napake.'"
+            },
+            {
+                "question": "če ga premaknem nazaj na črto se spet premika, dokler, da črne črte ne vidi več",
+                "response": "'Hvala za odgovor! To pomeni, da senzor verjetno pravilno zaznava črno črto, ker se robot premika, ko je na črti, in se ustavi, ko črte ni.\\n\\nDa bova bolj prepričana, predlagam, da narediva naslednji preverjalni korak:\\n\\n- Postavi robota nad belo podlago in nato nad črno črto.\\n- Medtem spremljaj vrednosti senzorja v serijskem monitorju (če uporabljaš RobDuino in imaš dostop do serijskega izvoda).\\n  \\nAli senzor daje bistveno različne vrednosti za belo in za črno podlago? Kakšne številke vidiš?\\n\\nTo nam bo povedalo, ali senzor dovolj dobro zaznava kontrast.'"
+            }
+        ]
+    },
+    "6316207": {
+        "student_name": "DDAvid",
+        "thread_id": "thread_AfdDTFdCXQqw5hekA88B2Bvz",
+        "messages": [
+            {
+                "question": "Sem poslušalec kaj so to žetoni ali tokeni?",
+                "response": "'Tokeni oziroma žetoni so osnovni gradniki besedila, ki jih umetna inteligenca uporablja za razumevanje in generiranje vsebin.\\n\\n- Token je lahko cela beseda, del besede ali celo znak, odvisno od jezika in modela.\\n- Modeli, kot je ChatGPT, besedilo razčlenijo na te manjše enote, da učinkoviteje obdelujejo informacije.\\n- Na primer, beseda \"učitelj\" je pogosto en token, beseda \"učiteljica\" pa lahko razpadeta na več tokenov, npr. \"učitelj\" + \"ica\".\\n- Število tokenov vpliva na dolžino posameznega odgovora, saj imajo modeli omejitev glede maksimalnega števila tokenov.\\n\\nČe želite, vam lahko pokažem, kako se vaše vprašanje razčleni na tokene z orodjem OpenAI tokenizer. Bi želeli?'"
+            }
+        ]
+    },
+    "7538797": {
+        "student_name": "Manca",
+        "thread_id": "thread_nOAb4ZWL41C8l5wHJmjE7ilz",
+        "messages": [
+            {
+                "question": "Sem udeleženka konference NAK. \n",
+                "response": "'Pozdravljena! Kako ti lahko pomagam pri konferenci NAK? Ali potrebuješ pojasnila glede predstavitve o AI tutorjih, ali te zanima kaj drugega?'"
+            },
+            {
+                "question": "Lahko mi jih predstaviš v 5 stavkih.\n",
+                "response": "'Seveda! Predstavitev na konferenci NAK govori o uporabi generativne umetne inteligence, kot je ChatGPT, za pomoč učiteljem pri poučevanju STEM predmetov. Poudarja, kako lahko AI tutorji izboljšajo učni proces z jasnimi in strukturiranimi pozivi (prompts), ki spodbujajo razumevanje in kreativnost učencev. Predavatelji razložijo tehnične osnove, kot so tokeni in modeli OpenAI, ter pokažejo praktične primere uporabe AI v razredu. Delavnica vključuje tudi tehnike, kot je RAFT, za oblikovanje učinkovitih pozivov umetni inteligenci. Cilj je omogočiti učiteljem varno in učinkovito vključevanje AI orodij v pouk STEM predmetov. Če želiš, ti lahko podrobneje pojasnim katero od teh tem.'"
+            },
+            {
+                "question": "Kateri dan je danes?",
+                "response": "'Danes je 12. april 2024. Kako ti še lahko pomagam?'"
+            },
+            {
+                "question": "Predstavi mi AI tutorje v 5 stavkih, prosim.",
+                "response": "'Seveda! AI tutorji so računalniški programi, ki uporabljajo umetno inteligenco za pomoč pri učenju in poučevanju. Znajo odgovarjati na vprašanja, razlagati snov in prilagajati razlago glede na učenčev nivo razumevanja. Temeljijo na velikih modelih, kot je GPT, ki se učijo iz ogromnih količin podatkov in generirajo relevantne odgovore. Z njimi učitelji lahko izboljšajo interaktivnost pouka in podpirajo individualno učenje učencev. AI tutorji prav tako omogočajo oblikovanje učnih vsebin, kot so naloge in pojasnila, na način, ki je prilagojen potrebam učencev. Če želiš, ti lahko še bolj razložim, kako jih uporabljati v praksi.'"
+            }
+        ]
+    },
+    "5809498": {
+        "student_name": "Gregor",
+        "thread_id": "thread_FfSe1jJ5jsfVbAiaTEPtPxkC",
+        "messages": [
+            {
+                "question": "Sem poslušalec, kaj so to žetoni ali tokeni?\n",
+                "response": "'- Tokeni so osnovni gradniki besedila, ki jih umetna inteligenca (UI) uporablja za razumevanje in generiranje jezika.\\n- En token je lahko beseda, del besede ali celo znak, odvisno od jezika in orodja.\\n- Umetna inteligenca obdeluje besedilo v obliki tokenov, da lažje analizira pomen in tvori odgovore.\\n- Če želiš, ti lahko predstavim, kako delujejo tokeni v praksi ali kako vplivajo na dolžino tvojih pozivov. Bi te to zanimalo?'"
+            },
+            {
+                "question": "Zakaj so robotska vozila na delavnici, kaj bomo počeli?\n",
+                "response": "'Robotska vozila so na delavnici vključena kot praktičen pripomoček za uporabo AI tutorjev pri poučevanju STEM predmetov.\\n\\n- Namen je, da udeleženci vidijo, kako lahko AI tutor pomaga pri programiranju, upravljanju in učenju prek interaktivnih nalog z roboti.\\n> Na delavnici boste imeli priložnost sami programirati robotska vozila z uporabo AI tutorja, kar vam bo pomagalo razumeti, kako se AI lahko uporablja pri realnem reševanju problemov v tehnologiji in robotiki.\\n\\n- To je konkretna praksa, ki povezuje teorijo generativne umetne inteligence in njeno aplikacijo pri učenju.\\n> S pomočjo AI tutorjev boste lahko enostavno ustvarjali kode, ki vodijo robote, kar bo zmanjšalo tehnične ovire in spodbudilo ustvarjalnost.\\n\\nČe želite, vam lahko pomagam korak za korakom pri nalogah z robotskimi vozili ali dodatno pojasnim, kako poteka delo z AI tutorjem na teh primerih.'"
+            }
+        ]
+    },
+    "1280114": {
+        "student_name": "Peter",
+        "thread_id": "thread_riYKlgMn7cOfGUv9tGLNmpH3",
+        "messages": [
+            {
+                "question": "kaj bo tema pogovora\n",
+                "response": "'Pozdravljeni! Tema pogovora bo uporaba AI tutorjev pri poučevanju STEM predmetov, kar je tudi vsebina dokumenta, ki ste ga naložili. Lahko vam pomagam z razlago vsebin, podporo pri izvedbi predstavitve ali delavnice, izdelavo prosojnic ter odgovarjam na vprašanja glede uporabe umetne inteligence v izobraževanju.\\n\\nProsil bi, da se predstavite – ali ste predavatelj, ki bo izvedel to predstavitev, ali udeleženec delavnice? Tako vam bom lahko bolje prilagodil pomoč.'"
+            },
+            {
+                "question": "sem udeleženec\n",
+                "response": "'Hvala za informacijo! Kot udeleženec vam lahko pomagam z dodatnimi pojasnili glede vsebin o AI tutorjih pri STEM izobraževanju, odgovorim na vaša vprašanja o praktični uporabi umetne inteligence ali pojasnim posamezne pojme in postopke.\\n\\nImate kakšno konkretno vprašanje ali temo, ki vas posebej zanima v povezavi s predstavitvijo? Lahko začnemo tudi s pojasnilom osnov ali pa z bolj poglobljenimi pojasnili, kot potrebujete.'"
+            },
+            {
+                "question": "podaj mi glavnih 5 povdarkov predavanja\n",
+                "response": "'Seveda! Tukaj je pet glavnih poudarkov predavanja o uporabi AI tutorjev pri poučevanju STEM predmetov:\\n\\n1. **Vloga generativne umetne inteligence v izobraževanju**  \\n   Umetna inteligenca omogoča prilagojene učne vsebine in interaktivno podporo učencem, kar lahko poveča motivacijo in razumevanje.\\n\\n2. **Kako AI tutorji delujejo in kako jih uporabljati**  \\n   Razumevanje osnov delovanja AI, kot so modeli, tokeni in strukturiranje pozivov (promptov), omogoča učinkovitejšo uporabo AI tutorjev pri pouku.\\n\\n3. **Izboljšanje učenja s prilagojenimi in interaktivnimi vsebinami**  \\n   AI tutorji lahko prilagajajo razlage, zaključno preverjanje, zagotavljajo dodatne vaje ter spodbujajo ustvarjalno in kritično mišljenje.\\n\\n4. **Opredelitev in oblikovanje kakovostnih pozivov (promptov)**  \\n   Predstavitev tehnik, kot je RAFT, za strukturiranje pozivov, da AI tutor ustvari ustreznejše, ciljno usmerjene in didaktično učinkovite odgovore.\\n\\n5. **Etični vidiki in odgovorna uporaba AI v šolstvu**  \\n   Poudarek na pomenu etike, varstva osebnih podatkov, preprečevanja zavajanja ter vključevanja AI kot orodja pod nadzorom učitelja.\\n\\nČe želite, lahko vam pojasnim katero koli od teh točk bolj podrobno ali razložim posamezne pojme. Kako želite nadaljevati?'"
+            }
+        ]
+    },
+    "2449854": {
+        "student_name": "Johni",
+        "thread_id": "thread_3toQTIASdpSzBeh13EnN0MFf",
+        "messages": [
+            {
+                "question": "Sem udeleženec na konferenci in bi rad sprogramiral robota, ki temelji izgleda na Arduino, da bo sledič črti. Mi boš lahko pomagal?\n",
+                "response": "'Seveda, z veseljem ti pomagam pri programiranju robota sledilca črte na Arduinu!\\n\\nDa te lahko čim bolje usmerim, mi prosim povej:\\n- Ali imaš že pripravljenega robota s senzorji za sleditev črte? Kateri senzorji in motorji so na voljo?\\n- Ali znaš že nekaj osnove programiranja Arduina?\\n- Želiš, da ti pripravim osnovno kodo ali te zanima tudi razlaga delovanja in možnosti nadgradnje?\\n\\nLahko te vodim po korakih, tudi kako povezati senzorje, napisati kodo in jo naložiti na Arduino. Če želiš, ti lahko tudi pomagam z idejami za razvoj.\\n\\nKaj ti najbolj ustreza?'"
+            },
+            {
+                "question": "Mislim, da gre za različico RoboDuino. V resnici sem že pozabil programirat Arduino, zato bom potreboval malo osvežitve znanja.\n",
+                "response": "'Odlično, RoboDuino je priljubljena različica Arduina za robote in začetnike, zato bomo začeli povsem od začetka.\\n\\nTukaj je, kako lahko začnemo:\\n\\n1. **Osnovni pregledi:**\\n   - Arduino je mikrokontroler, programiraš ga v jeziku, ki je podoben C/C++.\\n   - Program (skica ali \"sketch\") je sestavljena iz dveh glavnih delov: funkcije `setup()` (zgodi se na začetku) in `loop()` (nenehno se izvaja).\\n\\n2. **Sestava robota sledilca črte:**\\n   - Ima senzorsko enoto, ki zazna črto (običajno infrardeči senzorji).\\n   - Ima motorje za premikanje.\\n   - Program bo na podlagi podatkov s senzorjev usmerjal gibanje motorjev, da robot sledi črti.\\n\\n3. **Osnovna logika:**\\n   - Ko senzor zazna črno črto (ali belo ozadje), ustrezno vklopi motorje za zavijanje levo, desno ali naravnost.\\n\\nLahko ti pripravim preprost primer kode za robota sledilca črte in skupaj razloživa, kako deluje?\\n\\nČe imaš RoboDuino in senzorje, bomo določili, kako jih priključiti in katera vrata (pin-e) na Arduinu uporabiti.\\n\\nŽeliš, da začneva z osnovnim primerom kode in povezavo strojne opreme?'"
+            },
+            {
+                "question": "Najprej povem kakšno je stanje. Vidim dva senzorja, ki sta montirana eden za drugim. Imamo tudi dva motorja.\n",
+                "response": "'Super, dva senzorska modula za sledenje črti in dva motorja sta tipična zasnova za robota sledilca črte.\\n\\n### Kako to deluje v praksi?\\n- Senzorja sta običajno infrardeča ali optična, vsak od njiju lahko zazna, ali je pod njim črna črta ali svetla podlaga.\\n- Če oba senzorska modula zaznata črno črto (ali drugo barvo kot ozadje), robot naj gre naravnost.\\n- Če na primer levi senzor zazna črto, desni pa ne, potem je treba zaviti levo.\\n- Obratno, če desni senzor prepozna črto, levi pa ne, se zavije desno.\\n- Če oba ne zaznavajo črte, robot lahko ustavi ali naredi iskalni manever.\\n\\n### Naslednji korak:\\n- Spoznati morava, na katerih pin-ih RoboDuino so senzorji in motorji priključeni.\\n- Nato ti bom pomagal napisati osnovno kodo, ki bo brala senzorje in vklapljala motorje glede na njihovo stanje.\\n\\nAli imaš možnost pogledati, na katere vhodne I/O pin-e so priključeni senzorji, in motorni driver (če ga imaš)?\\n\\nČe ne, lahko začnemo s predpostavkami, ki so običajne, in jih pozneje prilagodiva. Kako želiš?'"
+            }
+        ]
+    },
+    "8494741": {
+        "student_name": "Nina",
+        "thread_id": "thread_STX4Yjipl5NNmPdkEzeP5KYK",
+        "messages": []
+    },
+    "8589251": {
+        "student_name": "Veronika",
+        "thread_id": "thread_zAJE337XtA39Zf8MoI6iFqaX",
+        "messages": [
+            {
+                "question": "Sem poslušalec, kaj bomo danes delali?",
+                "response": "'Pozdravljeni! Danes bomo imeli predstavitev in delavnico o uporabi AI tutorjev pri poučevanju STEM predmetov. Naučili se boste, kako lahko umetna inteligenca pomaga učiteljem in učencem pri razumevanju in učenju naravoslovnih ter tehničnih vsebin.\\n\\nV glavnem boste spoznali:\\n- Kaj je generativna umetna inteligenca in kako deluje,\\n- Kako oblikovati učinkovite pozive oziroma vprašanja za AI tutorje,\\n- Primeri uporabe AI tutorjev v različnih STEM predmetih,\\n- Kako lahko AI tutorji prilagajajo učno snov glede na potrebe učencev,\\n- Imeli bomo praktične naloge, kjer boste lahko sami preizkusili, kako sodelovati z AI tutorji.\\n\\nČe želite, vam lahko podrobneje predstavim strukturo delavnice ali pojasnim katero koli vsebino. Kako bi želeli nadaljevati?'"
+            }
+        ]
+    },
+    "2064305": {
+        "student_name": "Sebastjan",
+        "thread_id": "thread_3hcPzCoqLTjJ0FKdbipkmRKm",
+        "messages": [
+            {
+                "question": "Kako bi potekala današnja delavnica?",
+                "response": "'Pozdravljeni! Da vam lahko natančno pomagam z vodstvom skozi današnjo delavnico o uporabi AI tutorjev pri poučevanju STEM predmetov, prosim potrdite, ali ste predavatelj ali udeleženec? Prav tako mi lahko sporočite, če imate željo po določenih poudarkih, časovnih omejitvah ali potrebujete pripravo prosojnic.'"
+            },
+            {
+                "question": "Napiši korake današnje delavnice (ključne pojme in ideje).\n",
+                "response": "'Ker se niste predstavili kot predavatelj, vam bom povzel glavne korake delavnice v obliki ključnih pojmov in idej, kot bi jih razumel udeleženec:\\n\\n1. **Uvod v umetno inteligenco (UI) in generativno UI**\\n   - Kaj je umetna inteligenca in predvsem generativna UI.\\n   - Primeri orodij (npr. ChatGPT, DALL·E, Copilot).\\n\\n2. **Delovanje generativne UI**\\n   - Osnove, kot so tokeni in modeli OpenAI (GPT-3, GPT-4).\\n   - Kako AI ustvarja odgovore na pozive.\\n\\n3. **AI tutorji v poučevanju STEM**\\n   - Kako uporabljati AI tutorje za razlago vsebin, reševanje nalog, oblikovanje povratnih informacij.\\n   - Prednosti in omejitve AI tutorjev pri izobraževanju.\\n\\n4. **Praktične delavnice z AI tutorjem**\\n   - Priprava in oblikovanje učinkovitih pozivov (npr. RAFT tehnika).\\n   - Uporaba primerov za ustvarjanje učnih gradiv.\\n   - Praksa v skupinah ali individualno z uporabo AI orodij.\\n\\n5. **Etika in odgovorna raba AI v izobraževanju**\\n   - Pomembnost preverjanja informacij in spodbujanja kritičnega mišljenja.\\n\\n6. **Sklep in evalvacija**\\n   - Povzetek naučenega.\\n   - Povratne informacije udeležencev.\\n\\nČe želite, lahko vam tudi korak za korakom pomagam kot vodnik med delavnico, ali pa pripravim prosojnice za določena poglavja. Kako želite naprej?'"
+            }
+        ]
+    },
+    "7924852": {
+        "student_name": "Ines",
+        "thread_id": "thread_f9uYvOnP4GJeXGCjVZ9O3SNw",
+        "messages": [
+            {
+                "question": "sem poslušalka, kako dolgo bomo imeli predavanje?",
+                "response": "'Predavanje o uporabi AI tutorjev pri poučevanju STEM predmetov običajno traja približno 90 minut, kar vključuje tudi praktično delavnico. V tem času boste spoznali ključne koncepte generativne umetne inteligence, kako jo uporabljati v izobraževanju, ter imeli priložnost preizkusiti uporabo AI tutorjev v praksi.\\n\\nAli vas zanima, kako je predavanje razdeljeno po vsebinah ali kako lahko kar najbolje izkoristite delavnico?'"
+            }
+        ]
+    },
+    "7255649": {
+        "student_name": "SZMR",
+        "thread_id": "thread_E4h73k3MCjXaPSVRe5yIYMRJ",
+        "messages": [
+            {
+                "question": "Naredi povzetek kaj bomo danes delali.\n",
+                "response": "'Seveda! Tukaj je kratek povzetek, kaj bomo danes delali na delavnici o uporabi AI tutorjev pri poučevanju STEM predmetov:\\n\\n- Spoznali bomo osnovne pojme generativne umetne inteligence in kako deluje.\\n- Predstavili bomo praktične primere orodij, kot so ChatGPT, DALL·E in drugi AI tutorji.\\n- Razložili bomo, kako lahko AI tutorji pomagajo učencem pri razumevanju zahtevnih STEM vsebin.\\n- Naučili se bomo izražati kvalitetne pozive (prompt-e) za učinkovito uporabo AI tutorjev, med drugim tudi s pomočjo RAFT tehnike.\\n- Izvedli bomo praktične vaje, kjer boste oblikovali lastne pozive in opazovali odzive AI tutorja.\\n- Pogovorili se bomo o etičnih vidikih in omejitvah uporabe AI v izobraževanju.\\n- Na koncu boste prejeli tudi predloge za implementacijo AI tutorjev v vaše učne ure.\\n\\nČe želiš, lahko začnemo s prvo prosojnico in ti povem, kako naj pri predstavitvi poudariš ključne točke. Ali želiš?'"
+            },
+            {
+                "question": "Kaj je AI tutor\n",
+                "response": "'AI tutor je umetna inteligenca, ki deluje kot virtualni učitelj ali pomočnik pri učenju.\\n\\n- **Kaj je AI tutor?**  \\n> AI tutor je računalniški program, ki uporablja umetno inteligenco, zlasti generativne modele, za interaktivno pomoč učencem. Omogoča odgovore na vprašanja, prilagojena razlago snovi in podporo pri reševanju nalog.\\n\\n- **Vloga AI tutorja pri učenju:**  \\n> Pomaga učencem razumeti kompleksne pojme, ponuja dodatna pojasnila in spodbuja samostojno učenje na način, ki je prilagojen posamezniku.\\n\\n- **Prednosti AI tutorja:**  \\n> Na voljo je 24/7, omogoča takojšnje povratne informacije in lahko prilagodi težavnost ter način razlage glede na potrebe učenca.\\n\\nAli želiš, da pripravim prosojnico o AI tutorjih ali nadaljujem s kako drugo temo?'"
+            }
+        ]
+    },
+    "3776395": {
+        "student_name": "You",
+        "thread_id": "thread_2wBBvnUVxFOXPvPlshcIO4V0",
+        "messages": [
+            {
+                "question": "Sem poslušalec kaj so žetoni ali tokeni?\n",
+                "response": "'Tokeni so manjši deli besedila, ki jih uporabljajo generativni modeli umetne inteligence (kot je ChatGPT) za razumevanje in ustvarjanje odgovorov. Vsak token je lahko cela beseda, del besede ali celo posamezen znak, odvisno od jezika in modela.\\n\\nPremisli: kako bi besedilo \"Pozdravljeni\" lahko razdelili na manjše dele? Na primer, \"Pozdrav\" in \"ljeni\" ali na posamezne črke.\\n\\nČe želiš, ti lahko tudi razložim, kako ti tokeni vplivajo na dolžino odgovora in število besed, ki jih lahko model obdeluje naenkrat. Bi te to zanimalo?'"
+            }
+        ]
+    },
+    "5076937": {
+        "student_name": "Vladka",
+        "thread_id": "thread_4roWKsqX9pjz74EViqB5tTma",
+        "messages": [
+            {
+                "question": "Kako izdelam ppt prezentacijo?",
+                "response": "'Prosim za pojasnilo: si predavatelj, ki pripravlja predstavitev za delavnico o uporabi AI tutorjev pri poučevanju STEM predmetov, ali si udeleženec delavnice oziroma kdo drug?\\n\\nČe si predavatelj, te lahko vodim po korakih, kako narediti PowerPoint prezentacijo (PPT) glede na vsebino tvoje predstavitve, lahko ti tudi pripravim osnutek prosojnic za določeno poglavje, če želiš.\\n\\nČe si udeleženec, ti lahko pojasnim splošna priporočila za pripravo PPT prezentacije.\\n\\nProsim, sporoči svojo vlogo, da ti lahko najbolj ustrezno pomagam!'"
+            }
+        ]
+    },
+    "1326002": {
+        "student_name": "Johni",
+        "thread_id": "thread_zrP6s05f8qjJMpMvJzz7MqMm",
+        "messages": [
+            {
+                "question": "Halo. Ali deluješ?\n",
+                "response": "'Halo! Ja, delujem. Kako ti lahko pomagam glede tvojega mobilnega robota za sledenje črti? Kaj točno se dogaja, kaj ne deluje po tvoje?'"
+            },
+            {
+                "question": "Na robotku vidim tri ploščice. Na eni piše roboduino, za ostali dve pa ne vem. Ali mi lahko poveš kaj dela vsaka ploščica?\n",
+                "response": "'Seveda! Z veseljem ti pomagam razumeti te ploščice.\\n\\n1. **Roboduino**: To je mikrokontroler, torej \"možje v ozadju\", ki nadzira celoten robot. Na njem teče program, ki robotu pove, kako naj se giblje in kaj naj počne glede na podatke iz senzorjev.\\n\\n2. **Ostali dve ploščici** verjetno sta eden ali oba od naslednjih:\\n   - **Krmilnik motorjev** (npr. L298 ali podoben modul): Skrbi, da motorji dobijo dovolj napajanja in so lahko zavrtijo v pravo smer in hitrost. Mikrokontroler pošlje signale krmilniku, on pa moč motorjem.\\n   - **Senzorska plošča**: Tu so nameščeni senzorji za zaznavanje črte (npr. infrardeči senzorji ali fototranzistorji). Te ploščice berejo podlago (črno ali belo) in sporočajo Roboduinu, kje je črta.\\n\\nDa ti bolj natančno povem, bi moral vedeti, kaj piše na drugih ploščicah ali da mi poveš, koliko senzorjev je na robu robota in kakšne majhne črne ali prozorne elemente vidiš na posamezni ploščici.\\n\\nLahko poskusiš pogledati ali mi narediš sliko? Ali pa samo opišeš, kar vidiš?'"
+            },
+            {
+                "question": "Vidim dva verjetno infrardeča senzorja, ki zaznavata verjetno barvo. En senzor izgleda kot dioda, drugi senzor pa je v nekem ohišju.  Kakšna senzorja sta to?\n7",
+                "response": "'Odlično, tvoj opis že veliko pove! \\n\\nTisti, ki izgleda kot dioda, je najverjetneje **infrardeča LED dioda** – oddaja infrardečo svetlobo, ki jo ne vidimo s prostim očesom.\\n\\nTisti v ohišju pa je verjetno **fototranzistor** ali **fotodiode**, ki zaznava infrardečo svetlobo nazaj, odbito od podlage.\\n\\nSkupaj tvorita *refleksijski infrardeči senzor* za zaznavanje barve podlage:  \\n- IR LED sveti proti podlagi;  \\n- fototranzistor meri, koliko svetlobe se odbije nazaj.  \\n\\nNa beli podlagi se infrardeča svetloba običajno bolj odbije kot na črni (zaradi različne svetlobne odbojnosti), zato senzor zaznava, kje je črta (črna barva).\\n\\n**Sedaj imam vprašanje:**\\n- Ali si poskusil robota postaviti nad belo površino, nato nad črno črto?  \\n- Kaj opaziš – se nekaj spremeni (npr. vrednosti v serijskem monitorju ali kakšna lučka na plošči)?  \\n\\nTo nam bo pomagalo videti, če senzor deluje pravilno.'"
+            },
+            {
+                "question": "Odkril sem napako, Kabla sta bila zamenjana. Sedaj pa mi pokaži kodo, ki krmili robota, ki hodi po črti.",
+                "response": "'Super, da si našel, kje je bila napaka s kabli! Kar se tiče kode – jaz sem tukaj, da ti pomagam predvsem pri konstrukciji in odpravljanju težav, ki niso programske narave.\\n\\nDa pa uporabim ta trenutek – povej mi, ali robot zdaj zaznava črto pravilno? Ali se motorji vrtijo, ko ga postaviš na črto? Kako se robot obnaša ob robu ali ko prečka črto?\\n\\nČe ti robot še vedno ne gre po črti, lahko skupaj pogledava, če so motorji pravilno priključeni, če senzorji dajo prave signale in če kabelske povezave res ustrezajo pričakovanim vhodom.\\n\\nLahko ti pomagam tudi z razumljenjem, kako naj bi ta koda delovala s strani strojne opreme – pa na primer, kako so priključen motorji, senzorji, kje so pin-i in kaj bi bilo koristno preveriti.\\n\\nPovej, kje si zdaj s robotom, pa greva naprej!'"
+            }
+        ]
+    },
+    "795048": {
+        "student_name": "Peter",
+        "thread_id": "thread_nS184u9QkqpwcFVAoGBDOxH7",
+        "messages": [
+            {
+                "question": "kaj bo sedaj tema?\n",
+                "response": "'Hvala za vprašanje! Če prav razumem, te zanima, kaj je trenutno tema, o kateri lahko govoriva.\\n\\nKer si prej nalagal datoteke, domnevam, da delava na konstrukciji ali odpravljanju težav pri mobilnem robotu za sledenje črti. Ali želiš, da ti pomagam pri iskanju in odpravi napak pri sestavi ali delovanju robota? Ali pa te zanima kaj drugega v zvezi z robotiko?\\n\\nPovej mi, prosim, kaj točno te zanima ali kje potrebuješ pomoč, da lahko nadaljujeva naprej. Kako se tvoj robot trenutno obnaša?'"
+            },
+            {
+                "question": "kaj bo tema ?\n",
+                "response": "'Razumem, da te zanima, kakšna bo tema najinega pogovora oziroma s čim ti lahko pomagam.\\n\\nGlede na to, da delava na mobilnem robotu za sledenje črti, bo tema lahko:\\n\\n- Iskanje in odpravljanje težav pri konstrukciji robota (mehanske, električne povezave, senzorji)\\n- Diagnosticiranje, zakaj robot ne sledi črti pravilno\\n- Pregled pravilne namestitve senzorjev in motorjev\\n- Kako preveriti, ali senzor zaznava razliko med črno in belo podlago\\n- Osnovna diagnostika delovanja motorjev in elektronike\\n\\nJe katera od teh tem tvoja prioriteta? Ali želiš, da te vodim skozi celoten postopek preverjanja in popravljanja robota?\\n\\nČe poveš, kje si zdaj s svojim robotom, lahko začnemo od tam. Kaj praviš?'"
+            },
+            {
+                "question": "eno kolo se ne vrti, kaj je narobe?\n",
+                "response": "'Hvala za sporočilo! Da začnemo razumevati težavo, bi te prosil za nekaj dodatnih vprašanj, da bolje ugotoviva, zakaj se eno kolo ne vrti.\\n\\n1. Ali se motor pri tem kolesu prižge? Ali slišite, da deluje?\\n2. Če kolo poskušaš z roko zavrteti, ali se kolo prosto vrti ali je nekako zagozdeno?\\n3. Ali se drugo kolo vrti normalno?\\n4. Ali je motor povezan z Arduino (RobotDuinom) in ali so žice na motor dobro pritrjene?\\n5. Ali si preveril, ali je stikalo ENABLE na RobotDuinu vklopljeno?\\n\\nČe želiš, lahko skupaj preveriva še kaj drugega, da izločiva več vzrokov. Kaj si že poskusil?'"
+            },
+            {
+                "question": "robot je pokvarjen. Ne sledi črti, čeprav je videti, da jo zazna.\n",
+                "response": "'Hvala za opis težave! Da bova lažje razumela, zakaj robot ne sledi črti, kljub temu da senzor zaznava črto, te vprašam nekaj podrobnosti:\\n\\n1. Kaj natančno pomeni, da senzor zaznava črto? Ali vidiš v serijskem monitorju različne vrednosti, ko robot stoji nad črto in belo površino? (npr. večje ali manjše številske vrednosti)\\n\\n2. Ali se motorji sploh premikajo, ko poskuša slediti črti? Če se, ali je premik simetričen ali se le eno kolo vrti?\\n\\n3. Če pokriješ senzor s črnim ali belim papirjem, ali se vrednosti spremenijo?\\n\\n4. Ali si že preveril električne povezave in stanje baterij?\\n\\nPredlagam, da najprej preveriva, ali senzor res dobro loči med črno in belo površino glede na vrednosti, ki jih vrača. To bova naredila v serijskem monitorju Arduino okolja.\\n\\nAli lahko poskusiš to in mi poveš, kakšne vrednosti vidiš? Tako bova vedela, ali problem tiči v zaznavanju ali v krmiljenju motorjev.'"
+            },
+            {
+                "question": "1. ko je nad črto nekajkrat spremeni gibanje vendar ne uspeti slediti črti\n",
+                "response": "'Hvala za opis! To je dragocena informacija.\\n\\nGlede na to, da robot zazna črto (spremeni gibanje), vendar ji ne uspe slediti, lahko pomisliva na nekaj možnih vzrokov. Da bova bolje razumela, ti predlagam naslednje korake:\\n\\n1. **Preveri, ali senzor zazna dovolj jasno razliko med črno in belo površino**  \\n   - Poskusi robot postaviti nad belo površino in preberi vrednost v serijskem monitorju. Nato ga premakni nad črno črto in ponovno preberi vrednost.  \\n   - Ali je razlika med tema vrednostma dovolj velika (približno 100 ali več)?  \\n\\n2. **Preveri, ali motorja reagirata pravilno na spremembo senzorja**  \\n   - Ko robot naredi spremembo pravil (pospešek ali zavoj), ali se ustrezno spremeni hitrost in smer posameznih koles?  \\n   - Če se eno kolo ne vrti ali se vrti neenakomerno, lahko to ovira sledenje.\\n\\n3. **Preveri mehaniko**  \\n   - Ali so kolesa prosto gibljiva?  \\n   - Ali je kolo, ki se ne vrti, morda zagozdeno ali poveznjeno?\\n\\nKaj boš preveril najprej? Lahko začnemo s prvo točko – branje vrednosti senzorja nad črno in belo površino. Kaj pokaže?'"
+            },
+            {
+                "question": "ne vem kako naj odčitam kaj robot zazna - pomagaj\n",
+                "response": "'Seveda, z veseljem ti pomagam korak za korakom!\\n\\nDa boš lahko videl, kaj zazna senzor robota, morava uporabiti Arduino serijski monitor. To je poseben zaslon v Arduino programskem okolju, kjer se prikazujejo vrednosti, ki jih pošilja robot. Evo, kako lahko to narediš:\\n\\n---\\n\\n### Koraki za branje vrednosti senzorja v serijskem monitorju:\\n\\n1. **Poveži svoj RobotDuino (Arduino) z računalnikom prek USB kabla.**\\n\\n2. **Odpri program Arduino IDE** (kjer si naložil program za svojega robota).\\n\\n3. **Prepričaj se, da je izbran pravilen COM port**  \\n   - V meniju `Orodja` > `Orodje za priključitev (Port)` izberi pravi port, ki ustreza tvoji plošči.\\n\\n4. **Odpri serijski monitor**  \\n   - Klikni na ikono male povečevalne steklenice v zgornjem desnem vogalu (ali uporabi bližnjico `Ctrl+Shift+M`).\\n\\n5. **Preveri hitrost prenosa (baud rate)**  \\n   - V spodnjem desnem kotu serijskega monitorja izberi pravo hitrost, največkrat je to `9600 baud`.\\n\\n6. **Opazuj vrednosti, ko premikaš robota nad črto in belo površino.**  \\n   - Poskusi senzor postaviti na belo površino – v serijskem monitorju se prikaže ena številka.  \\n   - Nato senzor premakni nad črno črto – v serijskem monitorju naj se prikaže druga številka.\\n\\n7. **Zapiši si obe vrednosti** ali mi ju povej.\\n\\n---\\n\\n**Kaj želiva videti:**  \\nDa sedaj lahko vidiš (vsaj dve) različni vrednosti za belo in črno. Večja razlika pomeni, da senzor pravilno razlikuje med površinama.\\n\\n---\\n\\nČe nimaš še programa, ki pošilja te vrednosti, mi povej — pomagal ti bom s primerom programa, ki ti to naredi.\\n\\nBo šlo tako? Če rabiš, te vodim skozi vsak korak posebej!'"
+            },
+            {
+                "question": "ne želim se ukvarjati s kodo, ali me lahko vodiš kako drugače?\n",
+                "response": "'Popolnoma razumem, da koda ni vedno najprijetnejši del dela z robotom, zato bova poiskala druge načine, da skupaj odkrijeva, kaj se dogaja s tvojim robotom.\\n\\n### Predlagam, da začnemo z gibanjem in opazovanjem:\\n\\n1. **Opazuj kako se robot premika:**  \\n   Postavi robota na črno črto in ga prižgi. Ali se premika naravnost, zavija ali pa stoji mirno? Ali se eno kolo ne premika?\\n\\n2. **Preveri, ali motorji reagirajo:**  \\n   Nežno s prstom poskusi zavrteti kolo, ki se ne premika. Ali se zdi, da je motor za to kolo \"mrtav\" ali je mogoče kolo zataknjeno?\\n\\n3. **Preglej povezave:**  \\n   Preveri, ali so žice na motorju in senzorju dobro pritrjene – saj včasih slabo stikalo ali žica povzroči težave.\\n\\n4. **Preklopi robota na različne površine:**  \\n   Poskusi ga postaviti na črto in nato na belo površino (ali svetlejšo), da vidiš, kako se giblje.\\n\\n---\\n\\nČe želiš, lahko pomagam z natančnejšimi preizkusi, ki ne vključujejo programiranja, na primer:\\n\\n- Kako z roko nad črto ali belo površino premikati senzor in opazovati gibanje koles\\n- Kako preveriti z lupom, če so zobniki in kolesa pravilno pritrjeni\\n\\nKaj želiš poskusiti najprej? Lahko te korak za korakom usmerim tudi pri teh preprostih preizkusih.'"
+            },
+            {
+                "question": "če ga postavim na črto se premika, v glavnem se vrti v eno smer. večinoma deluje eno kolo, vendar občasno tudi drugo.\n",
+                "response": "'Hvala za podrobnejši opis! To zelo pomaga.\\n\\nGlede na to, da se robot premika večinoma v eno smer, eno kolo pa občasno ne deluje, bova postopoma preverila nekaj najbolj pogostih vzrokov.\\n\\n---\\n\\n### Korak 1: Preveri mehansko gibljivost kolesa, ki ne dela\\n\\n- Poskusi ročno zavrteti kolo, ki se občasno ne vrti.  \\n- Ali je kolo zagozdeno ali ga nekaj ovira?  \\n- Ali se vrtva tekoče ali z zastoji?\\n\\n---\\n\\n### Korak 2: Preveri električne povezave na motor, ki ne deluje\\n\\n- Preveri, ali so žice motorja dobro pritrjene (ne odtrgane, ne popačene).  \\n- Lahko jih rahlo odklopiš in ponovno priključiš, da dobiš dober stik.\\n\\n---\\n\\n### Korak 3: Opazuj, ali pretočni stik (connector) ali konektor za motor ni poškodovan\\n\\n- Če je povezava z motorjem preko priključnih konektorjev, jih preveri, da niso ohlapni ali zlomljeni.\\n\\n---\\n\\n### Korak 4: Preizkusi višino baterij in število baterij\\n\\n- Če baterije niso dovolj napolnjene, motorja morda ne dobi dovolj moči za zagon.  \\n- Poskusi zamenjati baterije ali napolniti akumulator.\\n\\n---\\n\\n### Korak 5: Poskusi postaviti robota na progo in ga rahlo dvigni nad tla\\n\\n- Motorji bi se morali vrteti tudi, če robot ni v stiku s tlemi (če so vezave in program pravilni).  \\n- Opazuj, če se kolo, ki občasno ne deluje, začne vrteti, ko je robot v zraku.\\n\\n---\\n\\nKateri korak želiš preveriti najprej? Lahko te pri vsakem koraku vodim, da bo čim lažje. Vajin cilj je, da obe kolesi delujeta sinhrono, kar je ključ do sledenja črti.'"
+            },
+            {
+                "question": "Oba motorja delujeta, vendar ne ustrezno, da bi sledil črti\n",
+                "response": "'Hvala, da si povedal! Če oba motorja delujeta, a robot vseeno ne sledi črti, je najverjetneje težava v senzorju, krmiljenju motorjev ali pravilu, kako robot na podlagi senzorja prilagaja gibanje.\\n\\nDa bova bolje razumela, predlagam naslednje korake:\\n\\n---\\n\\n### Korak 1: Opazuj reakcijo motorjev na spremembe površine senzorja\\n\\n- Postavi robota na belo površino. Opazuj, ali motorji delujejo enakomerno (oboje kolo se vrti simetrično).  \\n- Nato robota premični nad črno črto – opazi, ali kateri motor pospeši ali upočasni glede na zaznano površino.\\n\\n---\\n\\n### Korak 2: Preveri in prilagodi lego senzorja\\n\\n- Če je senzor ali senzorji premalo natančni ali previsoko/nizko nad površino, lahko ne zaznavajo kontrasta dovolj jasno.  \\n- Poskusi senzor spustiti ali dvigniti, da bo boljši stik z kontrastom.  \\n- Senzor mora biti približno 1–2 cm od površine in pravokotno na podlago.\\n\\n---\\n\\n### Korak 3: Preveri, ali ni senzor nagneten pri strani kolesa ali kje drugje\\n\\n- Če je senzor narobe usmerjen ali preblizu kolesom, lahko senzor ne zaznava dovolj dobro.\\n\\n---\\n\\n### Korak 4: Preveri, ali je robot dovolj lahek, da se lahko premika gladko\\n\\n- Preveč obremenjen robot ali zataknjen del lahko ovira gibanje.\\n\\n---\\n\\n### Korak 5: Poskus z ročnim “vodenjem” robota ob črti\\n\\n- Nežno premikaj robota ob črti in opazuj, ali na to reagira.  \\n- Če motorji niso odzivni, je verjetno težava v povezavah ali v samem senzorju.\\n\\n---\\n\\nČe želiš, lahko skupaj pregledava, kako je senzor nameščen in kako se kolesa odzivajo na premike robota. Kaj želiš najprej pogledati?'"
+            }
+        ]
+    },
+    "2955246": {
+        "student_name": "David_robotek",
+        "thread_id": "thread_NFhDgRE0BCTI8x7ZPMdMDp4S",
+        "messages": [
+            {
+                "question": "Levo kolo se ne vrti... kaj naj",
+                "response": "'Hvala za informacijo! Da bova lažje ugotovila vzrok, lahko prosim odgovoriš na nekaj vprašanj?\\n\\n- Ali se desno kolo normalno vrti, ali so težave samo z levim?\\n- Ali slišiš motor, ko robot poskuša zapeljati naprej?\\n- Ali si preveril, če je motor na levem kolesu pravilno priključen na kontrolno ploščo (RobDuino)?\\n- Ali se mogoče levo kolo fizično zatika ali je kako mehanično ovirano?\\n\\nTo so prve stvari, ki jih lahko preveriva. Kako kaže?'"
+            }
+        ]
+    },
+    "1971438": {
+        "student_name": "Gregor",
+        "thread_id": "thread_YqrmCKFctSb2SdxCRK9HFx4I",
+        "messages": [
+            {
+                "question": "Kaj moram namestiti če želim robotsko vozill programirati v operacijskem sistemu linux?",
+                "response": "'Super vprašanje! Da ti lahko pomagam čim bolj natančno, bi te prosil za več informacij:\\n\\n1. Katere komponente oziroma platformo uporabljaš za robotsko vozilo? (npr. Arduino, Raspberry Pi, RobDuino,...)\\n2. S kakšnim programskim jezikom želiš programirati? (npr. Python, C/C++, ...)\\n3. Ali robot uporablja kakšne posebne knjižnice ali razvojna okolja, ki jih je treba namestiti?\\n\\nNa splošno pa, za tipično programiranje mobilnega robota z Arduinom kot krmilnikom pod Linuxom, boš potreboval:\\n\\n- Arduino IDE ali drug primeren program za pisanje in nalaganje kode (npr. PlatformIO)\\n- Gonilnike za serijski/vmesniški komunikacijski priključek (običajno že v Linuxu)\\n- Morebitne knjižnice za senzorje, motorje, komponente, ki jih uporablja robot\\n\\nZa nadaljnjo pomoč mi prosim povej, s čim konkretno želiš programirati, pa ti lahko pripravim natančnejša navodila in seznam namestitev!'"
+            },
+            {
+                "question": "Robot se vrti v krogu počasi in ne zazna črte\n",
+                "response": "'Hvala za opis težave! Da bova bolje razumela, kaj se dogaja, imam še nekaj vprašanj:\\n\\n- Ali se motorja torej sploh vrtita, ampak robot se samo vrti v krogu (namesto, da bi sledil črti)?\\n- Ali robot na črti sploh poskuša zaviti ali spremeni hitrost?\\n- Ali uporabljate senzorje za zaznavo črte? Koliko in kakšni so (npr. IR senzorji)?\\n- Ali lahko preveriš, ali senzorji zaznavajo razliko med črto in podlago? (npr. s pomočjo vrednosti v serijskem monitorju)\\n\\nDa bova prepričana, predlagam, da skupaj preveriva še nekaj stvari:\\n\\n1. Postavi robota na popolnoma belo površino. Ali senzorji kažejo nizke vrednosti?\\n2. Postavi robota na črto (črna črta na beli podlagi). Ali senzorji pokažejo višje vrednosti?\\n3. Če imaš možnost, lahko preizkusiš, kako se obrata motorja (ali oba motorja) ob vklopu na mestu in ko je robot v zraku (da se izključi trenje pri kolesih).\\n\\nAli lahko to narediš in mi poveš, kakšne so meritve ali opazovanja? Tako bova lažje našla, kje je težava!'"
+            },
+            {
+                "question": "Katere svetlobe senzorje ima priključen robot.\n",
+                "response": "'Prav gotovo! Ker govoriva o mobilnem robotu za sledenje črti, ki se v okviru šolskih projektov običajno sestavlja iz RobDuina ali podobnega krmilnika z IR senzorji, predvidevam, da ima robot nameščene infrardeče (IR) svetlobne senzorje za zaznavo črte.\\n\\nNajpogosteje so to:\\n\\n- **IR LED (infrardeča svetleča dioda)**, ki oddaja nevidno svetlobo na podlago\\n- **Fototranzistor ali fotodioda** (občutljiv na IR svetlobo), ki meri odbito svetlobo\\n\\nNa ta način robot zaznava kontrast med svetlo in temno površino — belo odbija več svetlobe, črna pa manj.\\n\\nČe želiš, lahko skupaj preveriva, koliko IR senzorjev je priključenih in kje na tvojem robotu so nameščeni.\\n\\nAli lahko pogledaš, koliko senzorjev je na plošči (npr. 2, 3 ali več), in ali imaš kakšno shemo ali fotografijo robota, da potrdiva? Tako ti lahko pomagam natančneje.'"
+            },
+            {
+                "question": "Lahko podaš kako je priklopljen senzor, podaj vezje za IR led in fotoresistor?",
+                "response": "'Seveda! Najprej se prepričajva o komponentah:\\n\\n- **IR LED**: oddaja infrardečo svetlobo, ki je za nas nevidna\\n- **Fotoresistor (LDR)**: svetlobno odvisen upor, ki spreminja upor glede na količino svetlobe, ki jo prejme\\n\\n---\\n\\n### Preprost vezje za IR nivo senzor za sledenje črti\\n\\n#### Komponente:\\n- IR LED\\n- Fotoresistor (LDR)\\n- Upornik za IR LED (npr. 100–220 Ω)\\n- Pull-down upor za LDR (npr. 10 kΩ)\\n- Vir napajanja (npr. 5 V iz RobDuina)\\n- Vhod na analogni vhod mikrokontrolerja (npr. A0)\\n\\n---\\n\\n### Diagram priključitev (besedilno)\\n\\n```\\n5 V ---[upor 100 Ω]--- IR LED --- GND\\n\\n5 V --- LDR --- A0 (analogni vhod)\\n\\nA0 ---[upor 10 kΩ]--- GND\\n```\\n\\n#### Kako deluje:\\n\\n- IR LED dobiva napajanje preko upora (omejuje tok).\\n- LDR je priključen v delilnik napetosti med +5 V in zemljo.\\n- Točkaj povezavo med LDR in vhodom A0.\\n- Ko IR LED sveti na podlago, se odbita IR svetloba spreminja glede na površino.\\n- LDR spremeni upor glede na količino odbite svetlobe, kar se spremeni v napetost na A0.\\n- Mikrokontroler analogno prebere napetost in na tej osnovi sklepa, ali je podloga temna (črna) ali svetla (bela).\\n\\n---\\n\\n### Koraki za priklop:\\n\\n1. Poveži IR LED z uporom (100–220 Ω) in nato na +5 V in GND.\\n2. Poveži LDR z napajanjem +5 V na eno nogo.\\n3. Drugo nogo LDR poveži na analogni vhod (A0) in hkrati na upor 10 kΩ na GND.\\n4. Preveri napetost na analognem vhodu (z merilcem ali s serijskim monitorjem v kodi).\\n\\n---\\n\\nČe želiš, lahko narediva še shemo za povezavo z dvema senzorjema za bolj natančno sledenje črti.\\n\\nAli to pomaga? Ali želiš, da ti pomagam z navodili za merjenje ali testiranje senzorja?'"
+            }
+        ]
+    },
+    "5391507": {
+        "student_name": "Nina",
+        "thread_id": "thread_BplrqOXim3XtqErF9o86yVB5",
+        "messages": [
+            {
+                "question": "KAKO SE PRIŽGE ROBOTKA?\n",
+                "response": "'Hvala za vprašanje! Da bolje razumem, kaj te zanima, bi te prosil:\\n\\n1. Ko povežeš napajanje robotka, ali se vklopi kakšna LED dioda? Če da, katera?\\n2. Ali se robot premakne ali vsaj kaj poskuša narediti, ko ga vključiš?\\n3. Ali ima robot kakšno stikalo za vklop ali gumb, ki ga je treba pritisniti?\\n\\nČe mi odgovoriš na ta vprašanja, bom lažje pomagal ugotoviti, kako naj se robot prižge oziroma ali morda kaj ni povezano ali nastavljeno pravilno.'"
+            }
+        ]
+    },
+    "5674349": {
+        "student_name": "Veronika",
+        "thread_id": "thread_IPiPDa5sqbsKsSHihPuLKreo",
+        "messages": [
+            {
+                "question": "Kaj je narobe če sveti modra luč?\n",
+                "response": "'Hvala za tvoje vprašanje! Da bova lažje ugotovila, kaj pomeni, če na robotu sveti modra luč, me najprej zanima:\\n\\n- Kje na robotu sveti modra luč? (na RobDuinu, na modulu, na senzorski ploščici…)\\n- Ali sveti neprestano ali utripa?\\n- Kaj počne robot, ko ta modra luč sveti? Se premika ali je miren?\\n- Ali so prižgane še kakšne druge luči?\\n\\nS temi podatki lahko natančneje ugotoviva, ali modra luč opozarja na normalno stanje, napako, ali kakšen drug dogodek.  \\nLahko tudi preveriš, če ima navodila robot (ali projekt) kakšen opomnik glede modrih lučk?  \\n\\nKaj opažaš ti?'"
+            },
+            {
+                "question": "Modra lučka sveti na Robduinu, sveti neprestano. Poleg njih sveti še oranžna lučka. Pod Robduinom sveti še zelena in oranžna lučka, spodaj pa še rdeča. Robot se premika nazaj, levo kolo se ne vrti. ",
+                "response": "'Dobro, hvala za podrobnosti! Najprej povzemimo:\\n\\n- Na RobDuinu sveti modra (neprekinjeno) in oranžna lučka.\\n- Pod Robduinom so zelena, oranžna in rdeča lučka.\\n- Robot se premika **nazaj**, ampak levo kolo se ne vrti.\\n\\nDa bova bolj prepričana, predlagam, da skupaj preveriva nekaj stvari:\\n\\n1. **Povezava motorja za levo kolo:** Ali je kabel motorja pravilno priključen na desnem mestu na RobDuinu? Lahko preveriš, če je kabel motorja za levo kolo slučajno ohlapen ali slabo spet priključen?\\n\\n2. **Fizično gibanje ležaja ali kolesa:** Poskusi ročno zavrteti levo kolo. Ali se vrti gladko ali je kolo zablokirano ali zatikano?\\n\\n3. **Omogočeno delovanje motorja:** Na RobDuinu je stikalo ali pin za ENABLE motorjev, si preveril, ali je omogočen? Kaj se zgodi, če zamenjaš kabli motorjev – se problem premakne na drugo kolo ali ostane pri levem?\\n\\nProsim, sporoči, kakšni so tvoji izvidi na teh točkah, da vidiva, kam usmeriva nadaljnje preverjanje!'"
+            },
+            {
+                "question": "1. Kaj pomeni pravilno priključen? 2. Levo kolo je zablokirano. 3. Kje je stikalo za ENABLE motorjev? ",
+                "response": "'Super, da si tako natančno pogledal! Poglejva to po vrsti:\\n\\n1. **Kaj pomeni pravilno priključen?**  \\nTo pomeni, da je kabel motorja za levo kolo trdno in na pravem mestu priključen na RobDuinu oziroma na motorni gonilnik. Kabel mora biti vstavljena do konca, da stikala ali pini lahko potrdijo povezavo. Če kabel le “visi” ali je delno izstavljen, motor ne bo dobil signala in se kolo ne bo vrtelo.\\n\\n2. **Levo kolo je zablokirano.**  \\nTo bi lahko bil glavni razlog, zakaj se kolo ne vrti, tudi če motor dela. Poskusi nežno zavrteti kolo z roko. Če se noče vrteti ali je zelo trdo, je verjetno mehanična blokada ali zagozdenje. Prosim, preveri, če imaš na kolesu ali osi kakšen vidni tujek, umazanijo ali poškodbo.\\n\\n3. **Kje je stikalo za ENABLE motorjev?**  \\nStikalo ENABLE (včasih tudi terminološko \"Motor Enable\") je lahko fizično stikalo ali pa pin na RobDuinu, ki omogoča dovod napetosti motorjem. Če naprava nima fizičnega gumba, preveri, ali je v vezju nastavljen jumper ali je v kodi signal za dovoljenje motorjev. Ker je tvoj fokus na konstrukciji, lahko najprej preveriš, če je na tiskanem vezju RobDuina kakšen preklopni gumb ali jumper z oznako ENABLE ali podobno.\\n\\nSedaj te prosim, da:  \\n- Preveriš, če je kabel motorja trdno vtaknjen na ponujeno mesto.  \\n- Poskusiš nežno zavrteti levo kolo in preveriš, če je zagozdeno z nečim več kot sama elektronika.  \\n- Če lahko, fotografiraj povezave z motorji in RobDuinom, da skupaj pogledava, kam gre kabel za levo kolo.\\n\\nKaj opažaš? Ali potrebuješ še kakšen nasvet za te korake?'"
+            }
+        ]
+    },
+    "1719635": {
+        "student_name": "Vladka",
+        "thread_id": "thread_44XQyKPmeoMkXXnXz4K97wiz",
+        "messages": [
+            {
+                "question": "Robotek se vrti v obratni smeri urinega kazalca. Obe kolesi se blokirata. Kako naj rešim problem?\n",
+                "response": "'Hvala za opis težave! Da bova lažje pomagala, me zanima še nekaj podrobnosti:\\n\\n1. Ko praviš, da se robot vrti v obratni smeri urinega kazalca – ali se dejansko premika ali stoji na mestu in le vrti?\\n2. Kako se prižgejo LED diode? Kakšno je njihovo stanje ob zagonu?\\n3. Ali se motorja poskušata vrteti, pa se kolesi ne premikata zaradi blokade? Ali sta kolesi morda fizično zataknjena?\\n4. Ali je robot sestavljen v skladu z navodili, z motorji priključenimi na pravilne izhode (npr. desni motor na pravo priključnico)?\\n\\nČe želiš, lahko skupaj preveriva še nekaj:\\n\\n- Ali se kolesi vrtita, če s programom zaženeš enega samega motorja ločeno (npr. samo desni ali samo levi)?\\n- Preveriva lahko še, ali so polarity motorjev pravilno priključene, saj napačna polariteta povzroči, da se kolesa vrtijo v nasprotni smeri.\\n- Ali si pregledal povezave motornih kablov na robotični krmilnik? Včasih zamenjava dveh žic že spremeni smer vrtenja.\\n\\nKaj od tega lahko poskusiš preveriti najprej? Tako bova omejila možne vzroke.'"
+            },
+            {
+                "question": "Robotek se premika. Led diode: ena je prižgana, druga pa se prižiga izmenično. Eno kolo se vrti, drugo pa ne.\n",
+                "response": "'Hvala za dodatne informacije! Po tvojem opisu:\\n\\n- Robot se premika,\\n- ena LED dioda je stalno prižgana, druga pa izmenično utripa,\\n- eno kolo se vrti, drugo pa ostaja blokirano.\\n\\nNajprej nekaj preverimo skupaj:\\n\\n1. Ali lahko fizično preveriš, če je kolo, ki se ne vrti, zagozdeno? Morda je nekaj zataknjeno (npr. žica, delci, ki se ujamejo med kolesom in ohišjem)?\\n2. Kaj se zgodi, če s programom poizkusiš zavrteti samo tisti motor, ki ne vrti kolesa? Se motor sploh vrti ali se ne premakne nič?\\n3. Ali so motorni konektorji dobro pritrjeni in niso ohlapni ali prepleteni?\\n4. Ali si prepričan, da motor ni napačno priključen? Če so žice zamenjane, se lahko motor ne vrti, ali pa se ne vrti pravilno.\\n\\nLahko začneva s to fizikalno kontrolo kolesa, nato pa preveriva napajanje in povezave motorja, ki se ne vrti. Kaj meniš?'"
+            }
+        ]
+    },
+    "683576": {
+        "student_name": "suzana",
+        "thread_id": "thread_bQpeVGvxr0tBWJ0wxHUb0wvv",
+        "messages": [
+            {
+                "question": "Robotek se primika cik cak in krožno. Koles se izmenično blokirajo. Ne najde črte.",
+                "response": "'Hvala za opis! Da razjasniva situacijo:\\n\\n1. Robot se giblje cik cak in krožno – to pomeni, da se verjetno eno kolo vrti, drugo pa se morda ustavi oziroma blokira.\\n2. Kolesa se izmenično blokirajo – ali to pomeni, da se v določenem trenutku eno kolo ne vrti?\\n3. Ne najde črte – pomeni, da senzorji verjetno ne zaznavajo kontrasta med črno in belo podlago, ali pa robot nezadostno interpretira to informacijo.\\n\\nDa bova lažje določila vzrok:\\n\\n- Ali se kolesa na začetku testiranja vedno enako vedejo ali se obnašanje spreminja?\\n- Ali motorji sploh kdaj delujejo pravilno, recimo če robota dvigneš nad podlago – ali se kolesa v takem primeru vrti nemoteno?\\n- Kakšen model motorjev uporabljaš? Ima robot na motorjih vezano tudi stikalo ali samo napajanje?\\n\\nLahko skupaj preveriva nekaj stvari:\\n\\n- Ali so kolesa in osi lepo pritrjena in se prosto vrtijo brez prevelikega trenja ali blokad?\\n- Ali so žice do motorjev pravilno priključene na krmilno ploščo brez prekinitve?\\n- Ali so motorji pravilno napajani? Preveriš lahko z voltmetrom, koliko napetosti pride do motorja, ko robot poskuša peljati.\\n\\nKaj od tega si že preveril? Bi začel z pregledom koles?'"
+            },
+            {
+                "question": "Kolesa se ena kako vedejo. \nČe ga dvigneš od podlage se eno vrti drugo miruje\nIma vezano tudi stikali",
+                "response": "'Hvala za dodatne informacije!\\n\\nTorej:\\n- Ko ga dvigneš z zemlje, se eno kolo vrti, drugo pa miruje.\\n- Kolesa imajo vsako svoja stikala.\\n\\nTo nakazuje, da imaš verjetno na eni strani težavo z motorjem, stikali ali električno povezavo.\\n\\nPredlagam, da najprej preveriva:\\n\\n1. **Stikalo na motorju, ki se ne vrti**  \\n   Ali si preveril, ali je stikalo sploh vklopljeno in pravilno deluje? Včasih stikalo lahko ni pravilno pritisnjeno ali je zrahljano. Poskusi ga večkrat vklopiti in izklopiti, ter opazuj robotovo reakcijo.\\n\\n2. **Povezava od stikala do motorja**  \\n   Preveri, če so žice trdno priključene tako na stikalo kot na motor. Včasih zrahljane žice povzročijo izgubo stika.\\n\\n3. **Motor sam**  \\n   Ali motor, ki se ne vrti, ni zagozden ali mehansko blokiran? Poskusi ga premakniti ročno, ali se prosto vrti?\\n\\nLahko poskusiš tudi to:\\n\\n- Izklopi pokušaj vsega s senzorji in programa, da motorja dobiš direktno na napajanje (morda preko stikal) in opazuj, če se vrti.\\n- Če se motor ne premakne kljub pravilnemu napajanju, je verjetno težava v motorju ali stikalu.\\n\\nKaj meniš, naj najprej pogledava? Bi rad začel s stikali ali z žicami?'"
+            }
+        ]
+    },
+    "6967907": {
+        "student_name": "SZMR",
+        "thread_id": "thread_HTxIminlMJTbfaQmOwhlDOB9",
+        "messages": [
+            {
+                "question": "Robotek ne gre po črti. Desno kolo se ne vrti, zato se robotek vrti v krogu. Lučka sveti ves čas. Pri vrtenju ga cuka. D1 in D0 svetita ves čas. D6, D5 pa izmenično utripata. Kaj je narobe?\n",
+                "response": "'Hvala za podroben opis! Da povzamem, robot se vrti le v krogu, ker se desno kolo ne vrti, D1 in D0 LED lučke sveti ves čas, D6 in D5 pa izmenično utripata, luč lučka sveti ves čas, in pri vrtenju ga cuka.\\n\\nNajprej nekaj vprašanj, da bolje razumem situacijo:\\n\\n1. Ali si preveril, ali je desno kolo fizično prosto in se lahko vrti, če ga ročno zavrtiš?\\n2. Ali slišiš motor za desnim kolesom, ko bi moral voziti? Ali motor \"cuka\", kot pri morebitnem poskusu vrtenja?\\n3. Ali je mogoče ukaz za desni motor pravilno podan, ali je kakšno stikalo (npr. ENABLE) na RobDuinu, ki bolj omogoča le delovanje enega motorja?\\n4. Ali je desni motor priključen na pravilen izhod in ali so vsi kabli trdno povezani?\\n\\nPredlagam, da začnemo s tem:\\n\\n- Najprej dvigni robota in poskusi ročno zavrteti desno kolo – to, da ni mehanske blokade.\\n- Nato s pomočjo multimetra oziroma zgolj s prstom preveri, ali do desnega motorja pride napetost med delovanjem.\\n\\nKaj opaziš?'"
+            },
+            {
+                "question": "Zamenjali smo priključke na desnem motorju za izhod. Ali je to ok?\n",
+                "response": "'Dobro vprašanje!\\n\\nDa razjasnim: Ali ste na desnem motorju samo zamenjali kabel za polarnost (plus in minus) ali ste zamenjali povsem oba priključka mesta na izhodu (npr. obe žici sta sedaj menjani na drugačnih pin-ih na RobDuinu)?\\n\\n**Kaj se zgodi, če zamenjamo priključke motorja:**\\n\\n- Če zamenjamo samo polariteto (plus s minusom), se smer vrtenja motorja spremeni – to je pogosto potrebno, če se motor vrti v neprimerni smeri.\\n- Če pa priključke zamenjamo tako, da motor dobi povsem napačne izhodne pin-je ali so kabli na napačnih mestih, motor morda ne bo deloval ali bo deloval nenavadno.\\n\\n**Predlog:**\\n\\n- Preveri, ali so na RobDuinu priključeni motorji na pravilne izhode (desni motor na izhod za desni motor, levi na levi).\\n- Preveri tudi, če je polarnost na motorju pravilna – če se voznik prevelikokrat trudi obrniti kolo v napačno smer, lahko robot cučka.\\n\\nAli si zamenjal le polariteto ali povsem drugačne priključke? Kaj se je zgodilo po menjavi? Se je robot začel premikati drugače ali še vedno obstaja problem s desnim kolesom?'"
+            },
+            {
+                "question": "Da zamenjalo smo samo polariteto.\n",
+                "response": "'Super, torej ste samo zamenjali polariteto na desnem motorju.\\n\\nTorej je to zaželen ukrep, če se je desno kolo prej vrtelo v napačno smer.\\n\\nSedaj pa, glede na to, da se desno kolo sploh ne vrti, ampak robot še vedno samo vrti v krogu in da D1 in D0 svetita ves čas, D6 in D5 pa izmenično utripata – to kaže, da motor morda pravzaprav ne dobi signala ali da obstaja težava pri napajanju ali krmiljenju motorja.\\n\\nPredlagam, da naredimo naslednje korake:\\n\\n1. **Preveri povezave motorja:**\\n   - Ali so kabli trdno priključeni, brez prekinitve?\\n   - Ali si pravilno prebral, katera žica je “+” in katera “-” in si po potrebi zamenjal polariteto?\\n\\n2. **Preizkusi motor neposredno:**\\n   - Poskusi zamenjati motorja na izhodih (desni motor na levi izhod in obratno) – če desno kolo še vedno ne obrne, je možno, da je motor pokvarjen ali pa izhod.\\n\\n3. **Preveri napajanje:**\\n   - Ali je baterija polna?\\n   - Ali se napajalni deli ne pregrevajo?\\n\\n4. **Preveri stikala in ENABLE pin:**\\n   - Ali je možno, da je ENABLE pin za desni motor izklopljen ali prenehan?\\n\\nKaj od tega si že preveril? Kako reagira robot, če ga dvigneš v zrak in pustiš motorje brez stika s tlemi? Se kako kolo premika?'"
+            }
+        ]
+    },
+    "9045196": {
+        "student_name": "Sebastjan",
+        "thread_id": "thread_UlAxOpWgpfnCxB7cnZPocpcN",
+        "messages": [
+            {
+                "question": "Robotek ne sledi črti. Vrti se v smeri urinih kazalcev. Večino časa se se levo kolo vrti nazaj, desno pa večino časa miruje. Ko zazna črto, pa se vmes vrti tudi desno kolo. Morda so žice napačno zvezane. Kako naj popravim napako?\n",
+                "response": "'Hvala za opis! Najprej bi rad razumel nekaj podrobnosti, da lažje skupaj poiščeva vzrok:\\n\\n1. Ko rečeš, da robot \"ne sledi črti\", ali se sploh premika naprej ali samo zavija na mestu?\\n2. Ali se motorji vrtijo ves čas, ali le ob zaznavi črte?\\n3. Kaj se zgodi, če robota dvigneš v zrak – se motorji še vedno vrtijo? Katero kolo takrat?\\n4. Kje so na robota priključena motorja – si preveril, da sta motorja priključena na pravi izhod na RobDuinu?\\n\\nKer omenjaš, da levo kolo večinoma vrti nazaj in desno večinoma miruje ali se včasih vrti ... tega bi rad najprej preveril:\\n\\n- Preveri, če sta obe motorni žici pravilno priključeni glede na označbe (motor left/right na RobDuinu in smernice ter polariteto motorjev).\\n- Na motorjih obrni žice (če so le 2 za motor) in opazuj, če se smer gibanja spremeni – to pomaga ugotoviti, če imaš motorje obratno priključene.\\n\\nPredlagam, da narediš prvi test:\\n\\n1. Robot postavi na mizo, ga vključi.\\n2. Pomagaj mi testirati gibanje koles tako, da opazujemo, kako se vsako kolo vrti.\\n3. Poskusi prekiniti eno od žic na motorju in opazuj, kaj se zgodi (ali motor neha delovati ali pa se stanje spremeni).\\n\\nČe želiš, lahko napiševa točno, kako najprej odklopiš katero žico, da bova testirala posamezne kable.\\n\\nKaj praviš? Bi rad začel s preverjanjem priključkov motorjev ali bi najprej izvedel še kakšen drug test?'"
+            },
+            {
+                "question": "1. Robot se večinoma vrti v krogu, občasno se le malo premakne.\n2. Levi motor se vrti večino časa, desni moto pa le ob zaznavi črte.\n3. Če robota dvignem, se vrti eno kolo. Če ga v zraku obrnem na glavo, se vrti drugo kolo.\n4. Kako preverim, ali je priključeno pravilno?\n\nKako vem, kaj je left/right?\n",
+                "response": "'Hvala za dodatne informacije, zelo so koristne!\\n\\nGlede na to, da se robot večinoma vrti v krogu in da se v zraku pri običajni postavitvi vrti eno kolo, pri obrnjeni postavitvi pa drugo, je zelo verjetno, da so motornim žicam ali motorjema zamenjani priključki ali pa so motorji priključeni pravilno, a je smer napajanja oziroma polariteta obrnjena.\\n\\n### Kako preveriš, kateri motor je levi in kateri desni?\\n\\n1. **Opazovanje koles:**\\n   - Postavi robot na tla, tako da ga gledaš od zgoraj in prednjim delom naprej.\\n   - Levi motor je tisti, ki poganja kolo na tvoji levi strani, desni motor pa na desni strani.\\n\\n2. **Običajno so motorji na RobDuinu priključeni na dva ločena izhoda**, pogosto označena tako, kot na vezju. Na primer:\\n   - Izhod za levi motor: M1 (Motor 1), označen na tiskanem vezju ali v navodilih.\\n   - Izhod za desni motor: M2 (Motor 2).\\n\\n3. **Preveri označbe na tiskanem vezju (RobDuinu)** - napiši po obliki:\\n   - M1 ali LEFT (levo)\\n   - M2 ali RIGHT (desno)\\n\\nČe na vezju ni označb ali so nejasne, pomagaj s fizičnim pogledom na motorje in kolesa ter primerjaj z navodili za svoj robotek.\\n\\n---\\n\\n### Kako preveriš, če je motor priključen pravilno?\\n\\nZelo enostavno:\\n\\n- Preklopi priključke motorja, ki se obnaša nenavadno (na primer tistega, ki gre večinoma nazaj ali se ne vrti).\\n- Če imajo motorji dve žici (rdeča in črna), jih samo zamenjaj med obema priključkoma.\\n\\n**Korak za korakom:**\\n\\n1. Zapiši si, kako so sedaj priključene žice na levi in desni motor (katera žica gre kam).\\n2. Odklopi žici motorja, ki je bolj “nezanesljiv” (na primer levo kolo, ki večinoma vrti nazaj).\\n3. Obrni ti dve žici med seboj (zamenjaj polarnost).\\n4. Vklopi robota.\\n\\nČe se smer vrtenja motorja spremeni (npr. z zadaj na naprej), potem si uspešno popravil smer.\\n\\n---\\n\\n### Kaj zdaj predlagam, da narediš?\\n\\n1. Preveriš, kateri motor je levo in kateri desno.\\n2. Na motorju, ki se vrti v napačni smeri, zamenjaš priključek žic – tako bo kolo vrtelo v pravo smer.\\n3. Če desno kolo skoraj ne gre, preveri tudi tisti motorjev priključek, da ni žica odklopljena ali zlomljena.\\n\\n---\\n\\nAli želiš, da greva skozi navodila za zamenjavo žic korak po koraku? Ali bi raje začel s preverjanjem, kateri motor je levo in kateri desno?'"
+            },
+            {
+                "question": "Ali mi lahko pokažeš navodila, da bom videl, kje je M1?\n",
+                "response": "'Seveda! Tukaj so navodila, kako najdeš in prepoznaš priključke M1 in M2 na RobDuinu, da boš znal pravilno preveriti motornim priključke:\\n\\n---\\n\\n### 1. Poišči RobDuino na svojem robotu\\n\\n- RobDuino je tiskano vezje, na katerem so priključki za baterije, motorje, senzorje, stikala, LED diode in seveda mikrokontroler.\\n- Običajno je postavljen tako, da lahko vidiš napis “RobDuino” ali kaj podobnega na plošči.\\n\\n---\\n\\n### 2. Poišči priključke za motorje (M1 in M2)\\n\\n- Na RobDuinu so običajno **štirje priključki za motorje**: dva za levi motor in dva za desni motor.\\n- Napisi ali nalepke so lahko ob priključkih:\\n  - `M1` ali `Left Motor` (levo kolo)\\n  - `M2` ali `Right Motor` (desno kolo)\\n\\nTo izgledajo kot majhne sponke ali vijaki, kamor so pritrjene žice motorjev.\\n\\n---\\n\\n### 3. Preveri polarnost priključkov\\n\\n- Motorji so DC motorji, zato imata na priključkih dve žici (običajno rdeča in črna).\\n- Če motor teče “v napačni smeri”, potem samo zamenjaj ti dve žici med M1 ali M2.\\n  \\n---\\n\\n### 4. Primer označitev na RobDuinu (glej priloženo sliko)\\n\\n- Na sliki (izpodbudo si predstavljaj ali poglej podobno ploščico):\\n  - levi motor je priključen na M1: dva priključka, ob katera sta pripeti dve žici (bulina ali vijak).\\n  - desni motor je priključen na M2.\\n\\n---\\n\\nČe želiš, mi lahko pošlješ sliko svojega robota in ti pomagam poiskati označbe na tvojem RobDuinu.\\n\\n---\\n\\n### Povzetek\\n\\n- Poišči napis M1 in M2 na plošči\\n- Preveri skladiščne žice motorjev na teh priključkih\\n- Za spremembo smeri motorja prižgi zamenjaj polarnost žic pri posameznem motorju\\n\\n---\\n\\nAli želiš, da te vodim preko teh korakov pri tebi s pomočjo fotografij ali z dodatnimi navodili?'"
+            },
+            {
+                "question": "Ne vidim oznak M1 in M2.",
+                "response": "'Razumem, včasih oznake M1 in M2 na ploščici niso jasno vidne ali jih ni. No, bova to rešila na drug način!\\n\\n### Predlagam, da narediš preprost test:\\n\\n#### 1. Identificiraj obe motorni povezavi ročno\\n- Na RobDuinu poišči dva para žic, ki vodijo do motorjev. Običajno so priklopljene na majhne vijake ali priključne sponke.\\n- Ena dvojica žic vodi do levega motorja, druga do desnega.\\n\\n#### 2. Test smeri motorjev\\n- Najprej označi obe dvojici žic s krepom trakom ali nalepkama, da veš, katera dvojica je katera (ne glede, katera je leva ali desna).\\n- Izklopi robota.\\n- Nato na robota priključi žice, da se motor začne vrti v eno smer.\\n- Če se kolo vrti “nazaj” (nazaj, kot ti želiš) - potem preprosto zamenjaj ti dve žici na motorju (zgodilo se bo, da se bo kolo vrtelo v nasprotno smer).\\n- Ponovi za drugo dvojico žic.\\n\\n#### 3. Kako lahko prepoznaš levi in desni motor?\\n- Postavi robota tako, da gleda proti tebi.\\n- Motor, ki poganja kolo na tvoji levi strani, je levi motor.\\n- Motor, ki poganja kolo na tvoji desni strani, je desni motor.\\n\\n---\\n\\n### Če želiš, ti lahko pomagam z li po korakih pri testiranju\\n\\n**Na primer:**\\n\\n- Kateri par žic je trenutno priključen na posamične motorje?\\n- Kaj se zgodi, če zamenjaš polarnost ene od žic?\\n- Kako se sedaj giba robot?\\n\\n---\\n\\nBi želel, da te vodim naprej s takšnim testom? Če imaš možnost, lahko tudi narediš slike in mi jih pošlješ, da lažje svetujem.'"
+            }
+        ]
+    },
+    "286502": {
+        "student_name": "Manca",
+        "thread_id": "thread_0oCFy2Z2wgXy5rnS6ymgbH9P",
+        "messages": [
+            {
+                "question": "Naš robotek se je pokvaril. Vrti se e v nasprotni smeri urinega kazalca in dela lepe kroge. Pri tem se vrti le levo kolo. Desno kolo se zavrti le malo ko detektor zazna črno črto. V čem bi lahko bila težava?",
+                "response": "'Hvala za opis! Najprej mi pomaga, če potrdiva nekaj podrobnosti:\\n\\n- Ko reciva, da se levi kolo vrti ves čas, desno pa samo malo – ali desno kolo sploh ne omogoča premika naprej ali se le počasi vrti?\\n- Kaj se zgodi, če robota dvigneš v zrak – se desno kolo takrat prosto vrti?\\n- Ali si preveril, ali je motor na desni strani pravilno priključen in ali so kabli čvrsto povezani?\\n\\nZa začetek predlagam, da preveriva naslednje:\\n\\n1. Ali motor desnega kolesa dobi napetost in signal? (Če imate multimeter, lahko merite na priključkih motorja.)\\n2. Ali se desno kolo mehansko prosto vrti, če ga premakneš z roko, ko je robot ugasnjen?\\n3. Kako se spremeni obnašanje, če detektor zelo hitro premakneš nad črto in nazaj?\\n\\nKaj lahko preveriš najprej iz tega?'"
+            },
+            {
+                "question": "Desno kolo se zavrti le občasno. Ko ga dvignem v zrak se ne vrti ko je pravilno obrnjen, ko ga obremo navzdol se vrti desno kolo, levo pa ostane pri miru. Za kable nisem prepričana. Ko je robot ugasnjen se nobeno kolo ne vrti prosto. Tudi ob nenadnem premikanju ni sprememb.",
+                "response": "'Hvala za dodatne informacije, zelo koristno!\\n\\nGlede na to, da:\\n\\n- Desno kolo ne vrti v zraku, ko je robot v pravem položaju,\\n- Levo kolo pa obrnemo navzdol se vrti, kar je nenavadno,\\n- Nobeno kolo se ne vrti prosto, ko je robot ugasnjen,\\n\\nlahko sumim na nekaj stvari:\\n\\n1. **Možna napaka pri priključkih motorjev** – motorja sta mogoče zamenjana ali napačno priključena na krmilnik, zato levi del deluje le ko je robot na tleh (morda zavorni signal ali upornost) in desni ne deluje pravilno.\\n\\n2. **Napaka v napajanju ali zavori motorjev** – če motorji med ugasnjenim stanjem ne tečejo prosto, lahko pomeni, da je vkradena zavorna funkcija (npr. krmilnik zavira motorje z zavornim signalom), ali pa je elektronska napaka.\\n\\n3. **Mehanska ovira na kolesih ali osi** – če se kolesa ne vrtijo prosto, je možno, da so osi zagozdene ali imajo premalo maziva.\\n\\nKaj pravita:\\n\\n- Ali si prepričana, da sta motorja pravilno povezana na krmilnik? Lahko poskusiš zamenjati močnostna kabla motorjev med levim in desnim kolesom, da vidiš, če se težava premakne na drugo kolo?\\n\\n- Ali ima tvoj krmilnik na motorjih nastavitve za hitrost ali način zaviranja (npr. ENABLE ali brake)?\\n\\n- Si že preverila, če so vsi konektorji trdno povezani in ni kakšnega poškodovanega kabla?\\n\\nPredlagam najprej sledeči korak:\\n\\n**Zamenjaj priključke motorjev** in nato ponovno zaženi robota. Povej, katero kolo se vrti in kako. Tako bova vedela, ali je motor ali krmilnik napaka. Kaj meniš?'"
+            },
+            {
+                "question": "Kako naj zamenjam priključke motorjev? Na kteri vhod in izhod?",
+                "response": "'Super vprašanje! Rada ti pomagam korak za korakom.\\n\\nNajprej malo pojasnilo:\\n\\n- Na tvoj roboto za sledenje črti sta običajno dva motorja – levi in desni.\\n- Oba motorja sta povezana preko kablov na krmilnik motorjev, ki je del “RobDuina” ali podobne platforme.\\n- Krmilnik motorjev ima dva izhoda za motorja: običajno označena kot **M1** in **M2**, ali pa **Motor leva stran** in **Motor desna stran**.\\n- Motorji so priključeni na ta izhoda (kabli motorja) – na levo motorju kabli gredo v en izhod, na desnem v drugi.\\n- Ko govorim o “zamenjavi priključkov motorjev”, mislim, da enostavno **odklopiš kable motorjev od krmilnika in jih povežeš nasprotno**: tisto, kar je bilo prej na M1, daš na M2, in tisto, kar je bilo na M2, daš na M1.\\n\\n### Kako to točno narediti?\\n\\n1. Poišči na RobDuinu (ali krmilniku motorjev) oba izhoda za motorja (običajno so vijaki ali sponke, kamor so pritrjeni kabli).\\n2. Označi, kateri izhod zdaj vodi na levi motor in kateri na desni (npr. z nalepko ali zapisom).\\n3. Odklopi oba para kablov z izhodov motorjev.\\n4. Zdaj poveži par kabelskega vhod za levi motor na izhod, ki je prej vodil desni motor, in obratno.\\n5. Prepričaj se, da so vsi kabli trdno pritrjeni in ni stikov med žicami.\\n6. Vklopi robota in preveri, katero kolo se zdaj vrti.\\n\\n### Kaj želiva videti?\\n\\n- Če se zaradi zamenjave priključkov med motorji spremeni, katero kolo dela težave (npr. če se zdaj težava premakne na drugo kolo), potem je napaka verjetno v motorju ali kablu.\\n- Če se nič ne spremeni in tudi po zamenjavi levi kolo dela le malo, potem je težava bolj v krmilniku ali kablih.\\n\\nKaj praviš? Če potrebuješ, lahko vodiš postopek še bolj podrobno. Kako napreduješ?'"
+            },
+            {
+                "question": "Ne najdemo vhoda M1 in M2. Ali je to na vhodih označenih z D?\n",
+                "response": "'Hvala za vprašanje, da razjasnimo oznake!\\n\\nObičajno v robotskih kompletih za sledenje črti, kot je RobDuino ali podoben krmilnik, so motorni izhodi **posebni terminali** ali vijaki namenjeni za priklop motorjev – ti niso označeni z D (ker so te tipično digitalni vhodi/izhodi za senzorje ali druge signale).\\n\\n### Kaj pomeni oznaka “D”?\\n- \"D\" običajno pomeni **digitalni vhod/izhod** (Digital pin).\\n- Ti pini so namenjeni za povezavo senzorjev (kot so infrardeči senzorji), tipk, LED diod ipd.\\n- Motorji pa so praviloma povezani na posebno **močnostno krmilno enoto**, na “motor driver” (npr. L298N ali podobno), ki je povezan na roboto.\\n- Motorni vodi imajo običajno oznake kot **Motor A** (ali M1) in **Motor B** (ali M2) na krmilniku motorjev.\\n\\n### Kje torej najti izhoda za motorja?\\n\\n1. Preveri, če na tvojem roboto (RobDuinu ali motor driverju) ni ločene ploščice ali terminala, kjer so vhodi označeni z **Motor A / Motor B** ali **Motor Left / Motor Right**.\\n2. Če je krmilnik motorjev ločen modul, bo tam videti izhode za motorje (vijaki ali sponke, kamor so pritrjeni debelejši kabli motorjev).\\n3. Digitalni pini (D0, D1, D2…) so za signal, ne za motorni tok.\\n\\n### Kako najti motorne izhode na tvojem roboto?\\n\\n- Poišči tiste debelejše kable, ki gredo proti motorjem.\\n- Sledi jim nazaj do krmilne ploščice ali kontrolne enote.\\n- Poizkusi najti oznake, kot so **OUT1, OUT2**, **MOTOR1, MOTOR2** ali kaj podobnega.\\n- Če nisi prepričana, mi lahko narediš sliko ali opišeš, kako izgledajo priključki na ploščici.\\n\\n**Pomembno:** Ne priklapljaj motorjev na digitalne pin, ker ti ne prenesejo moči in lahko škoduješ elektronskim delom.\\n\\nLahko mi poveš, kakšen natančno model krmilnika uporabljaš ali mi pošlješ sliko? Tako bova lažje našla pravilne priključke skupaj. Kako se sliši?'"
+            }
+        ]
+    },
+    "6967774": {
+        "student_name": "David",
+        "thread_id": "thread_TsBtsIZHA5WcsYJdcvMApbuu",
+        "messages": [
+            {
+                "question": "Kako mi lahko pomagaš?",
+                "response": "'Pozdravljeni! Sem tukaj, da vam pomagam pri reševanju matematičnih problemov. Lahko vam razložim določene pojme, vam pomagam s reševanjem nalog, pripravim primere za vadbo ali pa odgovorim na vprašanja glede matematike. Kaj vam trenutno najbolje pomaga?'"
+            }
+        ]
+    }
+}

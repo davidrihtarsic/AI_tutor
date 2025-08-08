@@ -230,5 +230,35 @@
                 "response": "'---\\n# PRAKTIČNI PRIMERI UPORABE IN PREDNOSTI AI TUTORJA\\n\\n- Generiranje vprašanj različnih težavnostnih stopenj  \\n> AI tutor lahko pripravi naloge od osnovnih do zahtevnejših, prilagojene učencem.\\n\\n- Interaktivna razlaga konceptov  \\n> Učencem pomaga razumeti kemijske reakcije, matematične probleme in fizikalne pojave z različnimi pojasnili.\\n\\n- Povečanje učinkovitosti učiteljevega dela  \\n> Omogoča individualno podporo učencem, hkrati pa zmanjša breme učitelja.\\n\\n---\\n\\nAli želiš nadaljevati z zaključkom predstavitve, z napotki za učitelje, kako integrirati AI tutorja v pouk?'"
             }
         ]
+    },
+    "6490416": {
+        "student_name": "Nak_ključ_testing",
+        "thread_id": "thread_VF4LNN2aOBfsObwOiCTI4kqd",
+        "messages": [
+            {
+                "question": "Sem udeleženec, kako mi lahko pomagaš",
+                "response": "'Pozdravljen! Kot udeleženec ti lahko pomagam tako, da:\\n\\n- Pojasnim nejasne pojme ali koncepte s področja uporabe AI tutorjev pri poučevanju STEM predmetov.\\n- Odgovorim na tvoja vprašanja o praktični uporabi AI tutorjev.\\n- Te usmerjam k dodatnim virom ali načinom, kako lahko samostojno raziskuješ določene teme.\\n- Pomagam razjasniti postopke ali tehnike, o katerih so govorili na predstavitvi ali delavnici.\\n\\nČe imaš kakšno konkretno vprašanje ali potrebuješ pojasnilo, kar vprašaj! Kaj te posebej zanima?'"
+            }
+        ]
+    },
+    "4894522": {
+        "student_name": "nak_test",
+        "thread_id": "thread_EvWAJ9r4GkSgSmjvS4sXThgG",
+        "messages": [
+            {
+                "question": "kaj je to fakulteta?",
+                "response": "'Fakulteta je izobraževalna ustanova, ki omogoča študij po srednji šoli (srednješolski programi) in podeljevanje diplom, ob tistem, ko študent pridobi ustrezno znanje in spretnosti na določenem področju, na primer na področju medicine, prava, ekonomije ali tehniških ved.\\n\\nVprašanje za razumevanje:  \\nKatera od naslednjih možnosti najbolj opisuje fakulteto?  \\nA) Splošna medicinska služba  \\nB) Izobraževalna ustanova za terciarno izobraževanje  \\nC) Podjetje, ki izdeluje medicinske pripomočke  \\nD) Ustanova za športne aktivnosti'"
+            }
+        ]
+    },
+    "2313558": {
+        "student_name": "david_test",
+        "thread_id": "thread_FYbwYVh0fAtlFxMj5SZxmwUk",
+        "messages": [
+            {
+                "question": "Kako mi lahko pomagaš?",
+                "response": "'Prosim, povej mi, kdo si in kako želiš, da ti pomagam:\\n\\n- Če si **predavatelj** in pripravljaš ali izvajaš predstavitev o uporabi AI tutorjev pri poučevanju STEM, ti lahko pomagam tako, da te vodim skozi vsebino, predlagam, kaj povedati, naredim prosojnice, ti svetujem, kako zasnovati delavnice, ter te opozarjam na časovne omejitve in pomembne poudarke.\\n\\n- Če si **učitelj/udeleženec delavnice**, ti lahko pomagam z dodatnimi pojasnili, odgovori na vprašanja glede vsebin o AI tutorjih, te usmerjam k poglobljenemu razmišljanju in praktični uporabi AI v učnem procesu.\\n\\nProsim, predstavi se in povej, kako ti lahko najbolje pomagam!'"
+            }
+        ]
     }
 }
