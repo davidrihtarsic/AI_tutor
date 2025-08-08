@@ -77,5 +77,9 @@
             }
         ]
     },
-    "asst_tOdnTU0a5I87GeiqC1Jj2oWp": "thread_Xd7z8bKqoZQDd0cs88dFFmQn"
+    "asst_tOdnTU0a5I87GeiqC1Jj2oWp": {
+        "student_name": "ArchLinuxAssistant",
+        "thread_id": "thread_9ydyN7Q0O6cZiw3c3YYoVRgI",
+        "messages": []
+    }
 }

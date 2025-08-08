@@ -53,12 +53,26 @@ def main():
     client = OpenAI(api_key=api_key)
 
     # Naloži ali ustvari thread_id za tega asistenta
+
     threads = load_threads()
-    thread_id = threads.get(assistant_id)
+    # thread_id je lahko v dveh oblikah: kot string ali kot objekt
+    thread_entry = threads.get(assistant_id)
+    if isinstance(thread_entry, dict):
+        thread_id = thread_entry.get("thread_id")
+    elif isinstance(thread_entry, str):
+        thread_id = thread_entry
+    else:
+        thread_id = None
+
     if thread_id is None:
         thread = client.beta.threads.create()
         thread_id = thread.id
-        threads[assistant_id] = thread_id
+        # Shrani v strukturi: kljuc je assistant_id, vrednost je objekt
+        threads[assistant_id] = {
+            "student_name": assistant_name,
+            "thread_id": thread_id,
+            "messages": []
+        }
         save_threads(threads)
         print(f"Created new thread with ID: {thread_id}")
 
