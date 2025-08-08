@@ -2,6 +2,7 @@
 import sys
 import json
 import os
+import time
 from openai import OpenAI
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "../config/config.json")
@@ -37,17 +38,34 @@ def main():
     client = OpenAI(api_key=api_key)
     print(f"User input: {user_input}")
 
-    # Use Responses API (OpenAI Python SDK >= 1.3.8)
-    response = client.chat.completions.create(
-        model="gpt-4o",  # ali drug model, če uporabljaš drugega
-        messages=[
-            {"role": "system", "content": "You are an assistant with ID: %s." % assistant_id},
-            {"role": "user", "content": user_input}
-        ]
+    thread = client.beta.threads.create()
+
+    client.beta.threads.messages.create(
+        thread_id=thread.id,
+        role="user",
+        content=user_input,
     )
 
-    # Print the assistant's reply
-    print(response.choices[0].message.content)
+    run = client.beta.threads.runs.create(
+        thread_id=thread.id,
+        assistant_id=assistant_id,
+    )
+
+    while run.status not in {"completed", "failed", "cancelled", "expired"}:
+        time.sleep(1)
+        run = client.beta.threads.runs.retrieve(
+            thread_id=thread.id,
+            run_id=run.id,
+        )
+
+    if run.status == "completed":
+        messages = client.beta.threads.messages.list(thread_id=thread.id)
+        for message in messages.data:
+            if message.role == "assistant" and message.content:
+                print(message.content[0].text.value)
+                break
+    else:
+        print(f"Run ended with status: {run.status}")
 
 if __name__ == "__main__":
     main()
