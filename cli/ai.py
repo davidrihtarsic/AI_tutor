@@ -2,8 +2,25 @@
 import sys
 import json
 import os
+
 import time
 from openai import OpenAI
+import threading
+
+CONV_PATH = os.path.join(os.path.dirname(__file__), "../conversations/conv.json")
+
+def load_threads():
+    if not os.path.exists(CONV_PATH):
+        return {}
+    with open(CONV_PATH, "r") as f:
+        try:
+            return json.load(f)
+        except Exception:
+            return {}
+
+def save_threads(threads):
+    with open(CONV_PATH, "w") as f:
+        json.dump(threads, f, indent=4)
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "../config/config.json")
 
@@ -33,33 +50,39 @@ def main():
         user_input = " ".join(sys.argv[1:])
 
     api_key, assistant_id = get_api_key_and_assistant_id(config, assistant_name)
-    print(f"Using assistant: {assistant_name} (ID: {assistant_id})")
-
     client = OpenAI(api_key=api_key)
-    print(f"User input: {user_input}")
 
-    thread = client.beta.threads.create()
+    # Naloži ali ustvari thread_id za tega asistenta
+    threads = load_threads()
+    thread_id = threads.get(assistant_id)
+    if thread_id is None:
+        thread = client.beta.threads.create()
+        thread_id = thread.id
+        threads[assistant_id] = thread_id
+        save_threads(threads)
+        print(f"Created new thread with ID: {thread_id}")
 
+    # Pošlji sporočilo v obstoječi ali nov thread
     client.beta.threads.messages.create(
-        thread_id=thread.id,
+        thread_id=thread_id,
         role="user",
         content=user_input,
     )
 
     run = client.beta.threads.runs.create(
-        thread_id=thread.id,
+        thread_id=thread_id,
         assistant_id=assistant_id,
     )
 
     while run.status not in {"completed", "failed", "cancelled", "expired"}:
         time.sleep(1)
         run = client.beta.threads.runs.retrieve(
-            thread_id=thread.id,
+            thread_id=thread_id,
             run_id=run.id,
         )
 
     if run.status == "completed":
-        messages = client.beta.threads.messages.list(thread_id=thread.id)
+        messages = client.beta.threads.messages.list(thread_id=thread_id)
         for message in messages.data:
             if message.role == "assistant" and message.content:
                 print(message.content[0].text.value)
