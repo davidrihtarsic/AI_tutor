@@ -1,3 +1,28 @@
+"""
+AI_tutor CLI - Navodila za uporabo
+-----------------------------------
+
+Osnovna uporaba:
+  python3 ai.py [assistant_name] "vaše vprašanje"
+  ./cli/ai.py [assistant_name] "vaše vprašanje"
+
+Primeri:
+  ./cli/ai.py ArchLinuxAssistant "Kako izpišem vsebino direktorija?"
+  ./cli/ai.py Fixy "Zakaj robot ne deluje?"
+  ./cli/ai.py TiTWriter "Napiši strokovni povzetek tega besedila."
+
+Uporaba s kontekstom iz stdin (npr. iz datoteke ali pipe):
+  cat napaka.log | ./cli/ai.py ArchLinuxAssistant "Zakaj je prišlo do te napake?"
+  ./cli/ai.py TiTWriter "Naredi povzetek" < besedilo.txt
+
+Uporaba s kontekstom iz označenega besedila (X11 PRIMARY selection, Linux):
+  ./cli/ai.py ArchLinuxAssistant --clip "Kaj pomeni ta ukaz?"
+  # Če želiš brati iz CLIPBOARD (Ctrl+C), spremeni 'primary' v 'clipboard' v kodi.
+
+Če asistenta ne navedeš, se uporabi privzeti (ArchLinuxAssistant):
+  ./cli/ai.py "Kaj je GPT?"
+
+"""
 #!/usr/bin/env python3
 import sys
 import json
