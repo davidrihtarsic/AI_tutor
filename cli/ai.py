@@ -41,8 +41,6 @@ import time
 from openai import OpenAI
 import threading
 
-
-
 # Poišči conv.json in config.json v več možnih lokacijah
 def find_config_file(possible_paths):
     for path in possible_paths:
