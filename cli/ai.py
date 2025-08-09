@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 AI_tutor CLI - Navodila za uporabo
 -----------------------------------
@@ -23,7 +24,6 @@ Uporaba s kontekstom iz označenega besedila (X11 PRIMARY selection, Linux):
   ./cli/ai.py "Kaj je GPT?"
 
 """
-#!/usr/bin/env python3
 import sys
 import json
 import os
