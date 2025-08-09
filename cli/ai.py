@@ -23,6 +23,15 @@ Uporaba s kontekstom iz označenega besedila (X11 PRIMARY selection, Linux):
 Če asistenta ne navedeš, se uporabi privzeti (ArchLinuxAssistant):
   ./cli/ai.py "Kaj je GPT?"
 
+Program ./cli/ai.py omogoča tudi nastavitev različnih asistentov,
+    ki jih lahko konfiguriraš v config.json datoteki. Prav tako lahko beleži
+    pogovore v conv.json datoteko, kar omogoča nadaljevanje pogovorov in
+    pregled preteklih interakcij.
+    Nastavitvene datoteke se nahajajo ali v podmapi:
+    - `../config` in ../conersations,
+    ali v uporabniški mapi:
+    - ./config/config.json
+    - ~/.config/ai_tutor/config.json
 """
 import sys
 import json
@@ -32,26 +41,53 @@ import time
 from openai import OpenAI
 import threading
 
-CONV_PATH = os.path.join(os.path.dirname(__file__), "../conversations/conv.json")
+
+
+# Poišči conv.json in config.json v več možnih lokacijah
+def find_config_file(possible_paths):
+    for path in possible_paths:
+        if os.path.exists(path):
+            return path
+    return possible_paths[0]  # privzeta lokacija, če ne obstaja
+
+def get_conv_path():
+    home = os.path.expanduser("~")
+    return find_config_file([
+        os.path.join(os.path.dirname(__file__), "../conversations/conv.json"),
+        os.path.join(home, ".config", "ai_tutor", "conv.json"),
+        os.path.join(home, ".ai_tutor", "conv.json"),
+    ])
+
+def get_config_path():
+    home = os.path.expanduser("~")
+    return find_config_file([
+        os.path.join(os.path.dirname(__file__), "../config/config.json"),
+        os.path.join(home, ".config", "ai_tutor", "config.json"),
+        os.path.join(home, ".ai_tutor", "config.json"),
+    ])
 
 def load_threads():
-    if not os.path.exists(CONV_PATH):
+    conv_path = get_conv_path()
+    if not os.path.exists(conv_path):
         return {}
-    with open(CONV_PATH, "r") as f:
-        try:
+    try:
+        with open(conv_path, "r") as f:
             return json.load(f)
-        except Exception:
-            return {}
+    except Exception:
+        return {}
+def load_config():
+    config_path = get_config_path()
+    try:
+        with open(config_path, "r") as f:
+            return json.load(f)
+    except Exception:
+        print(f"Napaka: Ne najdem ali ne morem prebrati config datoteke: {config_path}")
+        sys.exit(1)
 
 def save_threads(threads):
-    with open(CONV_PATH, "w") as f:
+    conv_path = get_conv_path()
+    with open(conv_path, "w") as f:
         json.dump(threads, f, indent=4)
-
-CONFIG_PATH = os.path.join(os.path.dirname(__file__), "../config/config.json")
-
-def load_config():
-    with open(CONFIG_PATH, "r") as f:
-        return json.load(f)
 
 def get_api_key_and_assistant_id(config, assistant_name="ArchLinuxAssistant"):
     api_key = config["api_keys"]["default_key"]
@@ -73,10 +109,9 @@ def main():
     if len(sys.argv) < 2:
         print("Usage: python3 ai.py [assistant_name] your question")
         sys.exit(1)
-
+    
     config = load_config()
     assistants = config.get("assistants", {})
-
 
     # Preveri, ali je prvi argument ime asistenta
     if sys.argv[1] in assistants:
@@ -85,6 +120,7 @@ def main():
     else:
         assistant_name = "ArchLinuxAssistant"
         user_input = " ".join(sys.argv[1:])
+        print(f"Using default assistant: {assistant_name}")
 
     # Če je stdin_context, ga dodaj kot kontekst
     if stdin_context:
@@ -109,8 +145,6 @@ def main():
             "messages": []
         }
         save_threads(threads)
-    else:
-        thread_id = None
 
     if not thread_id:
         thread = client.beta.threads.create()
