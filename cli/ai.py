@@ -34,12 +34,24 @@ def get_api_key_and_assistant_id(config, assistant_name="ArchLinuxAssistant"):
     return api_key, assistant_id
 
 def main():
+
+    # Preveri, če je stdin ne-prazen (npr. echo ... | ./cli/ai.py ... ali < file)
+    import select
+    stdin_context = None
+    if not sys.stdin.isatty():
+        try:
+            if select.select([sys.stdin], [], [], 0.0)[0]:
+                stdin_context = sys.stdin.read().strip()
+        except Exception:
+            pass
+
     if len(sys.argv) < 2:
         print("Usage: python3 ai.py [assistant_name] your question")
         sys.exit(1)
 
     config = load_config()
     assistants = config.get("assistants", {})
+
 
     # Preveri, ali je prvi argument ime asistenta
     if sys.argv[1] in assistants:
@@ -49,25 +61,35 @@ def main():
         assistant_name = "ArchLinuxAssistant"
         user_input = " ".join(sys.argv[1:])
 
+    # Če je stdin_context, ga dodaj kot kontekst
+    if stdin_context:
+        user_input = f"[Kontekst]\n{stdin_context}\n\n[Navodilo]\n{user_input}"
+
     api_key, assistant_id = get_api_key_and_assistant_id(config, assistant_name)
     client = OpenAI(api_key=api_key)
 
     # Naloži ali ustvari thread_id za tega asistenta
 
     threads = load_threads()
-    # thread_id je lahko v dveh oblikah: kot string ali kot objekt
     thread_entry = threads.get(assistant_id)
+    # thread_entry je lahko dict (pravilna oblika), ali string (stara oblika)
     if isinstance(thread_entry, dict):
         thread_id = thread_entry.get("thread_id")
     elif isinstance(thread_entry, str):
         thread_id = thread_entry
+        # Migriraj na novo obliko
+        threads[assistant_id] = {
+            "student_name": assistant_name,
+            "thread_id": thread_id,
+            "messages": []
+        }
+        save_threads(threads)
     else:
         thread_id = None
 
-    if thread_id is None:
+    if not thread_id:
         thread = client.beta.threads.create()
         thread_id = thread.id
-        # Shrani v strukturi: kljuc je assistant_id, vrednost je objekt
         threads[assistant_id] = {
             "student_name": assistant_name,
             "thread_id": thread_id,
@@ -82,6 +104,7 @@ def main():
         role="user",
         content=user_input,
     )
+    print(f"Sending message to thread:\n {user_input}"),
 
     run = client.beta.threads.runs.create(
         thread_id=thread_id,
