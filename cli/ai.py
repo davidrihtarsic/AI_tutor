@@ -93,6 +93,11 @@ def get_api_key_and_assistant_id(config, assistant_name="ArchLinuxAssistant"):
     return api_key, assistant_id
 
 def main():
+    # Podpora za --clip (clipboard, X11 PRIMARY selection)
+    use_clipboard = False
+    if "--clip" in sys.argv:
+        use_clipboard = True
+        sys.argv.remove("--clip")
 
     # Preveri, če je stdin ne-prazen (npr. echo ... | ./cli/ai.py ... ali < file)
     import select
@@ -120,9 +125,20 @@ def main():
         user_input = " ".join(sys.argv[1:])
         print(f"Using default assistant: {assistant_name}")
 
-    # Če je stdin_context, ga dodaj kot kontekst
+    # Če je stdin_context ali --clip, ga dodaj kot kontekst
+    context = None
     if stdin_context:
-        user_input = f"[Kontekst]\n{stdin_context}\n\n[Navodilo]\n{user_input}"
+        context = stdin_context
+    elif use_clipboard:
+        import subprocess
+        try:
+            context = subprocess.check_output(['xclip', '-selection', 'primary', '-o'], text=True).strip()
+        except Exception:
+            print("Napaka: Za podporo --clip na Linuxu namesti xclip: sudo apt install xclip")
+            sys.exit(1)
+        # Če želiš brati iz CLIPBOARD (Ctrl+C), zamenjaj 'primary' z 'clipboard' v zgornji vrstici.
+    if context:
+        user_input = f"[Kontekst]\n{context}\n\n[Navodilo]\n{user_input}"
 
     api_key, assistant_id = get_api_key_and_assistant_id(config, assistant_name)
     client = OpenAI(api_key=api_key)
