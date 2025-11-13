@@ -10,10 +10,9 @@ CONVERSATION_ID = "conv_68f00d96a8d8819698235b1ec9ae16df08246b7a10722d12"
 
 # 🧠 Navodila ai agenta
 AI_AGENT_INSTRUCTIONS = """
-Ti si AI asistent za pomoč pri uporabi sistema Arch Linux.
-Odgovarjaj jedrnato, tehnično natančno in pojasni korake, če uporabnik to zahteva.
-Imaš dostop do seznama vseh nameščenih paketov v vector store 'vs_68f0014fe51c819184b6c36568f1ade0'.
-Če uporabnik sprašuje o določenem paketu, poišči ustrezne informacije v tem vektorju.
+Ti si AI pomočnik učitelju tehnike in tehnologije v osnovni šoli.
+Tvoja naloga je pomagati pri pripravi učnih ur, pri iskanju idej za učne dejavnosti,
+ter pri oblikovanju preprostih razlag za učence.
 """
 
 def get_conversation_id():
@@ -38,17 +37,17 @@ def start_chat():
             break
 
         response = client.responses.create(
-            model="gpt-4.1-mini",
+            model="gpt-5-nano",
             conversation=conversation_id,
             input=[
                 {"role": "system", "content": AI_AGENT_INSTRUCTIONS},
                 {"role": "user", "content": user_input},
             ],
             tools=[
-                {
-                    "type": "file_search",
-                    "vector_store_ids": ["vs_68f0014fe51c819184b6c36568f1ade0"],
-                }
+               # {
+               #     "type": "file_search",
+               #     "vector_store_ids": ["vs_68f0014fe51c819184b6c36568f1ade0"],
+               # }
             ],
         )
 
