@@ -1,0 +1,165 @@
+{
+  "import_id": "elora26_2026-05-30",
+  "notes": [
+    "Reconciliation is inferential. The official roster was supplied after the original import.",
+    "Exact-name and repeated-name mappings are high confidence.",
+    "The anonymous line-following cluster is strongly likely to be one person, but attribution of that cluster to Jure Zeljko is low confidence because no direct name/ID link exists.",
+    "David is the teacher/test user and is excluded from student analytics."
+  ],
+  "students": [
+    {
+      "official_id": "70097664",
+      "canonical_nickname": "eliska",
+      "full_name": "Eliška Brychtová",
+      "anchor_legacy_id": "1305005505371",
+      "legacy_ids": [
+        "1305005505371",
+        "70097683"
+      ],
+      "confidence": "medium",
+      "reason": "The Eliška record is direct. 'Nela' is Czech, female, and asks about the same final-test context; no Nela exists in the supplied official roster."
+    },
+    {
+      "official_id": "70097871",
+      "canonical_nickname": "teresa",
+      "full_name": "Maria Teresa de Vasconcelos Pereira Xavier Figueira",
+      "anchor_legacy_id": "9617238",
+      "legacy_ids": [
+        "9617238"
+      ],
+      "confidence": "high",
+      "reason": "Legacy name is 'teresa'."
+    },
+    {
+      "official_id": "1190108",
+      "canonical_nickname": "maja",
+      "full_name": "Maja Demšar",
+      "anchor_legacy_id": "01190108",
+      "legacy_ids": [
+        "01190108",
+        "2935306"
+      ],
+      "confidence": "high",
+      "reason": "Both sessions explicitly use the name Maja and show continuity of the same robotics project."
+    },
+    {
+      "official_id": "70097672",
+      "canonical_nickname": "chiara",
+      "full_name": "Chiara Fabro",
+      "anchor_legacy_id": "70097672",
+      "legacy_ids": [
+        "70097672"
+      ],
+      "confidence": "high",
+      "reason": "Direct ID/name match."
+    },
+    {
+      "official_id": "1210054",
+      "canonical_nickname": "jakob",
+      "full_name": "Jakob Istenič",
+      "anchor_legacy_id": "91375",
+      "legacy_ids": [
+        "91375"
+      ],
+      "confidence": "high",
+      "reason": "Legacy name is Jakob; legacy numeric key differs from the official ID."
+    },
+    {
+      "official_id": "70097687",
+      "canonical_nickname": "hynek",
+      "full_name": "Hynek Nešpor",
+      "anchor_legacy_id": "70097687",
+      "legacy_ids": [
+        "70097687",
+        "2118614",
+        "528469",
+        "hynek",
+        "4629650"
+      ],
+      "confidence": "medium-high",
+      "reason": "Several sessions explicitly use Hynek. The 'n' session is in Czech and fits Hynek's repeated Czech/English interaction pattern."
+    },
+    {
+      "official_id": "70097702",
+      "canonical_nickname": "omer",
+      "full_name": "Ömer Furkan Özkader",
+      "anchor_legacy_id": "70097702",
+      "legacy_ids": [
+        "70097702",
+        "6276437",
+        "4024939",
+        "290645",
+        "1112167",
+        "8781829"
+      ],
+      "confidence": "high",
+      "reason": "All sessions explicitly use Ömer/omer and Turkish, with strong project continuity."
+    },
+    {
+      "official_id": "70097931",
+      "canonical_nickname": "maria",
+      "full_name": "Maria Pedreno Ferreira Santos Saágua",
+      "anchor_legacy_id": "70097931",
+      "legacy_ids": [
+        "70097931",
+        "6318515"
+      ],
+      "confidence": "high",
+      "reason": "Both records explicitly use Maria/MARIA."
+    },
+    {
+      "official_id": "1190096",
+      "canonical_nickname": "nik_trampus",
+      "full_name": "Nik Trampuš",
+      "anchor_legacy_id": "01190096",
+      "legacy_ids": [
+        "01190096"
+      ],
+      "confidence": "high",
+      "reason": "Direct name match; legacy ID is the official number with leading zero formatting."
+    },
+    {
+      "official_id": "70097700",
+      "canonical_nickname": "matt",
+      "full_name": "Matthew Nico Vendison",
+      "anchor_legacy_id": "70097700",
+      "legacy_ids": [
+        "70097700",
+        "1388992",
+        "5810507",
+        "2340391",
+        "858757",
+        "841401",
+        "506004",
+        "349022"
+      ],
+      "confidence": "high",
+      "reason": "All sessions explicitly use Matt and form a coherent sequence of robotics questions."
+    },
+    {
+      "official_id": "1200214",
+      "canonical_nickname": "jure",
+      "full_name": "Jure Željko",
+      "anchor_legacy_id": null,
+      "legacy_ids": [
+        "3904605",
+        "1647126",
+        "7181146",
+        "236880",
+        "1377950",
+        "401687",
+        "223356",
+        "3890627"
+      ],
+      "confidence": "low",
+      "reason": "These anonymous aliases strongly form one continuous one-sensor line-following/obstacle-avoidance project. Jure is the only supplied roster student without a directly named legacy session, so this is the best available attribution, but it is not directly evidenced."
+    }
+  ],
+  "exclude_from_student_analytics": [
+    {
+      "legacy_id": "345345",
+      "legacy_name": "David",
+      "reason": "Teacher/test interaction, not a student in the supplied roster."
+    }
+  ]
+}

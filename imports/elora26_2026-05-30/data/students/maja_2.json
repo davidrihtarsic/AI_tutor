@@ -1,0 +1,30 @@
+{
+  "student_id": "maja_2",
+  "tutors": {
+    "robotics": {
+      "topics": {
+        "pwm": {
+          "support_estimate": 0.5,
+          "observations": 1
+        },
+        "light_sensor": {
+          "support_estimate": 0.5,
+          "observations": 2
+        },
+        "motor_control": {
+          "support_estimate": 0.5,
+          "observations": 1
+        },
+        "distance_sensor": {
+          "support_estimate": 0.5,
+          "observations": 3
+        },
+        "line_following": {
+          "support_estimate": 0.5,
+          "observations": 1
+        }
+      }
+    }
+  },
+  "updated_at": "2026-05-30T08:50:37+00:00"
+}

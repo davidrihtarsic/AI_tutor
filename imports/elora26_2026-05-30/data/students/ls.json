@@ -1,0 +1,18 @@
+{
+  "student_id": "ls",
+  "tutors": {
+    "robotics": {
+      "topics": {
+        "line_following": {
+          "support_estimate": 0.5,
+          "observations": 3
+        },
+        "digital_io": {
+          "support_estimate": 0.5,
+          "observations": 1
+        }
+      }
+    }
+  },
+  "updated_at": "2026-05-30T08:36:34+00:00"
+}

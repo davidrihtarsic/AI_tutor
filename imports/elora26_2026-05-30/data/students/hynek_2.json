@@ -1,0 +1,14 @@
+{
+  "student_id": "hynek_2",
+  "tutors": {
+    "robotics": {
+      "topics": {
+        "light_sensor": {
+          "support_estimate": 0.5,
+          "observations": 1
+        }
+      }
+    }
+  },
+  "updated_at": "2026-05-30T08:17:22+00:00"
+}

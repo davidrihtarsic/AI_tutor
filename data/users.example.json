@@ -1,0 +1,4 @@
+[
+  {"nickname":"robot01","password":"motor1","enabled":true},
+  {"nickname":"robot02","password":"senzor2","enabled":true}
+]

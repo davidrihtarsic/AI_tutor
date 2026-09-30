@@ -1,0 +1,6 @@
+[
+  {"id": "voltage_current", "label": "Napetost in tok"},
+  {"id": "measurement", "label": "Merjenje"},
+  {"id": "op_amp", "label": "Operacijski ojačevalnik"},
+  {"id": "feedback", "label": "Povratna zveza"}
+]

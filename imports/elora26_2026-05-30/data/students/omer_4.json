@@ -1,0 +1,18 @@
+{
+  "student_id": "omer_4",
+  "tutors": {
+    "robotics": {
+      "topics": {
+        "general_robotics": {
+          "support_estimate": 0.5,
+          "observations": 1
+        },
+        "robot_behavior": {
+          "support_estimate": 0.5,
+          "observations": 1
+        }
+      }
+    }
+  },
+  "updated_at": "2026-05-30T08:20:33+00:00"
+}

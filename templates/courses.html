@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Izbira tečaja{% endblock %}
+{% block content %}
+<section class="card narrow login-card"><h1>Izberi tečaj</h1><p>Prijavljen: <strong>{{ nickname }}</strong></p>
+{% for course in courses %}<form method="post" action="/courses" class="form-grid"><input type="hidden" name="course_id" value="{{ course.id }}"><button type="submit">{{ course.name }}</button></form>{% endfor %}
+<form method="post" action="/logout"><button class="secondary">Odjava</button></form></section>
+{% endblock %}

@@ -1,0 +1,680 @@
+{% extends "base.html" %}
+{% block title %}Učiteljski dashboard{% endblock %}
+{% block content %}
+<div class="teacher-dashboard">
+
+<div class="dashboard-head compact-head">
+    <div>
+        <h1>Tečaji in analitika</h1>
+        <span class="head-note">Učitelj določi aktivni tečaj za nove prijave; analitiko lahko pregleduje ločeno.</span>
+    </div>
+    <form method="post" action="/teacher/logout"><button class="secondary compact-button">Odjava</button></form>
+</div>
+
+<!-- ================================================================
+     1) SEJA
+     Operativne nastavitve pouka: aktivni tečaj, tutor, dejavnost in
+     začasna dovoljenost pogovora.
+     ================================================================ -->
+<details class="dashboard-section" data-section-id="session" open>
+    <summary class="dashboard-section-header">
+        <span class="section-chevron" aria-hidden="true">▸</span>
+        <strong>Seja</strong>
+        <span class="section-summary-text">
+            {{ active_course.name if active_course else 'ni aktivnega tečaja' }}
+            {% if active_course %} · {{ classroom.tutor_id }}{% if classroom.activity_id %} · {{ classroom.activity_id }}{% endif %}
+            · {{ 'pogovor omogočen' if classroom.chat_enabled else 'pogovor začasno prekinjen' }}{% endif %}
+        </span>
+        <button type="button" class="section-help-button" data-help="session" aria-label="Pomoč za sklop Seja">?</button>
+    </summary>
+
+    <div class="dashboard-section-body">
+        <section class="card control-card compact-inner-card">
+            <div class="session-control-row">
+                <form method="post" action="/teacher/classroom" class="classroom-controls" id="classroom-form">
+                    <label class="compact-field">
+                        <span>Aktivni tečaj</span>
+                        <select name="course_id" id="active-course" required>
+                            <option value="" {% if not active_course_id %}selected{% endif %} disabled>Izberi tečaj</option>
+                            {% for course in courses %}
+                            <option value="{{ course.id }}" {% if active_course_id == course.id %}selected{% endif %}>{{ course.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+
+                    <label class="compact-field">
+                        <span>Tutor</span>
+                        <select name="tutor_id" id="active-tutor" required>
+                            {% for item in tutors %}
+                            <option value="{{ item.id }}" {% if classroom.tutor_id == item.id %}selected{% endif %}>{{ item.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+
+                    <label class="compact-field">
+                        <span>Dejavnost</span>
+                        <select name="activity_id" id="active-activity">
+                            <option value="">Splošni pogovor</option>
+                        </select>
+                    </label>
+
+                    <button type="submit" class="compact-button apply-button">Uporabi</button>
+                </form>
+
+                {% if active_course_id %}
+                <form method="post" action="/teacher/chat-access" class="chat-access-control">
+                    <input type="hidden" name="course_id" value="{{ active_course_id }}">
+                    {% if classroom.chat_enabled %}
+                    <input type="hidden" name="chat_enabled" value="false">
+                    <button type="submit" class="secondary compact-button">Začasno prekini</button>
+                    {% else %}
+                    <input type="hidden" name="chat_enabled" value="true">
+                    <button type="submit" class="compact-button">Omogoči pogovor</button>
+                    {% endif %}
+                </form>
+                {% endif %}
+            </div>
+
+        </section>
+    </div>
+</details>
+
+<!-- ================================================================
+     2) ANALITIKA
+     Analitika vedno sledi aktivnemu tečaju; učitelj izbere le časovni obseg.
+     ================================================================ -->
+<details class="dashboard-section" data-section-id="analytics" open>
+    <summary class="dashboard-section-header">
+        <span class="section-chevron" aria-hidden="true">▸</span>
+        <strong>Analitika</strong>
+        <span class="section-summary-text">
+            {{ active_course.name if active_course else 'ni aktivnega tečaja' }} · {{ 'vsi podatki' if summary.window_minutes == 0 else (summary.window_minutes|string + ' min') }}
+        </span>
+        <button type="button" class="section-help-button" data-help="analytics" aria-label="Pomoč za sklop Analitika">?</button>
+    </summary>
+
+    <div class="dashboard-section-body">
+        <section class="card compact-inner-card analytics-overview-card">
+            <div class="analytics-summary-row">
+                <form method="get" action="/teacher" class="analytics-time-control">
+                    <label class="compact-field time-window-field">
+                        <span>Časovno obdobje</span>
+                        <select name="minutes" onchange="this.form.submit()">
+                            {% for item in time_windows %}
+                            <option value="{{ item.value }}" {% if selected_window == item.value %}selected{% endif %}>{{ item.label }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                </form>
+
+                <div class="metrics compact-metrics inline-metrics">
+                    <div class="metric"><strong>{{ summary.active_students }}</strong><span>učencev</span></div>
+                    <div class="metric"><strong>{{ summary.message_count }}</strong><span>vprašanj</span></div>
+                    <div class="metric"><strong>{{ summary.alerts|length }}</strong><span>opozoril</span></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="dashboard-grid">
+            <section class="card compact-inner-card">
+                <button type="button" class="help-title" data-help="topics">Najpogostejše teme <span>?</span></button>
+                {% if summary.topics %}
+                <table class="analytics-table"><tbody>
+                {% for name, count in summary.topics %}
+                    <tr class="analytics-category-row">
+                        <td><button type="button" class="analytics-category-toggle" aria-expanded="false"><span class="analytics-chevron">▸</span>{{ name }}</button></td>
+                        <td class="analytics-count">{{ count }}</td>
+                    </tr>
+                    <tr class="analytics-category-detail" hidden><td colspan="2"><div class="analytics-question-list">
+                    {% for item in summary.drilldown.topics.get(name, []) %}
+                        <details class="question-detail analytics-question"><summary><span class="question-time">{{ item.timestamp[:16] | replace('T', ' ') }}</span><span class="question-student">{{ item.student_id }}</span><span>{{ item.question }}</span></summary><div class="question-answer markdown-answer">{% if item.answer %}{{ item.answer }}{% else %}<em>Odgovor ni bil zabeležen.</em>{% endif %}</div></details>
+                    {% endfor %}
+                    </div></td></tr>
+                {% endfor %}
+                </tbody></table>
+                {% else %}<p class="compact-empty">Še ni podatkov.</p>{% endif %}
+            </section>
+
+            <section class="card compact-inner-card">
+                <button type="button" class="help-title" data-help="misconceptions">Možnost napačnih konceptov <span>?</span></button>
+                {% if summary.misconceptions %}
+                <table class="analytics-table"><tbody>
+                {% for name, count in summary.misconceptions %}
+                    <tr class="analytics-category-row">
+                        <td><button type="button" class="analytics-category-toggle" aria-expanded="false"><span class="analytics-chevron">▸</span>{{ name }}</button></td>
+                        <td class="analytics-count">{{ count }}</td>
+                    </tr>
+                    <tr class="analytics-category-detail" hidden><td colspan="2"><div class="analytics-question-list">
+                    {% for item in summary.drilldown.misconceptions.get(name, []) %}
+                        <details class="question-detail analytics-question"><summary><span class="question-time">{{ item.timestamp[:16] | replace('T', ' ') }}</span><span class="question-student">{{ item.student_id }}</span><span>{{ item.question }}</span></summary><div class="question-answer markdown-answer">{% if item.answer %}{{ item.answer }}{% else %}<em>Odgovor ni bil zabeležen.</em>{% endif %}</div></details>
+                    {% endfor %}
+                    </div></td></tr>
+                {% endfor %}
+                </tbody></table>
+                {% else %}<p class="compact-empty">Še ni podatkov.</p>{% endif %}
+            </section>
+
+            <section class="card compact-inner-card">
+                <button type="button" class="help-title" data-help="problems">Tip problema <span>?</span></button>
+                {% if summary.problems %}
+                <table class="analytics-table"><tbody>
+                {% for name, count in summary.problems %}
+                    <tr class="analytics-category-row">
+                        <td><button type="button" class="analytics-category-toggle" aria-expanded="false"><span class="analytics-chevron">▸</span>{{ name }}</button></td>
+                        <td class="analytics-count">{{ count }}</td>
+                    </tr>
+                    <tr class="analytics-category-detail" hidden><td colspan="2"><div class="analytics-question-list">
+                    {% for item in summary.drilldown.problems.get(name, []) %}
+                        <details class="question-detail analytics-question"><summary><span class="question-time">{{ item.timestamp[:16] | replace('T', ' ') }}</span><span class="question-student">{{ item.student_id }}</span><span>{{ item.question }}</span></summary><div class="question-answer markdown-answer">{% if item.answer %}{{ item.answer }}{% else %}<em>Odgovor ni bil zabeležen.</em>{% endif %}</div></details>
+                    {% endfor %}
+                    </div></td></tr>
+                {% endfor %}
+                </tbody></table>
+                {% else %}<p class="compact-empty">Še ni podatkov.</p>{% endif %}
+            </section>
+
+            <section class="card compact-inner-card">
+                <button type="button" class="help-title" data-help="alerts">Opozorila <span>?</span></button>
+                {% if summary.alerts %}
+                <ul class="alerts">{% for alert in summary.alerts %}<li><strong>{{ alert.student_id }}</strong> · {{ alert.topic }} — {{ alert.reason }}</li>{% endfor %}</ul>
+                {% else %}<p class="compact-empty">Ni opozoril.</p>{% endif %}
+            </section>
+        </div>
+    </div>
+</details>
+
+<!-- ================================================================
+     3) UČENCI
+     ================================================================ -->
+<details class="dashboard-section" data-section-id="students" open>
+    <summary class="dashboard-section-header">
+        <span class="section-chevron" aria-hidden="true">▸</span>
+        <strong>Učenci{% if selected_course %} · {{ selected_course }}{% endif %}</strong>
+        <span class="section-summary-text">{{ users|length }} prikazanih</span>
+        <button type="button" class="section-help-button" data-help="students" aria-label="Pomoč za sklop Učenci">?</button>
+    </summary>
+
+    <div class="dashboard-section-body">
+        <section class="card student-list-card compact-inner-card">
+            <div class="section-title-row">
+                <button type="button" class="help-title" data-help="student-table">Seznam učencev <span>?</span></button>
+                <span class="section-note">Klik na učenca → vprašanja; klik na vprašanje → odgovor.</span>
+            </div>
+
+            <details class="question-detail">
+                <summary><strong>Kako razumeti učni profil učenca?</strong></summary>
+                <div class="question-answer">
+                    <p>
+                        Učni profil ni šolska ocena, ampak sprotna ocena razvoja na podlagi dokazov iz pogovora z AI tutorjem.
+                        Vrednosti bližje 1 pomenijo več zbranih dokazov v prid posamezni dimenziji, vrednost okoli 0,5 pa pogosto pomeni
+                        negotovo stanje oziroma premalo dokazov.
+                    </p>
+                    <p>
+                        <strong>🧠 Razumevanje</strong> raste, ko učenec pravilno razloži pojem, utemelji vzrok in posledico,
+                        pravilno odgovori na kratko preverjanje ali znanje prenese v novo situacijo.
+                        <em>Primer:</em> učenec ne pove le, da PWM spremeni hitrost motorja, ampak zna razložiti, zakaj sprememba
+                        duty cycle vpliva na povprečno moč motorja.
+                    </p>
+                    <p>
+                        <strong>📈 Napredek</strong> raste, ko učenec uporabi prejšnjo pomoč in naredi naslednji korak:
+                        izboljša rešitev, popravi napako, postavi zahtevnejše nadaljevalno vprašanje ali razvije novo strategijo.
+                        <em>Primer:</em> po osnovnem krmiljenju motorja začne sam razmišljati, kako uskladiti dva motorja pri vožnji robota.
+                    </p>
+                    <p>
+                        <strong>🧭 Samostojnost</strong> raste, ko učenec pred vprašanjem sam poskusi, meri, testira,
+                        predlaga hipotezo ali opiše svojo diagnostiko. Samo iskanje pomoči samostojnosti ne znižuje;
+                        pomembno je, ali učenec pokaže lasten poskus in uporablja prejšnje odgovore.
+                        <em>Primer:</em> »Motor se ne vrti. Izmeril sem izhodno napetost in dobil 0 V, zato bom najprej preveril enable signal.«
+                    </p>
+                    <p>
+                        <strong>Primer razvoja:</strong> učenec najprej vpraša, zakaj se motor ne vrti (🧠), nato na podlagi razlage
+                        izvede meritev in odkrije napako (📈), pri naslednjem problemu pa sam predlaga in preizkusi rešitev, preden vpraša tutorja (🧭).
+                        Dimenzije so med seboj neodvisne: učenec lahko dobro razume snov, a še vedno potrebuje veliko pomoči, ali pa je zelo
+                        samostojen, vendar pri določenem konceptu še nima pravilnega razumevanja.
+                    </p>
+                </div>
+            </details>
+
+            {% if users %}
+            <table class="student-table">
+                <thead><tr><th>Vzdevek</th><th>Geslo</th><th>Aktiven</th><th title="Razumevanje">🧠</th><th title="Napredek">📈</th><th title="Samostojnost">🧭</th><th title="Odprti didaktični dogodki">⚑</th></tr></thead>
+                <tbody>
+                {% for user in users %}
+                <tr class="student-row" data-student="{{ loop.index }}" tabindex="0" role="button" aria-expanded="false">
+                    <td class="mono"><strong>{{ user.nickname }}</strong></td>
+                    <td class="mono">{{ user.password }}</td>
+                    <td><span class="presence {{ 'online' if user.active else 'offline' }}">{{ 'DA' if user.active else 'NE' }}</span></td>
+                    <td class="mono" title="Razumevanje">{{ '%.2f'|format(user.learning.understanding) }}</td>
+                    <td class="mono" title="Napredek">{{ '%.2f'|format(user.learning.progress) }}</td>
+                    <td class="mono" title="Samostojnost">{{ '%.2f'|format(user.learning.independence) }}</td>
+                    <td class="mono" title="Odprti didaktični dogodki">{{ user.didactic_events|length }}</td>
+                </tr>
+                <tr id="student-detail-{{ loop.index }}" class="student-detail-row" hidden>
+                    <td colspan="7">
+                        <div class="student-detail">
+                            <div class="section-title-row">
+                                <strong>Učni profil</strong>
+                                <span class="section-note">🧠 razumevanje {{ '%.2f'|format(user.learning.understanding) }} · 📈 napredek {{ '%.2f'|format(user.learning.progress) }} · 🧭 samostojnost {{ '%.2f'|format(user.learning.independence) }} · {{ user.learning.evidence_observations }} dokazov / {{ user.learning.observations }} opažanj</span>
+                            </div>
+                            {% if user.learning.topics %}
+                            <table class="student-table">
+                                <thead><tr><th>Tema</th><th title="Razumevanje">🧠</th><th title="Napredek">📈</th><th title="Samostojnost">🧭</th><th>Dokazi</th><th>Opažanja</th></tr></thead>
+                                <tbody>
+                                {% for topic in user.learning.topics %}
+                                <tr>
+                                    <td><span class="mono">{{ topic.topic_id }}</span>{% if topic.tutor_id %} <span class="section-note">· {{ topic.tutor_id }}</span>{% endif %}</td>
+                                    <td class="mono">{{ '%.2f'|format(topic.understanding) }}</td>
+                                    <td class="mono">{{ '%.2f'|format(topic.progress) }}</td>
+                                    <td class="mono">{{ '%.2f'|format(topic.independence) }}</td>
+                                    <td class="mono">{{ topic.evidence_observations }}</td>
+                                    <td class="mono">{{ topic.observations }}</td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            {% else %}
+                            <p class="compact-empty">Za tega učenca v aktivnem tečaju še ni podatkov učnega modela.</p>
+                            {% endif %}
+
+                            <div class="section-title-row"><strong>Didaktični dogodki</strong></div>
+                            {% if user.didactic_events %}
+                            <ul class="alerts">
+                                {% for event in user.didactic_events %}
+                                <li>
+                                    <strong>{{ event.label }}</strong>
+                                    · <span class="mono">{{ event.topic_id }}</span>
+                                    — {{ event.reason }}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% else %}
+                            <p class="compact-empty">Ni odprtih didaktičnih dogodkov.</p>
+                            {% endif %}
+
+                            <div class="section-title-row"><strong>Vprašanja</strong></div>
+                        {% if user.questions %}
+                            {% for item in user.questions %}
+                            <details class="question-detail">
+                                <summary>
+                                    <span class="question-time">{{ item.timestamp[:16] | replace('T', ' ') }}</span>
+                                    <span>{{ item.question }}</span>
+                                </summary>
+                                <div class="question-answer markdown-answer">
+                                    {% if item.answer %}{{ item.answer }}{% else %}<em>Odgovor ni bil zabeležen.</em>{% endif %}
+                                </div>
+                            </details>
+                            {% endfor %}
+                        {% else %}
+                            <p class="compact-empty">V izbranem časovnem obdobju ni vprašanj.</p>
+                        {% endif %}
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p class="compact-empty">Za izbrani tečaj ni učencev.</p>
+            {% endif %}
+        </section>
+
+        <section class="card compact-inner-card class-registration-card">
+            <div class="section-title-row">
+                <strong>Tečaji in vpisi</strong>
+                <span class="section-note">Ista oseba je lahko vpisana v več tečajev.</span>
+            </div>
+            <form method="post" action="/teacher/courses" class="class-create-form">
+                <label>ID tečaja<input name="course_id" required placeholder="npr. robotika26"></label>
+                <label>Ime tečaja<input name="course_name" required placeholder="npr. Robotika26"></label>
+                <label>Koda tečaja<input name="registration_code" required placeholder="npr. ROBOT8"></label>
+                <button type="submit" class="compact-button">Dodaj / spremeni</button>
+            </form>
+            {% if course_settings %}
+            <table class="class-registration-table">
+                <thead><tr><th>Tečaj</th><th>Koda</th><th>Registracija</th><th></th></tr></thead>
+                <tbody>
+                {% for item in course_settings %}
+                <tr>
+                    <td><strong>{{ item.get('name', item.get('id')) }}</strong></td>
+                    <td class="mono">{{ item.get('registration_code') }}</td>
+                    <td>{{ 'ODPRTA' if item.get('registration_open') else 'ZAPRTA' }}</td>
+                    <td>
+                        <form method="post" action="/teacher/courses/registration">
+                            <input type="hidden" name="course_id" value="{{ item.get('id') }}">
+                            <input type="hidden" name="registration_open" value="{{ 'false' if item.get('registration_open') else 'true' }}">
+                            <button type="submit" class="secondary compact-button">{{ 'Zapri vpis' if item.get('registration_open') else 'Odpri vpis' }}</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p class="compact-empty">Tečaji za samoregistracijo še niso nastavljeni.</p>
+            {% endif %}
+        </section>
+    </div>
+</details>
+
+<!-- ================================================================
+     4) BAZA ZNANJA
+     ================================================================ -->
+<details class="dashboard-section" data-section-id="knowledge" open>
+    <summary class="dashboard-section-header">
+        <span class="section-chevron" aria-hidden="true">▸</span>
+        <strong>Baza znanja</strong>
+        <span class="section-summary-text">{{ tutor_status|length }} tutorjev</span>
+        <button type="button" class="section-help-button" data-help="knowledge" aria-label="Pomoč za sklop Baza znanja">?</button>
+    </summary>
+
+    <div class="dashboard-section-body">
+        <section class="card compact-inner-card">
+            <div class="section-title-row">
+                <button type="button" class="help-title" data-help="vector-store">Strokovne baze / Vector Store <span>?</span></button>
+                <span class="section-note">Markdown je lokalni vir; sinhronizirajo se le spremembe.</span>
+            </div>
+            <table>
+                <thead><tr><th>Tutor</th><th>Vector Store</th><th></th></tr></thead>
+                <tbody>
+                {% for item in tutor_status %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td class="mono">{{ item.vector_store_id or 'še ni ustvarjen' }}</td>
+                    <td><button class="compact-button" onclick="syncTutor('{{ item.id }}', this)">Sinhroniziraj</button></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <pre id="sync-result" class="result compact-result"></pre>
+        </section>
+    </div>
+</details>
+
+</div>
+
+<!-- En sam modal za kontekstno pomoč. Besedilo se vstavi iz JS objekta spodaj. -->
+<dialog id="dashboard-help" class="dashboard-help-dialog">
+    <div class="help-dialog-head">
+        <h2 id="help-title">Pomoč</h2>
+        <button type="button" class="help-close" aria-label="Zapri pomoč">×</button>
+    </div>
+    <div id="help-body" class="help-dialog-body"></div>
+</dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+<script>
+// ---------------------------------------------------------------------------
+// Kontekstna pomoč
+// ---------------------------------------------------------------------------
+// Besedila so namenoma tukaj in ne v HTML karticah, da pomoč ne zavzema
+// prostora. V prihodnje jih lahko brez spremembe postavitve prestavimo v MD.
+const dashboardHelp = {
+    session: {
+        title: 'Seja',
+        body: `
+            <p><strong>Kaj je tukaj?</strong> Učitelj določi tečaj, ki ga trenutno vodi, njegovega tutorja in dejavnost.</p>
+            <p><strong>Aktivni tečaj</strong> določa, v kateri tečaj se ob novi prijavi vključijo že vpisani učenci. Že odprte seje ob spremembi tečaja ostanejo v svojem prvotnem tečaju.</p>
+            <p><strong>Tutor in dejavnost</strong> določata strokovno in didaktično vedenje AI tutorja za aktivni tečaj. Gumb <strong>Uporabi</strong> potrdi vse tri nastavitve.</p>
+            <p><strong>Začasno prekini</strong> onemogoči pošiljanje novih vprašanj v aktivnem tečaju, ne odjavi pa učencev. Učitelj lahko pogovor pozneje ponovno omogoči.</p>
+            <p><strong>Kje se nastavlja?</strong> Stanje aktivnega tečaja in njegove nastavitve se hranijo v <code>data/config/classroom.json</code>; tutorji so v <code>tutors/&lt;ime&gt;/</code>, dejavnosti pa v <code>activities/*.md</code>.</p>`
+    },
+    analytics: {
+        title: 'Analitika',
+        body: `
+            <p><strong>Kaj prikazuje?</strong> Analitika vedno velja za trenutno <strong>aktivni tečaj</strong>. Tečaja ali tutorja zato tukaj ni mogoče pomotoma zamenjati.</p>
+            <p><strong>Časovno obdobje</strong> je edini filter in določa, kako daleč nazaj se upoštevajo pogovori.</p>
+            <p><strong>Učencev</strong> je število različnih učencev, ki so v izbranem obdobju postavili vsaj eno vprašanje; <strong>vprašanj</strong> je skupno število njihovih vprašanj; <strong>opozoril</strong> pa število zaznanih dogodkov, ki zahtevajo učiteljevo pozornost.</p>
+            <p>Če se je znotraj istega tečaja tutor med poukom spreminjal, ostanejo vse interakcije del iste analitike tečaja; posamezni dogodki še vedno hranijo svoj <code>tutor_id</code>.</p>`
+    },
+    topics: {
+        title: 'Najpogostejše teme',
+        body: `<p><strong>Kaj prikazuje?</strong> Vsebinsko področje vprašanja – torej <em>o čem</em> učenci sprašujejo (npr. PWM, senzor razdalje, krmiljenje motorjev).</p>
+               <p><strong>Kdaj je uporabno?</strong> Če se ista tema pogosto pojavlja, je to signal, da jo je smiselno ponovno razložiti celotnemu razredu.</p>
+               <p><strong>Kje je definirano?</strong> Teme so <strong>specifične za posameznega tutorja</strong> in so določene v <code>tutors/&lt;tutor&gt;/topics.json</code>. Robotika in Elektronika imata zato lahko povsem različne teme.</p>
+               <p><strong>Preverjanje:</strong> klik na kategorijo odpre vprašanja, ki jih je AI uvrstil vanjo; klik na vprašanje pokaže še tutorjev odgovor. Klasifikacija je ocena AI, zato jo lahko učitelj tako tudi preveri.</p>`
+    },
+    misconceptions: {
+        title: 'Možnost napačnih konceptov',
+        body: `<p><strong>Kaj prikazuje?</strong> Možne napačne predstave ali predpostavke, ki jih je AI zaznal v učenčevem vprašanju oziroma razlagi.</p>
+               <p><strong>Kdaj je uporabno?</strong> Tak signal je posebej pomemben, ker lahko učenec nadaljnje razumevanje gradi na napačni osnovi. Če se isti napačni koncept pojavlja pri več učencih, ga je smiselno razjasniti s celotnim razredom.</p>
+               <p><strong>Kako nastane?</strong> Klasifikator ga zapiše v <code>InteractionClassification.possible_misconception</code>. Prikazane so samo interakcije, pri katerih je bila možna napačna predstava dejansko zaznana.</p>
+               <p><strong>Preverjanje:</strong> klik na zaznani koncept pokaže konkretna vprašanja in tutorjeve odgovore. Gre za <strong>oceno AI, ne za diagnozo znanja</strong>, zato jo učitelj vedno lahko preveri na izvorni interakciji.</p>`
+    },
+    problems: {
+        title: 'Tip problema',
+        body: `<p><strong>Kaj prikazuje?</strong> Naravo ovire – <em>kje je po oceni AI dejanski problem</em>, npr. konceptualni, sintaktični, strojni, algoritmični, merilni ali organizacijski.</p>
+               <p><strong>Kdaj je uporabno?</strong> Pomaga presoditi, ali imajo učenci predvsem težave z razumevanjem, algoritmom, kodo, strojno opremo ali meritvami. Tako lahko učitelj bolje izbere način skupne pomoči.</p>
+               <p><strong>Kje je definirano?</strong> Kategorije so trenutno določene v <code>models.py</code> (<code>InteractionClassification.problem_type</code>) in so <strong>enake za vse tutorje</strong>.</p>
+               <p><strong>Preverjanje:</strong> klik na kategorijo pokaže konkretna vprašanja in tutorjeve odgovore, zato lahko učitelj preveri tako ustreznost klasifikacije kot kakovost prejete pomoči.</p>`
+    },
+    alerts: {
+        title: 'Opozorila',
+        body: `<p>Tu se prikažejo interakcije, za katere je klasifikator označil, da bi lahko zahtevale učiteljevo pozornost.</p>
+               <p>Opozorilo ni avtomatska presoja učenca. Učitelj naj ga razume kot signal za pregled konkretne situacije.</p>`
+    },
+    students: {
+        title: 'Učenci',
+        body: `<p>Sklop prikazuje račune učencev iz trenutno izbranega tečaja in njihovo trenutno prisotnost.</p>
+               <p><strong>Aktiven: DA</strong> pomeni, da je učenec uspešno prijavljen in je aplikacija pred kratkim prejela njegov heartbeat. Po daljši neaktivnosti se status spremeni v NE.</p>
+               <p>Nove učence lahko doda samoregistracija: učitelj pripravi tečaj in kodo, učenec pa ob prvem vpisu izbere uporabniško ime in svoje geslo. Nastavitve tečajev so v <code>data/courses.json</code>, vpisi pa v <code>data/enrollments.json</code>, računi pa v <code>data/users.json</code>.</p>`
+    },
+    'student-table': {
+        title: 'Seznam učencev',
+        body: `<p>Klik na vrstico učenca odpre njegova vprašanja iz trenutno izbranega časovnega obdobja. Klik na posamezno vprašanje nato pokaže odgovor tutorja.</p>
+               <p>Gesla so v tem prototipu namenoma prikazana učitelju v čisti obliki, da jih lahko hitro posreduje učencu ob pozabi.</p>
+               <p>Seznam vedno sledi trenutno <strong>aktivnemu tečaju</strong>, ki ga učitelj nastavi v sklopu Seja.</p>`
+    },
+    knowledge: {
+        title: 'Baza znanja',
+        body: `<p>Prikazuje strokovne baze posameznih tutorjev. Lokalni Markdown dokumenti so glavni vir resnice, OpenAI Vector Store pa njihova indeksirana kopija.</p>
+               <p>Spremembe vsebine najprej naredi v <code>tutors/&lt;ime&gt;/knowledge/*.md</code>, nato sproži sinhronizacijo.</p>`
+    },
+    'vector-store': {
+        title: 'Strokovne baze / Vector Store',
+        body: `<p><strong>Vector Store ID</strong> pove, kateri trajni OpenAI indeks uporablja posamezni tutor.</p>
+               <p><strong>Sinhroniziraj</strong> primerja lokalne Markdown datoteke z zadnjim stanjem in naloži samo spremembe.</p>
+               <p>Vector Store ni primarni vir vsebine. Če ga izbrišemo, ga lahko ponovno zgradimo iz lokalnih Markdown dokumentov.</p>`
+    }
+};
+
+// ---------------------------------------------------------------------------
+// Ohranjanje položaja strani po akcijah na dashboardu
+// ---------------------------------------------------------------------------
+// Večina nastavitev na učiteljskem dashboardu uporablja običajen HTML obrazec.
+// Po POST/GET zahtevi se stran ponovno naloži, brskalnik pa bi brez tega prikaz
+// vrnil na vrh strani. Pred oddajo obrazca zato shranimo trenutni scrollY v
+// sessionStorage. Zapis velja samo znotraj trenutnega zavihka brskalnika.
+const dashboardScrollKey = 'teacher-dashboard-scroll-y';
+
+function saveDashboardScrollPosition() {
+    sessionStorage.setItem(dashboardScrollKey, String(window.scrollY));
+}
+
+function restoreDashboardScrollPosition() {
+    const stored = sessionStorage.getItem(dashboardScrollKey);
+    if (stored === null) return;
+
+    // Zapis odstranimo takoj: položaj se obnovi samo po konkretni akciji,
+    // ne pa ob vsakem prihodnjem odpiranju dashboarda.
+    sessionStorage.removeItem(dashboardScrollKey);
+
+    const y = Number(stored);
+    if (!Number.isFinite(y)) return;
+
+    // Dva requestAnimationFrame klica omogočita, da se pred pomikom najprej
+    // izrišejo tabele in obnovi odprtost/zaprtost glavnih sklopov.
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => window.scrollTo({top: y, left: 0, behavior: 'auto'}));
+    });
+}
+
+// Vsak običajen obrazec (filtri, sprememba tutorja/dejavnosti, odprtje/zaprtje
+// registracije, ustvarjanje tečaja ...) si pred oddajo zapomni položaj strani.
+for (const form of document.querySelectorAll('form')) {
+    form.addEventListener('submit', saveDashboardScrollPosition);
+}
+
+restoreDashboardScrollPosition();
+
+// ---------------------------------------------------------------------------
+// Ohranjanje odprtosti/zaprtosti glavnih sklopov
+// ---------------------------------------------------------------------------
+// Filtri na dashboardu povzročijo nov HTTP request in s tem ponovno nalaganje
+// strani. Brez tega bi se vsi <details> elementi vrnili v privzeto odprto
+// stanje. Stanje posameznega sklopa zato hranimo samo v brskalniku.
+const sectionStatePrefix = 'teacher-dashboard-section:';
+
+for (const section of document.querySelectorAll('.dashboard-section[data-section-id]')) {
+    const key = sectionStatePrefix + section.dataset.sectionId;
+    const stored = localStorage.getItem(key);
+
+    // Če je uporabnik ta sklop že kdaj odprl/zaprl, obnovimo njegovo stanje.
+    // Če zapisa še ni, ostane HTML privzeta vrednost (trenutno odprto).
+    if (stored === 'open') section.open = true;
+    if (stored === 'closed') section.open = false;
+
+    section.addEventListener('toggle', () => {
+        localStorage.setItem(key, section.open ? 'open' : 'closed');
+    });
+}
+
+const helpDialog = document.getElementById('dashboard-help');
+const helpTitle = document.getElementById('help-title');
+const helpBody = document.getElementById('help-body');
+
+function openHelp(key) {
+    const item = dashboardHelp[key];
+    if (!item) return;
+    helpTitle.textContent = item.title;
+    helpBody.innerHTML = item.body;
+    helpDialog.showModal();
+}
+
+// Naslovi kartic in vprašaji v naslovnih vrsticah odpirajo pomoč.
+for (const button of document.querySelectorAll('[data-help]')) {
+    button.addEventListener('click', (event) => {
+        // Gumb je lahko znotraj <summary>; preprečimo, da bi klik na pomoč
+        // hkrati odprl/zaprl celoten sklop.
+        event.preventDefault();
+        event.stopPropagation();
+        openHelp(button.dataset.help);
+    });
+}
+
+document.querySelector('.help-close').addEventListener('click', () => helpDialog.close());
+helpDialog.addEventListener('click', (event) => {
+    // Klik na temno ozadje dialog zapre; klik na vsebino ga pusti odprtega.
+    if (event.target === helpDialog) helpDialog.close();
+});
+
+// ---------------------------------------------------------------------------
+// Drill-down analitike: kategorija -> vprašanja -> odgovor
+// ---------------------------------------------------------------------------
+// Vsaka vrstica kategorije ima takoj za seboj skrito vrstico z vprašanji.
+// Podatki so že filtrirani na strežniku z istimi filtri kot števec kategorije,
+// zato odpiranje ne sproži novega API ali OpenAI klica.
+for (const row of document.querySelectorAll('.analytics-category-row')) {
+    const button = row.querySelector('.analytics-category-toggle');
+    const detail = row.nextElementSibling;
+    if (!button || !detail?.classList.contains('analytics-category-detail')) continue;
+
+    button.addEventListener('click', () => {
+        const opening = detail.hidden;
+        detail.hidden = !opening;
+        button.setAttribute('aria-expanded', String(opening));
+        const chevron = button.querySelector('.analytics-chevron');
+        if (chevron) chevron.textContent = opening ? '▾' : '▸';
+    });
+}
+
+// ---------------------------------------------------------------------------
+// Pregled učencev
+// ---------------------------------------------------------------------------
+for (const row of document.querySelectorAll('.student-row')) {
+    const toggle = () => {
+        const detail = document.getElementById(`student-detail-${row.dataset.student}`);
+        const opening = detail.hidden;
+        detail.hidden = !opening;
+        row.setAttribute('aria-expanded', String(opening));
+    };
+    row.addEventListener('click', toggle);
+    row.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggle();
+        }
+    });
+}
+
+// Tutor answers are stored as Markdown, just like in the learner chat.
+for (const answer of document.querySelectorAll('.markdown-answer')) {
+    const source = answer.textContent.trim();
+    if (source && !answer.querySelector('em')) {
+        answer.innerHTML = DOMPurify.sanitize(marked.parse(source));
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Tutor / activity controls
+// ---------------------------------------------------------------------------
+const tutors = {{ tutors | tojson }};
+const courseClassrooms = {{ course_classrooms | tojson }};
+const activeCourseSelect = document.getElementById('active-course');
+const tutorSelect = document.getElementById('active-tutor');
+const activitySelect = document.getElementById('active-activity');
+
+function refreshActivities(preferredActivity = null) {
+    const tutor = tutors.find(t => t.id === tutorSelect.value);
+    activitySelect.innerHTML = '<option value="">Splošni pogovor</option>';
+
+    for (const activity of (tutor?.activities || [])) {
+        const option = document.createElement('option');
+        option.value = activity.id;
+        option.textContent = activity.name;
+        if (activity.id === preferredActivity) option.selected = true;
+        activitySelect.appendChild(option);
+    }
+}
+
+tutorSelect.addEventListener('change', () => refreshActivities(null));
+
+function loadCourseTeachingConfig(courseId) {
+    const cfg = courseClassrooms[courseId] || {};
+    if (cfg.tutor_id && tutors.some(t => t.id === cfg.tutor_id)) {
+        tutorSelect.value = cfg.tutor_id;
+    }
+    refreshActivities(cfg.activity_id || null);
+}
+
+if (activeCourseSelect) {
+    activeCourseSelect.addEventListener('change', () => loadCourseTeachingConfig(activeCourseSelect.value));
+    if (activeCourseSelect.value) loadCourseTeachingConfig(activeCourseSelect.value);
+    else refreshActivities(null);
+} else {
+    refreshActivities(null);
+}
+
+async function syncTutor(tutorId, button) {
+    button.disabled = true;
+    const output = document.getElementById('sync-result');
+    output.style.display = 'block';
+    output.textContent = `Sinhroniziram ${tutorId} ...`;
+    try {
+        const response = await fetch(`/teacher/sync/${tutorId}`, {method: 'POST'});
+        const data = await response.json();
+        output.textContent = JSON.stringify(data, null, 2);
+        if (data.ok) {
+            // Tudi sinhronizacija uporablja ročni reload, zato pred njim
+            // shranimo trenutni položaj enako kot pri obrazcih.
+            saveDashboardScrollPosition();
+            setTimeout(() => location.reload(), 800);
+        }
+    } catch (error) {
+        output.textContent = String(error);
+    } finally {
+        button.disabled = false;
+    }
+}
+</script>
+{% endblock %}

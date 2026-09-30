@@ -1,0 +1,18 @@
+{
+  "student_id": "hynek_3",
+  "tutors": {
+    "robotics": {
+      "topics": {
+        "general_robotics": {
+          "support_estimate": 0.5,
+          "observations": 3
+        },
+        "distance_sensor": {
+          "support_estimate": 0.5,
+          "observations": 1
+        }
+      }
+    }
+  },
+  "updated_at": "2026-05-30T08:33:34+00:00"
+}

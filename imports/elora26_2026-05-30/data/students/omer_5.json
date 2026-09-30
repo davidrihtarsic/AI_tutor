@@ -1,0 +1,18 @@
+{
+  "student_id": "omer_5",
+  "tutors": {
+    "robotics": {
+      "topics": {
+        "analog_io": {
+          "support_estimate": 0.5,
+          "observations": 5
+        },
+        "motor_control": {
+          "support_estimate": 0.5,
+          "observations": 1
+        }
+      }
+    }
+  },
+  "updated_at": "2026-05-30T08:43:36+00:00"
+}

@@ -1,0 +1,374 @@
+{% extends "base.html" %}
+{% block title %}{{ tutor_name }} · {{ activity_name }}{% endblock %}
+{% block content %}
+<section class="chat-shell">
+    <div class="chat-heading chat-status-bar" style="display:block;">
+        <table class="student-header-table" style="width:100%; table-layout:fixed; border-collapse:collapse;">
+            <tbody>
+                <tr>
+                    <td style="width:33.333%; text-align:left; vertical-align:middle; padding:.2rem .4rem;">
+                        <strong>Tečaj:</strong> {{ course_name }}
+                    </td>
+                    <td style="width:33.333%; text-align:center; vertical-align:middle; padding:.2rem .4rem;">
+                        <strong>Tutor:</strong> <span id="active-tutor">{{ tutor_name }}</span>
+                    </td>
+                    <td style="width:33.333%; text-align:right; vertical-align:middle; padding:.2rem .4rem;">
+                        <strong>Aktivnost:</strong> <span id="active-activity">{{ activity_name }}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; vertical-align:middle; padding:.45rem .4rem .2rem;">
+                        <strong>Uporabnik:</strong> {{ nickname }}
+                    </td>
+                    <td style="text-align:center; vertical-align:middle; padding:.45rem .4rem .2rem;">
+                        <div class="student-learning-profile" aria-label="Moj učni profil" style="display:flex; flex-flow:row nowrap; justify-content:center; align-items:center; gap:1.25rem; width:100%; padding:0; border:0;">
+                        {% for key, icon, label in [
+                            ('understanding', '🧠', 'Razumevanje'),
+                            ('progress', '📈', 'Napredek'),
+                            ('independence', '🧭', 'Samostojnost')
+                        ] %}
+                        {% set item = learning_profile[key] %}
+                        <div class="student-profile-metric" id="student-profile-{{ key }}" style="display:inline-flex; flex-flow:row nowrap; align-items:center; white-space:nowrap;"
+                             data-level="{{ item.level }}"
+                             data-uncertain="{{ 'true' if item.uncertain else 'false' }}"
+                             title="{{ label }} — razvojni kazalnik, ne šolska ocena.">
+                            <span class="student-profile-icon" aria-hidden="true">{{ icon }}</span>
+                            <span class="student-profile-dots" aria-label="{{ label }}">
+                                {% for i in range(1, 6) %}<span class="profile-dot {{ 'filled' if i <= item.level else '' }}">{{ '●' if i <= item.level else '○' }}</span>{% endfor %}
+                            </span>
+                            <span class="student-profile-uncertain"{% if not item.uncertain %} hidden{% endif %}>?</span>
+                        </div>
+                        {% endfor %}
+                        </div>
+                    </td>
+                    <td style="text-align:right; vertical-align:middle; padding:.45rem .4rem .2rem;">
+                        <form method="post" action="/logout" class="chat-logout-form" style="margin:0;">
+                            <button type="submit" class="secondary compact-chat-button"><strong>Odjava</strong></button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="messages" class="messages" aria-live="polite"></div>
+
+    <p id="chat-availability" class="status"></p>
+
+    <form id="chat-form" class="chat-form">
+        <textarea id="message" rows="3" maxlength="8000" required placeholder="Napiši vprašanje ..."></textarea>
+        <button id="send" type="submit">Pošlji</button>
+    </form>
+    <p id="status" class="status"></p>
+</section>
+
+<style>
+.chat-header-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    width: 100% !important;
+    align-items: center !important;
+    column-gap: 1rem !important;
+}
+.chat-header-cell { min-width: 0; }
+.chat-header-left { justify-self: stretch; text-align: left; }
+.chat-header-center { justify-self: stretch; text-align: center; }
+.chat-header-right { justify-self: stretch; text-align: right; }
+.chat-header-right .compact-chat-button { margin-left: auto; }
+@media (max-width: 700px) {
+    .chat-header-grid {
+        grid-template-columns: 1fr 1fr 1fr !important;
+        column-gap: .5rem !important;
+    }
+    .student-learning-profile {
+        gap: .65rem !important;
+        overflow-x: auto;
+        justify-content: center !important;
+    }
+}
+</style>
+
+<!-- Tutorjevi odgovori so v Markdownu. marked ga pretvori v HTML, DOMPurify
+     pa rezultat očisti pred vstavljanjem v stran. -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+
+<!-- MathJax izriše LaTeX enačbe v odgovorih tutorja. -->
+<script>
+window.MathJax = {
+    tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']],
+        processEscapes: true
+    },
+    startup: {
+        // Enačbe dodajamo dinamično, zato jih izrisujemo sami po vsakem odgovoru.
+        typeset: false
+    }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<script>
+const sessionId = {{ session.session_id | tojson }};
+const previousHistory = {{ display_history | tojson }};
+const form = document.getElementById('chat-form');
+const input = document.getElementById('message');
+const messages = document.getElementById('messages');
+const status = document.getElementById('status');
+const send = document.getElementById('send');
+const activeTutor = document.getElementById('active-tutor');
+const activeActivity = document.getElementById('active-activity');
+const chatAvailability = document.getElementById('chat-availability');
+const learningProfileKeys = ['understanding', 'progress', 'independence'];
+let teacherChatEnabled = true;
+let requestInFlight = false;
+
+/*
+ * Keep the visible tutor/activity in sync with the teacher dashboard.  This is
+ * presentation only; /api/chat independently re-reads the same configuration
+ * before every answer.
+ */
+async function refreshClassroomStatus() {
+    try {
+        const response = await fetch('/api/classroom-status', {cache: 'no-store'});
+        if (!response.ok) return;
+        const data = await response.json();
+        activeTutor.textContent = data.tutor_name;
+        activeActivity.textContent = data.activity_name;
+        teacherChatEnabled = Boolean(data.chat_enabled);
+        updateLearningProfile(data.learning_profile);
+        updateChatAvailability();
+    } catch (_) {
+        // A temporary status-refresh failure must never interrupt chatting.
+    }
+}
+
+function updateLearningProfile(profile) {
+    if (!profile) return;
+    for (const key of learningProfileKeys) {
+        const metric = document.getElementById(`student-profile-${key}`);
+        const item = profile[key];
+        if (!metric || !item) continue;
+        const level = Math.max(0, Math.min(5, Number(item.level) || 0));
+        metric.dataset.level = String(level);
+        metric.dataset.uncertain = item.uncertain ? 'true' : 'false';
+        metric.querySelectorAll('.profile-dot').forEach(
+            (dot, index) => {
+                const filled = index < level;
+                dot.classList.toggle('filled', filled);
+                dot.textContent = filled ? '●' : '○';
+            }
+        );
+        const uncertain = metric.querySelector('.student-profile-uncertain');
+        if (uncertain) uncertain.hidden = !item.uncertain;
+    }
+}
+
+function updateChatAvailability() {
+    const blocked = !teacherChatEnabled;
+    if (!requestInFlight) {
+        input.disabled = blocked;
+        send.disabled = blocked;
+    }
+    chatAvailability.textContent = blocked
+        ? 'Učitelj je začasno ustavil pogovor. Počakaj na nadaljnja navodila.'
+        : '';
+}
+
+refreshClassroomStatus();
+setInterval(refreshClassroomStatus, 5000);
+
+/*
+ * Presence heartbeat: while this chat page is open, refresh the server-side
+ * last-seen timestamp. The teacher dashboard can therefore distinguish a
+ * learner who is actually present from an account that merely exists.
+ */
+async function sendPresenceHeartbeat() {
+    try {
+        await fetch('/api/presence', {method: 'POST'});
+    } catch (_) {
+        // Presence must never interrupt the learner's chat experience.
+    }
+}
+sendPresenceHeartbeat();
+setInterval(sendPresenceHeartbeat, 60000);
+
+/*
+ * Return the vertical position of an element inside the scrollable message
+ * window. getBoundingClientRect() is used instead of offsetTop because it is
+ * reliable even when the page layout changes later.
+ */
+function positionInsideMessages(el) {
+    const messageRect = el.getBoundingClientRect();
+    const containerRect = messages.getBoundingClientRect();
+    return messages.scrollTop + messageRect.top - containerRect.top;
+}
+
+/*
+ * Show the beginning of a newly arrived tutor response, not its very end.
+ * About 70 px of earlier conversation remains visible above the response, so
+ * the learner keeps visual context and can start reading at the first line.
+ */
+function revealAnswerStart(el) {
+    const target = Math.max(0, positionInsideMessages(el) - 70);
+    messages.scrollTo({top: target, behavior: 'smooth'});
+}
+
+/*
+ * Normalise common LaTeX delimiters BEFORE Markdown parsing.
+ *
+ * Marked treats \[ and \( as Markdown escape sequences, zato jih pretvorimo
+ * v $$/$. Poleg standardnih zapisov podpiramo tudi stare odgovore modela,
+ * kjer je samostojna enačba zapisana npr.:
+ *     [ i=\\frac{N_2}{N_1} ]
+ * Tak zapis prepoznamo samo, če notranjost vsebuje tipične LaTeX znake, da
+ * navadnih oglatih oklepajev v besedilu ne spreminjamo po nepotrebnem.
+ */
+function normalizeMathDelimiters(text) {
+    let normalized = text
+        .replace(/\\\[([\s\S]*?)\\\]/g, (_, expr) => `$$${expr}$$`)
+        .replace(/\\\(([\s\S]*?)\\\)/g, (_, expr) => `$${expr}$`);
+
+    // Legacy display form: a whole line like [ i=\frac{N_2}{N_1} ].
+    normalized = normalized.replace(
+        /^\s*\[\s*([^\n\]]*(?:\\[A-Za-z]+|[_^{}])[^\n\]]*)\s*\]\s*$/gm,
+        (_, expr) => `$$${expr.trim()}$$`
+    );
+
+    return normalized;
+}
+
+async function typesetMath(el) {
+    if (window.MathJax && MathJax.typesetPromise) {
+        try {
+            await MathJax.typesetPromise([el]);
+        } catch (error) {
+            // Slaba enačba ne sme prekiniti klepeta; ostane vidna kot besedilo.
+            console.warn('MathJax ni mogel izrisati enačbe:', error);
+        }
+    }
+}
+
+function addMessage(text, role, options = {}) {
+    const el = document.createElement('div');
+    el.className = `message ${role}`;
+
+    if (role === 'assistant') {
+        // Najprej poenotimo matematične oznake, nato obdelamo Markdown.
+        const markdown = normalizeMathDelimiters(text);
+        const html = marked.parse(markdown);
+        el.innerHTML = DOMPurify.sanitize(html);
+    } else {
+        // Učenčevega vnosa in sistemskih napak ne interpretiramo kot HTML.
+        el.textContent = text;
+    }
+
+    messages.appendChild(el);
+
+    if (role === 'assistant') {
+        // MathJax spremeni višino elementa, zato počakamo na izris enačb in šele
+        // nato po potrebi premaknemo pogled na začetek novega odgovora.
+        typesetMath(el).then(() => {
+            if (options.revealAnswer) {
+                requestAnimationFrame(() => revealAnswerStart(el));
+            }
+        });
+    } else if (options.keepVisible) {
+        // For the learner's own message a small/nearest scroll is enough.
+        el.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+    }
+
+    return el;
+}
+
+/* Animated bubble shown while the backend/OpenAI request is running. */
+function addTypingIndicator() {
+    const el = document.createElement('div');
+    el.className = 'message assistant typing-indicator';
+    el.setAttribute('aria-label', 'Tutor pripravlja odgovor');
+    el.innerHTML = '<span></span><span></span><span></span>';
+    messages.appendChild(el);
+    el.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+    return el;
+}
+
+/*
+ * Restore visible history from previous logins/sessions. This is DISPLAY ONLY:
+ * the server decides separately how much recent dialogue goes back to the AI.
+ */
+if (previousHistory.length > 0) {
+    for (const item of previousHistory) {
+        addMessage(item.text, item.role);
+    }
+
+    const separator = document.createElement('div');
+    separator.className = 'conversation-separator';
+    separator.textContent = 'Nadaljevanje pogovora';
+    messages.appendChild(separator);
+} else {
+    addMessage(
+        'Pozdravljen/a. Opiši, kaj trenutno delaš ali kje si obstal/a. Poskusil ti bom pomagati tako, da bo rešitev čim bolj tvoja.',
+        'assistant'
+    );
+}
+
+// On initial login show the most recent part of restored history.
+messages.scrollTop = messages.scrollHeight;
+
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!teacherChatEnabled) {
+        updateChatAvailability();
+        return;
+    }
+    const message = input.value.trim();
+    if (!message) return;
+
+    const studentBubble = addMessage(message, 'student', {keepVisible: true});
+    input.value = '';
+    requestInFlight = true;
+    input.disabled = true;
+    send.disabled = true;
+
+    // The moving dots live in the conversation itself. The status text remains
+    // useful to screen readers and as a small textual fallback.
+    const typing = addTypingIndicator();
+    status.textContent = 'Tutor pripravlja odgovor ...';
+
+    try {
+        const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({session_id: sessionId, message})
+        });
+        const data = await response.json();
+        if (!response.ok) {
+            if (response.status === 423) {
+                // Teacher locked the chat between the last status poll and submit.
+                // Do not leave a question on screen that was never stored/sent.
+                studentBubble.remove();
+                input.value = message;
+                teacherChatEnabled = false;
+                updateChatAvailability();
+                typing.remove();
+                return;
+            }
+            throw new Error(data.detail || 'Napaka pri odgovoru.');
+        }
+
+        typing.remove();
+        addMessage(data.answer, 'assistant', {revealAnswer: true});
+        refreshClassroomStatus();
+    } catch (error) {
+        typing.remove();
+        addMessage(`Napaka: ${error.message}`, 'system', {keepVisible: true});
+    } finally {
+        requestInFlight = false;
+        status.textContent = '';
+        updateChatAvailability();
+        if (teacherChatEnabled) input.focus();
+    }
+});
+</script>
+{% endblock %}

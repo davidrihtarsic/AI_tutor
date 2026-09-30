@@ -1,0 +1,38 @@
+{
+  "student_id": "anonym_3",
+  "tutors": {
+    "robotics": {
+      "topics": {
+        "line_following": {
+          "support_estimate": 0.5,
+          "observations": 1
+        },
+        "distance_sensor": {
+          "support_estimate": 0.5,
+          "observations": 8
+        },
+        "loops": {
+          "support_estimate": 0.5,
+          "observations": 1
+        },
+        "analog_io": {
+          "support_estimate": 0.5,
+          "observations": 2
+        },
+        "digital_io": {
+          "support_estimate": 0.5,
+          "observations": 1
+        },
+        "light_sensor": {
+          "support_estimate": 0.5,
+          "observations": 1
+        },
+        "pwm": {
+          "support_estimate": 0.5,
+          "observations": 2
+        }
+      }
+    }
+  },
+  "updated_at": "2026-05-30T09:02:22+00:00"
+}

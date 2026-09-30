@@ -1,0 +1,11 @@
+{
+  "robotics": {
+    "vector_store_id": "vs_example",
+    "files": {
+      "knowledge/sensors.md": {
+        "sha256": "example-hash",
+        "file_id": "file_example"
+      }
+    }
+  }
+}

@@ -1,33 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student GPT Chat</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <!-- and it's easy to individually load additional languages -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
-    <script>hljs.highlightAll();</script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="{{ url_for('static', filename='index.js') }}"></script>
+{% extends "base.html" %}
+{% block title %}Prijava učenca{% endblock %}
+{% block content %}
+<section class="card narrow login-card">
+    <h1>Prijava učenca</h1>
+    {% if active_course %}
+    <p><strong>Aktivni tečaj:</strong> {{ active_course.name }}</p>
+    <p>Vpiši svoje uporabniško ime in geslo. Tečaj določi učitelj.</p>
+    {% else %}
+    <p class="error">Učitelj trenutno še ni aktiviral tečaja.</p>
+    {% endif %}
 
-</head>
-<body>
-    <h2>Chat with GPT Assistant</h2>
-    <!-- Student Name and ID Input Fields in the Same Line -->
-    <div class="input-row">
-        <input type="text" id="studentNameInput" placeholder="Enter your name">
-        <input type="text" id="studentIdInput" placeholder="Enter your student ID (optional)">
-        <button id="loginButton" onclick="login()" disabled>Login</button>
-    </div>
-    <div id="chatBox"></div>
-    <!-- Message Input -->
-    <textarea id="messageInput" placeholder="Type your question..." rows="4" disabled></textarea>
-    <button id="sendButton" onclick="sendMessage()" disabled>Send</button>
-    <script>
-    </script>
-</body>
-</html>
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+
+    <form method="post" action="/login" class="form-grid">
+        <label>Uporabniško ime
+            <input name="nickname" required maxlength="80" autocomplete="username" value="{{ nickname or '' }}">
+        </label>
+        <label>Geslo
+            <input type="password" name="password" required maxlength="120" autocomplete="current-password">
+        </label>
+        <button type="submit" {% if not active_course %}disabled{% endif %}>Prijava</button>
+    </form>
+
+    <details class="first-registration" {% if register_open %}open{% endif %}>
+        <summary>Vpis v aktivni tečaj</summary>
+        <p>Za prvi vpis ali dodajanje obstoječega računa v <strong>{{ active_course.name if active_course else "aktivni tečaj" }}</strong> vnesi registracijsko kodo, ki jo poda učitelj.</p>
+        <form method="post" action="/register" class="form-grid">
+            <label>Uporabniško ime
+                <input name="nickname" required maxlength="80" autocomplete="username" value="{{ nickname or '' }}">
+            </label>
+            <label>Koda tečaja
+                <input name="course_code" required maxlength="80" autocomplete="off">
+            </label>
+            <label>Izberi geslo
+                <input type="password" name="password" required minlength="3" maxlength="120" autocomplete="new-password">
+            </label>
+            <button type="submit" {% if not active_course %}disabled{% endif %}>Vpiši se v tečaj</button>
+        </form>
+    </details>
+</section>
+{% endblock %}

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "robot_construction",
+    "label": "Konstrukcija robota"
+  },
+  {
+    "id": "motor_control",
+    "label": "Krmiljenje motorjev"
+  },
+  {
+    "id": "pwm",
+    "label": "PWM"
+  },
+  {
+    "id": "digital_io",
+    "label": "Digitalni vhodi in izhodi"
+  },
+  {
+    "id": "analog_io",
+    "label": "Analogni vhodi in meritve"
+  },
+  {
+    "id": "distance_sensor",
+    "label": "Senzor razdalje"
+  },
+  {
+    "id": "light_sensor",
+    "label": "Senzor svetlobe"
+  },
+  {
+    "id": "line_following",
+    "label": "Sledenje črti"
+  },
+  {
+    "id": "conditional_statements",
+    "label": "Pogoji if/else"
+  },
+  {
+    "id": "loops",
+    "label": "Zanke"
+  },
+  {
+    "id": "variables",
+    "label": "Spremenljivke in podatkovni tipi"
+  },
+  {
+    "id": "robot_behavior",
+    "label": "Algoritmi in vedenje robota"
+  },
+  {
+    "id": "measurement",
+    "label": "Meritve in merilni postopki"
+  },
+  {
+    "id": "general_robotics",
+    "label": "Splošno o robotiki"
+  }
+]

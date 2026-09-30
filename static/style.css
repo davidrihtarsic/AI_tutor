@@ -1,0 +1,966 @@
+:root {
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    color: #1f2937;
+    background: #f3f4f6;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: inherit; }
+.topbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem max(1rem, calc((100vw - 1100px)/2)); background: #111827; color: white;
+}
+.topbar nav { display: flex; gap: 1rem; }
+.topbar a { text-decoration: none; }
+.brand { font-weight: 700; }
+.container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+.card { background: white; border-radius: 12px; padding: 1.3rem; margin-bottom: 1rem; box-shadow: 0 1px 4px #0001; }
+.narrow { max-width: 500px; margin: 3rem auto; }
+.form-grid { display: grid; gap: 1rem; }
+label { display: grid; gap: .4rem; font-weight: 600; }
+input, select, textarea, button { font: inherit; }
+input, select, textarea { padding: .7rem; border: 1px solid #cbd5e1; border-radius: 8px; background: white; }
+button { border: 0; border-radius: 8px; background: #1d4ed8; color: white; padding: .7rem 1rem; cursor: pointer; }
+button:disabled { opacity: .55; cursor: wait; }
+button.secondary { background: #475569; }
+.chat-shell { max-width: 850px; margin: auto; }
+.chat-heading { display: flex; justify-content: space-between; }
+.messages { min-height: 430px; max-height: 62vh; overflow-y: auto; padding: 1rem; background: white; border-radius: 12px; }
+.message { max-width: 82%; padding: .8rem 1rem; margin: .7rem 0; border-radius: 12px; white-space: pre-wrap; line-height: 1.45; }
+.message.assistant { background: #eef2ff; }
+.message.student { background: #dbeafe; margin-left: auto; }
+.message.system { background: #fee2e2; }
+.chat-form { display: grid; grid-template-columns: 1fr auto; gap: .7rem; margin-top: .8rem; }
+.chat-form textarea { resize: vertical; }
+.status { min-height: 1.2em; color: #64748b; }
+.dashboard-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1rem 0; }
+.metric { background: white; border-radius: 12px; padding: 1rem; display: grid; }
+.metric strong { font-size: 2rem; }
+.metric span { color: #64748b; }
+.dashboard-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.dashboard-grid .card { margin: 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: .6rem; border-bottom: 1px solid #e5e7eb; }
+td:last-child { text-align: right; }
+.mono, .result { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .85rem; }
+.result { overflow: auto; background: #f8fafc; padding: .8rem; }
+.alerts { padding-left: 1.2rem; }
+.alerts li { margin-bottom: .8rem; }
+.error { color: #b91c1c; }
+.inline-form { display: flex; gap: 1rem; }
+@media (max-width: 700px) {
+    .dashboard-grid, .metrics { grid-template-columns: 1fr; }
+    .chat-form { grid-template-columns: 1fr; }
+    .message { max-width: 95%; }
+}
+
+/* Markdown rendered inside AI responses should follow normal HTML whitespace.
+   Student/system bubbles still keep manually entered line breaks. */
+.message.assistant { white-space: normal; }
+.message.assistant p { margin: .35rem 0 .7rem; }
+.message.assistant p:last-child { margin-bottom: 0; }
+.message.assistant ul,
+.message.assistant ol { margin: .5rem 0; padding-left: 1.5rem; }
+.message.assistant pre {
+    overflow-x: auto;
+    padding: .8rem;
+    border-radius: 8px;
+    background: #111827;
+    color: #f8fafc;
+    white-space: pre;
+}
+.message.assistant code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.message.assistant :not(pre) > code {
+    background: #e2e8f0;
+    padding: .1rem .3rem;
+    border-radius: 4px;
+}
+.active-config { border-left: 5px solid #1d4ed8; }
+.muted { color: #64748b; font-size: .92rem; }
+
+/* -------------------------------------------------------------------------
+   Compact teacher dashboard
+   -------------------------------------------------------------------------
+   The classroom dashboard is used while teaching, so vertical space matters.
+   These rules are intentionally scoped to .teacher-dashboard and therefore do
+   not make the student chat or login pages unnecessarily dense.
+*/
+.teacher-dashboard {
+    font-size: .92rem;
+}
+
+.teacher-dashboard .compact-head {
+    margin-bottom: .55rem;
+}
+
+.teacher-dashboard .compact-head h1 {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.15;
+}
+
+.teacher-dashboard .head-note,
+.teacher-dashboard .section-note,
+.teacher-dashboard .config-status {
+    color: #64748b;
+    font-size: .78rem;
+    font-weight: 400;
+}
+
+.teacher-dashboard .card {
+    border-radius: 9px;
+    padding: .72rem .85rem;
+    margin-bottom: .65rem;
+}
+
+.teacher-dashboard .card h2 {
+    margin: 0 0 .42rem;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+/* All three select menus occupy one compact toolbar on normal screens. */
+.teacher-dashboard .control-card {
+    border-left: 4px solid #1d4ed8;
+    padding-top: .65rem;
+    padding-bottom: .5rem;
+}
+
+.teacher-dashboard .control-row {
+    display: flex;
+    align-items: end;
+    gap: .65rem;
+    flex-wrap: nowrap;
+}
+
+.teacher-dashboard .classroom-controls {
+    display: grid;
+    grid-template-columns: minmax(145px, 1fr) minmax(180px, 1.4fr) auto;
+    gap: .55rem;
+    align-items: end;
+    flex: 1 1 auto;
+}
+
+.teacher-dashboard .analytics-control {
+    flex: 0 1 210px;
+    min-width: 160px;
+}
+
+.teacher-dashboard .compact-field {
+    display: grid;
+    gap: .18rem;
+    font-size: .76rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+.teacher-dashboard .compact-field select {
+    min-height: 32px;
+    padding: .32rem .5rem;
+    border-radius: 6px;
+    font-size: .88rem;
+}
+
+.teacher-dashboard .compact-button {
+    min-height: 32px;
+    padding: .34rem .68rem;
+    border-radius: 6px;
+    font-size: .82rem;
+    white-space: nowrap;
+}
+
+.teacher-dashboard .apply-button {
+    align-self: end;
+}
+
+.teacher-dashboard .config-status {
+    display: flex;
+    gap: .85rem;
+    flex-wrap: wrap;
+    margin-top: .42rem;
+    padding-top: .38rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.teacher-dashboard .compact-metrics {
+    gap: .6rem;
+    margin: .6rem 0;
+}
+
+.teacher-dashboard .metric {
+    border-radius: 9px;
+    padding: .5rem .75rem;
+    display: flex;
+    align-items: baseline;
+    gap: .5rem;
+}
+
+.teacher-dashboard .metric strong {
+    font-size: 1.35rem;
+    line-height: 1;
+}
+
+.teacher-dashboard .metric span {
+    font-size: .78rem;
+}
+
+.teacher-dashboard .dashboard-grid {
+    gap: .65rem;
+    margin-bottom: .65rem;
+}
+
+.teacher-dashboard table {
+    font-size: .84rem;
+}
+
+.teacher-dashboard th,
+.teacher-dashboard td {
+    padding: .32rem .42rem;
+}
+
+.teacher-dashboard .alerts {
+    margin: .15rem 0 0;
+    padding-left: 1.1rem;
+}
+
+.teacher-dashboard .alerts li {
+    margin-bottom: .28rem;
+}
+
+.teacher-dashboard .compact-empty {
+    margin: .15rem 0;
+    color: #64748b;
+    font-size: .82rem;
+}
+
+.teacher-dashboard .section-title-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .8rem;
+    margin-bottom: .25rem;
+}
+
+.teacher-dashboard .section-title-row h2 {
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+.teacher-dashboard .compact-result {
+    display: none;
+    margin: .5rem 0 0;
+    padding: .5rem;
+    max-height: 150px;
+    font-size: .75rem;
+}
+
+/* On narrow screens compactness must not make controls unusable. */
+@media (max-width: 820px) {
+    .teacher-dashboard .control-row {
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    .teacher-dashboard .classroom-controls {
+        grid-template-columns: 1fr 1fr auto;
+        width: 100%;
+    }
+
+    .teacher-dashboard .analytics-control {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 620px) {
+    .teacher-dashboard .classroom-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-dashboard .section-title-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .15rem;
+    }
+}
+
+/* The analytics filter now contains two compact selectors: tutor scope and
+   time window. They remain beside the classroom controls on normal screens. */
+.teacher-dashboard .analytics-control {
+    display: grid;
+    grid-template-columns: minmax(150px, 1fr) minmax(125px, .72fr);
+    gap: .55rem;
+    flex: 0 1 355px;
+    min-width: 285px;
+    align-items: end;
+}
+
+.teacher-dashboard .time-window-field {
+    min-width: 125px;
+}
+
+@media (max-width: 980px) {
+    .teacher-dashboard .control-row {
+        flex-wrap: wrap;
+    }
+
+    .teacher-dashboard .analytics-control {
+        flex: 1 1 320px;
+    }
+}
+
+@media (max-width: 620px) {
+    .teacher-dashboard .analytics-control {
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* -------------------------------------------------------------------------
+   Student chat UX
+   ------------------------------------------------------------------------- */
+
+/* A subtle divider marks that restored messages belong to earlier sessions. */
+.conversation-separator {
+    margin: .8rem 0 .45rem;
+    text-align: center;
+    color: #94a3b8;
+    font-size: .76rem;
+}
+
+.conversation-separator::before,
+.conversation-separator::after {
+    content: "";
+    display: inline-block;
+    width: 2.6rem;
+    border-top: 1px solid #cbd5e1;
+    vertical-align: middle;
+    margin: 0 .55rem;
+}
+
+/* Three moving dots indicate that a request is still being processed. */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: .28rem;
+    width: fit-content;
+    min-width: 3.2rem;
+    min-height: 2.35rem;
+}
+
+.typing-indicator span {
+    width: .42rem;
+    height: .42rem;
+    border-radius: 50%;
+    background: #64748b;
+    animation: tutor-typing 1.15s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) { animation-delay: .14s; }
+.typing-indicator span:nth-child(3) { animation-delay: .28s; }
+
+@keyframes tutor-typing {
+    0%, 60%, 100% { transform: translateY(0); opacity: .45; }
+    30% { transform: translateY(-.28rem); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .typing-indicator span { animation: none; opacity: .7; }
+}
+
+/* -------------------------------------------------------------------------
+   Teacher student/class drill-down
+   ------------------------------------------------------------------------- */
+.teacher-dashboard .analytics-control {
+    grid-template-columns: minmax(110px, .72fr) minmax(145px, 1fr) minmax(125px, .72fr);
+    flex-basis: 500px;
+    min-width: 420px;
+}
+
+.student-row { cursor: pointer; }
+.student-row:hover { background: #f8fafc; }
+.student-row[aria-expanded="true"] { background: #eef2ff; }
+.student-detail-row td { padding: 0 .42rem .45rem; background: #f8fafc; }
+.student-detail { padding: .4rem .5rem .15rem; }
+
+.presence { font-weight: 700; font-size: .76rem; }
+.presence.online { color: #15803d; }
+.presence.offline { color: #64748b; }
+
+.question-detail {
+    border-top: 1px solid #e5e7eb;
+    padding: .34rem .15rem;
+}
+.question-detail:first-child { border-top: 0; }
+.question-detail summary {
+    cursor: pointer;
+    display: flex;
+    gap: .55rem;
+    align-items: baseline;
+    line-height: 1.3;
+}
+.question-time {
+    flex: 0 0 auto;
+    color: #64748b;
+    font-size: .72rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.question-answer {
+    margin: .35rem 0 .15rem 6.8rem;
+    padding: .45rem .6rem;
+    border-left: 3px solid #c7d2fe;
+    background: white;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.4;
+}
+.question-answer p { margin: .25rem 0; }
+.question-answer pre { overflow-x: auto; }
+
+@media (max-width: 760px) {
+    .teacher-dashboard .analytics-control {
+        grid-template-columns: 1fr;
+        min-width: 0;
+    }
+    .question-detail summary { display: block; }
+    .question-time { display: block; margin-bottom: .15rem; }
+    .question-answer { margin-left: 0; }
+}
+
+/* -------------------------------------------------------------------------
+   Compact student chat header
+   ------------------------------------------------------------------------- */
+.chat-heading.chat-status-bar {
+    display: block;
+    padding: .5rem .72rem;
+    margin-bottom: .55rem;
+    background: #fff;
+    border-radius: 9px;
+    box-shadow: 0 1px 3px #0001;
+}
+
+.chat-status-bar > .chat-context-row,
+.chat-status-bar > .chat-user-row {
+    width: 100%;
+}
+
+.chat-status-bar > .chat-user-row {
+    margin-top: .55rem;
+}
+
+.chat-context-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: .7rem;
+    min-width: 0;
+    font-size: .92rem;
+}
+.chat-context-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.chat-context-primary { font-weight: 700; }
+.chat-context-separator {
+    flex: 0 0 auto;
+    color: #94a3b8;
+    font-weight: 700;
+}
+
+.chat-user-row {
+    display: flex;
+    align-items: center;
+    gap: 1.35rem;
+    min-width: 0;
+}
+
+.chat-student-name {
+    flex: 0 1 auto;
+    min-width: 6rem;
+    max-width: 14rem;
+    font-weight: 700;
+    font-size: .95rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.student-learning-profile {
+    display: flex;
+    align-items: center;
+    gap: 1.45rem;
+    min-width: 0;
+    padding-left: .3rem;
+    line-height: 1.05;
+}
+.student-profile-metric {
+    display: inline-flex;
+    align-items: center;
+    gap: .34rem;
+    white-space: nowrap;
+    font-size: .78rem;
+    cursor: help;
+}
+.student-profile-icon { width: 1.15rem; text-align: center; }
+.student-profile-dots { display: inline-flex; gap: .08rem; }
+.profile-dot { font-size: .72rem; }
+.profile-dot.filled { font-weight: 700; }
+.student-profile-uncertain {
+    font-weight: 700;
+    color: #64748b;
+    margin-left: .08rem;
+}
+.chat-logout-form {
+    margin: 0 0 0 auto;
+    flex: 0 0 auto;
+}
+.compact-chat-button { padding: .42rem .72rem; font-size: .86rem; }
+
+@media (max-width: 700px) {
+    .chat-context-row {
+        flex-wrap: wrap;
+        gap: .3rem .55rem;
+    }
+    .chat-user-row {
+        flex-wrap: wrap;
+        gap: .6rem 1rem;
+    }
+    .student-learning-profile {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: .55rem 1rem;
+        padding-top: .45rem;
+        padding-left: 0;
+        border-top: 1px solid #e2e8f0;
+    }
+    .chat-logout-form {
+        margin-left: auto;
+    }
+}
+
+
+/* Restored teacher dashboard visual rules (preserve student chat styles above) */
+   Collapsible teacher dashboard sections + contextual help
+   ------------------------------------------------------------------------- */
+.teacher-dashboard .dashboard-section {
+    margin: 0 0 .55rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    background: #fff;
+    box-shadow: 0 1px 3px #0000000d;
+    overflow: clip;
+}
+
+.teacher-dashboard .dashboard-section-header {
+    list-style: none;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .42rem .65rem;
+    cursor: pointer;
+    user-select: none;
+    background: #f8fafc;
+    border-bottom: 1px solid transparent;
+}
+
+.teacher-dashboard .dashboard-section[open] > .dashboard-section-header {
+    border-bottom-color: #e5e7eb;
+}
+
+.teacher-dashboard .dashboard-section-header::-webkit-details-marker { display: none; }
+.teacher-dashboard .dashboard-section-header::marker { content: ''; }
+
+.teacher-dashboard .section-chevron {
+    width: 1em;
+    color: #64748b;
+    transition: transform .12s ease;
+}
+
+.teacher-dashboard .dashboard-section[open] .section-chevron {
+    transform: rotate(90deg);
+}
+
+.teacher-dashboard .dashboard-section-header > strong {
+    font-size: .94rem;
+    white-space: nowrap;
+}
+
+.teacher-dashboard .section-summary-text {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #64748b;
+    font-size: .76rem;
+}
+
+.teacher-dashboard .section-help-button {
+    margin-left: auto;
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    padding: 0;
+    border-radius: 50%;
+    background: #e2e8f0;
+    color: #475569;
+    font-size: .78rem;
+    font-weight: 700;
+}
+
+.teacher-dashboard .section-help-button:hover,
+.teacher-dashboard .help-title:hover {
+    color: #1d4ed8;
+}
+
+.teacher-dashboard .dashboard-section-body {
+    padding: .55rem;
+}
+
+.teacher-dashboard .compact-inner-card {
+    box-shadow: none;
+    border: 1px solid #edf0f3;
+    margin-bottom: .5rem;
+}
+
+.teacher-dashboard .dashboard-section-body > :last-child,
+.teacher-dashboard .dashboard-section-body .dashboard-grid:last-child,
+.teacher-dashboard .dashboard-section-body .compact-inner-card:last-child {
+    margin-bottom: 0;
+}
+
+/* Naslovi analitičnih tabel so dejansko gumbi za pomoč. Vizualno ostanejo
+   enaki navadnemu majhnemu naslovu in zato ne porabijo dodatnega prostora. */
+.teacher-dashboard .help-title {
+    display: inline-flex;
+    align-items: center;
+    gap: .32rem;
+    margin: 0 0 .35rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #1f2937;
+    font-size: .94rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.teacher-dashboard .section-title-row .help-title { margin-bottom: 0; }
+
+.teacher-dashboard .help-title span {
+    display: inline-grid;
+    place-items: center;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    color: #64748b;
+    font-size: .68rem;
+}
+
+/* Native <dialog> gives keyboard focus trapping and Escape-to-close without
+   additional dependencies. */
+.dashboard-help-dialog {
+    width: min(620px, calc(100vw - 2rem));
+    max-height: min(76vh, 680px);
+    padding: 0;
+    border: 0;
+    border-radius: 11px;
+    box-shadow: 0 18px 50px #0004;
+    color: #1f2937;
+}
+
+.dashboard-help-dialog::backdrop {
+    background: #0f172a66;
+}
+
+.help-dialog-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .65rem .8rem;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f8fafc;
+}
+
+.help-dialog-head h2 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.help-close {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border-radius: 6px;
+    background: #e2e8f0;
+    color: #475569;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.help-dialog-body {
+    padding: .75rem .9rem .85rem;
+    overflow-y: auto;
+    font-size: .88rem;
+    line-height: 1.45;
+}
+
+.help-dialog-body p { margin: 0 0 .6rem; }
+.help-dialog-body p:last-child { margin-bottom: 0; }
+.help-dialog-body code {
+    padding: .08rem .28rem;
+    border-radius: 4px;
+    background: #eef2f7;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: .84em;
+}
+
+@media (max-width: 620px) {
+    .teacher-dashboard .section-summary-text { display: none; }
+    .teacher-dashboard .dashboard-section-body { padding: .42rem; }
+}
+
+/* -------------------------------------------------------------------------
+   Analytics drill-down: category -> questions -> tutor answer
+   ------------------------------------------------------------------------- */
+.teacher-dashboard .analytics-table {
+    width: 100%;
+}
+
+.teacher-dashboard .analytics-category-row td {
+    padding-top: .26rem;
+    padding-bottom: .26rem;
+}
+
+.teacher-dashboard .analytics-category-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: .28rem;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #1f2937;
+    font: inherit;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+.teacher-dashboard .analytics-category-toggle:hover {
+    color: #1d4ed8;
+}
+
+.teacher-dashboard .analytics-chevron {
+    display: inline-block;
+    width: .85rem;
+    color: #64748b;
+    font-size: .78rem;
+}
+
+.teacher-dashboard .analytics-count {
+    width: 2.4rem;
+    text-align: right;
+    font-weight: 700;
+}
+
+.teacher-dashboard .analytics-category-detail > td {
+    padding: .15rem .25rem .45rem .95rem;
+    background: #f8fafc;
+}
+
+.teacher-dashboard .analytics-question-list {
+    display: grid;
+    gap: .22rem;
+}
+
+.teacher-dashboard .analytics-question {
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid #e5e7eb;
+    border-radius: 0;
+    background: transparent;
+}
+
+.teacher-dashboard .analytics-question:last-child {
+    border-bottom: 0;
+}
+
+.teacher-dashboard .analytics-question > summary {
+    padding: .32rem .15rem;
+    line-height: 1.3;
+}
+
+.teacher-dashboard .question-student {
+    display: inline-block;
+    min-width: 4.5rem;
+    margin-right: .35rem;
+    color: #334155;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: .78rem;
+    font-weight: 700;
+}
+
+.teacher-dashboard .analytics-question .question-answer {
+    margin: 0 0 .4rem 1rem;
+    padding: .45rem .55rem;
+    border-left: 3px solid #cbd5e1;
+    background: #fff;
+}
+
+
+/* Self-registration */
+.first-registration { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; }
+.first-registration > summary { cursor: pointer; font-weight: 700; color: #334155; }
+.first-registration > p { color: #64748b; font-size: .9rem; }
+.teacher-dashboard .class-create-form { display: grid; grid-template-columns: 1fr 1fr auto; gap: .55rem; align-items: end; margin: .55rem 0 .7rem; }
+.teacher-dashboard .class-create-form label { font-size: .78rem; }
+.teacher-dashboard .class-create-form input { padding: .45rem .55rem; }
+.teacher-dashboard .class-registration-table form { margin: 0; }
+@media (max-width: 700px) { .teacher-dashboard .class-create-form { grid-template-columns: 1fr; } }
+
+/* -------------------------------------------------------------------------
+   v1.2: Session and Analytics as true single-row grids
+   -------------------------------------------------------------------------
+   The forms use display: contents so their controls participate in the same
+   parent grid. This avoids the subtle vertical misalignment caused by nesting
+   separate form/flex blocks in one toolbar.
+*/
+.teacher-dashboard .session-control-row {
+    display: grid;
+    grid-template-columns: minmax(145px, 1fr) minmax(145px, 1fr) minmax(165px, 1.15fr) auto auto;
+    gap: .55rem;
+    align-items: end;
+    width: 100%;
+}
+
+.teacher-dashboard .session-control-row .classroom-controls,
+.teacher-dashboard .session-control-row .chat-access-control {
+    display: contents;
+}
+
+.teacher-dashboard .session-control-row .compact-button {
+    align-self: end;
+}
+
+.teacher-dashboard .analytics-overview-card {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.teacher-dashboard .analytics-summary-row {
+    display: grid;
+    grid-template-columns: minmax(145px, 170px) repeat(3, minmax(105px, 1fr));
+    gap: .5rem;
+    align-items: end;
+    width: 100%;
+}
+
+.teacher-dashboard .analytics-time-control,
+.teacher-dashboard .inline-metrics {
+    display: contents;
+}
+
+.teacher-dashboard .analytics-time-control select {
+    width: 100%;
+}
+
+.teacher-dashboard .inline-metrics .metric {
+    min-height: 32px;
+    margin: 0;
+    padding: .36rem .65rem;
+    align-self: end;
+}
+
+.teacher-dashboard .inline-metrics .metric strong {
+    font-size: 1.2rem;
+}
+
+/* On narrower screens the same controls wrap into a compact two-column grid. */
+@media (max-width: 760px) {
+    .teacher-dashboard .session-control-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .teacher-dashboard .analytics-summary-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .teacher-dashboard .session-control-row,
+    .teacher-dashboard .analytics-summary-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Force the student status header to exactly two rows. */
+.chat-status-bar > .chat-user-row {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 1.2rem;
+}
+
+.chat-status-bar .chat-student-name {
+    min-width: 0;
+    max-width: none;
+}
+
+.chat-status-bar .student-learning-profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 1.2rem;
+    width: auto;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+}
+
+.chat-status-bar .student-profile-metric {
+    flex: 0 0 auto;
+}
+
+.chat-status-bar .chat-logout-form {
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .chat-status-bar > .chat-user-row {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        column-gap: .65rem;
+    }
+
+    .chat-status-bar .student-learning-profile {
+        order: initial;
+        width: auto;
+        flex-wrap: nowrap;
+        gap: .55rem;
+        padding: 0;
+        border: 0;
+    }
+
+    .chat-status-bar .student-profile-metric {
+        gap: .18rem;
+        font-size: .72rem;
+    }
+
+    .chat-status-bar .student-profile-dots {
+        gap: 0;
+    }
+
+    .chat-status-bar .profile-dot {
+        font-size: .66rem;
+    }
+}

@@ -1,0 +1,46 @@
+{
+  "student_id": "david",
+  "tutors": {
+    "robotics": {
+      "topics": {
+        "general_robotics": {
+          "support_estimate": 0.5,
+          "observations": 8
+        },
+        "digital_io": {
+          "support_estimate": 0.5,
+          "observations": 5
+        },
+        "motor_control": {
+          "support_estimate": 0.5,
+          "observations": 2
+        },
+        "robot_construction": {
+          "support_estimate": 0.5,
+          "observations": 4
+        },
+        "pwm": {
+          "support_estimate": 0.5,
+          "observations": 2
+        },
+        "distance_sensor": {
+          "support_estimate": 0.5,
+          "observations": 2
+        },
+        "light_sensor": {
+          "support_estimate": 0.5,
+          "observations": 4
+        },
+        "robot_behavior": {
+          "support_estimate": 0.5,
+          "observations": 4
+        },
+        "measurement": {
+          "support_estimate": 0.5,
+          "observations": 1
+        }
+      }
+    }
+  },
+  "updated_at": "2026-05-30T09:03:33+00:00"
+}

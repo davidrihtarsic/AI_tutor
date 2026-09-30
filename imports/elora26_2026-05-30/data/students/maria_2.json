@@ -1,0 +1,14 @@
+{
+  "student_id": "maria_2",
+  "tutors": {
+    "robotics": {
+      "topics": {
+        "digital_io": {
+          "support_estimate": 0.5,
+          "observations": 4
+        }
+      }
+    }
+  },
+  "updated_at": "2026-05-30T08:25:34+00:00"
+}

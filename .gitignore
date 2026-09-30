@@ -1,5 +1,35 @@
-# prezri nastavitve s pomembnimi podatki
-config/config.json
-config/Fixy/
-config/NAK2025/
-./conversations/JR_MLADI_Izola.json
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Runtime data: contains student interactions and installation-specific IDs.
+data/backups/*
+data/sessions/*
+data/students/*
+data/config/vector_stores.json
+
+# Keep empty directories in Git
+!data/sessions/.gitkeep
+!data/students/.gitkeep
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# Local classroom accounts/configuration. Passwords are intentionally plain text
+# in this trusted-LAN prototype and therefore MUST NOT be committed.
+data/users.json
+data/courses.json
+data/enrollments.json
+data/config/classroom.json
+data/config/classroom_events.jsonl
+
+# Runtime presence (successful login / heartbeat).
+data/config/presence.json

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Prijava učitelja{% endblock %}
+{% block content %}
+<section class="card narrow">
+    <h1>Učiteljski pogled</h1>
+    <p>V prototipu je nadzorna plošča zaščitena s preprostim PIN-om.</p>
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+    <form method="post" action="/teacher/login" class="form-grid">
+        <label>PIN <input type="password" name="pin" required></label>
+        <button type="submit">Prijava</button>
+    </form>
+</section>
+{% endblock %}
